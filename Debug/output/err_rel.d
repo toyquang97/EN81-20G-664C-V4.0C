@@ -1,0 +1,14 @@
+.\output\err_rel.o: ..\src\err_rel.c
+.\output\err_rel.o: ..\include\typedef.h
+.\output\err_rel.o: ..\include\parameter.h
+.\output\err_rel.o: ..\include\config.h
+.\output\err_rel.o: ..\include\canopen.h
+.\output\err_rel.o: ..\include\rtc.h
+.\output\err_rel.o: ..\include\state.h
+.\output\err_rel.o: ..\include\call.h
+.\output\err_rel.o: ..\include\can.h
+.\output\err_rel.o: ..\include\pos.h
+.\output\err_rel.o: ..\include\eeprom.h
+.\output\err_rel.o: ..\include\history.h
+.\output\err_rel.o: ..\include\io.h
+.\output\err_rel.o: ..\include\lpc1700.h

@@ -1,0 +1,11 @@
+.\output\ese.o: ..\src\ese.c
+.\output\ese.o: ..\include\typedef.h
+.\output\ese.o: ..\include\lpc1700.h
+.\output\ese.o: ..\include\parameter.h
+.\output\ese.o: ..\include\config.h
+.\output\ese.o: ..\include\canopen.h
+.\output\ese.o: ..\include\rtc.h
+.\output\ese.o: ..\include\state.h
+.\output\ese.o: ..\include\text.h
+.\output\ese.o: ..\include\can.h
+.\output\ese.o: ..\include\history.h

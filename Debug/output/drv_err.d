@@ -1,0 +1,13 @@
+.\output\drv_err.o: ..\src\drv_err.c
+.\output\drv_err.o: ..\include\typedef.h
+.\output\drv_err.o: ..\include\parameter.h
+.\output\drv_err.o: ..\include\config.h
+.\output\drv_err.o: ..\include\canopen.h
+.\output\drv_err.o: ..\include\rtc.h
+.\output\drv_err.o: ..\include\state.h
+.\output\drv_err.o: ..\include\drive.h
+.\output\drv_err.o: ..\include\call.h
+.\output\drv_err.o: ..\include\can.h
+.\output\drv_err.o: ..\include\io.h
+.\output\drv_err.o: ..\include\lpc1700.h
+.\output\drv_err.o: ..\include\nice5000.h

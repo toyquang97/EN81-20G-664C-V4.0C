@@ -1,0 +1,9 @@
+.\output\no_setup.o: ..\src\no_setup.c
+.\output\no_setup.o: ..\include\typedef.h
+.\output\no_setup.o: ..\include\parameter.h
+.\output\no_setup.o: ..\include\config.h
+.\output\no_setup.o: ..\include\canopen.h
+.\output\no_setup.o: ..\include\rtc.h
+.\output\no_setup.o: ..\include\state.h
+.\output\no_setup.o: ..\include\call.h
+.\output\no_setup.o: ..\include\can.h

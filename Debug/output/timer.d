@@ -1,0 +1,17 @@
+.\output\timer.o: ..\src\timer.c
+.\output\timer.o: ..\include\typedef.h
+.\output\timer.o: ..\include\lpc1700.h
+.\output\timer.o: ..\include\lpc1700pincfg.h
+.\output\timer.o: ..\include\parameter.h
+.\output\timer.o: ..\include\config.h
+.\output\timer.o: ..\include\canopen.h
+.\output\timer.o: ..\include\rtc.h
+.\output\timer.o: ..\include\state.h
+.\output\timer.o: ..\include\call.h
+.\output\timer.o: ..\include\can.h
+.\output\timer.o: ..\include\pos.h
+.\output\timer.o: ..\include\lcd.h
+.\output\timer.o: ..\include\text.h
+.\output\timer.o: ..\include\history.h
+.\output\timer.o: ..\include\io.h
+.\output\timer.o: ..\include\nice5000.h

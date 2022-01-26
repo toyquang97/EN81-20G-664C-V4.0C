@@ -1,0 +1,14 @@
+.\output\insp.o: ..\src\insp.c
+.\output\insp.o: ..\include\typedef.h
+.\output\insp.o: ..\include\parameter.h
+.\output\insp.o: ..\include\config.h
+.\output\insp.o: ..\include\canopen.h
+.\output\insp.o: ..\include\rtc.h
+.\output\insp.o: ..\include\nice5000.h
+.\output\insp.o: ..\include\state.h
+.\output\insp.o: ..\include\call.h
+.\output\insp.o: ..\include\can.h
+.\output\insp.o: ..\include\drive.h
+.\output\insp.o: ..\include\io.h
+.\output\insp.o: ..\include\lpc1700.h
+.\output\insp.o: ..\include\history.h

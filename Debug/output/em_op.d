@@ -1,0 +1,14 @@
+.\output\em_op.o: ..\src\em_op.c
+.\output\em_op.o: ..\include\typedef.h
+.\output\em_op.o: ..\include\parameter.h
+.\output\em_op.o: ..\include\config.h
+.\output\em_op.o: ..\include\canopen.h
+.\output\em_op.o: ..\include\rtc.h
+.\output\em_op.o: ..\include\state.h
+.\output\em_op.o: ..\include\call.h
+.\output\em_op.o: ..\include\can.h
+.\output\em_op.o: ..\include\drive.h
+.\output\em_op.o: ..\include\io.h
+.\output\em_op.o: ..\include\lpc1700.h
+.\output\em_op.o: ..\include\history.h
+.\output\em_op.o: ..\include\nice5000.h

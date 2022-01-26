@@ -1,0 +1,16 @@
+.\output\can_a.o: ..\src\can_a.c
+.\output\can_a.o: ..\include\typedef.h
+.\output\can_a.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\output\can_a.o: ..\include\lpc1700.h
+.\output\can_a.o: ..\include\parameter.h
+.\output\can_a.o: ..\include\config.h
+.\output\can_a.o: ..\include\canopen.h
+.\output\can_a.o: ..\include\rtc.h
+.\output\can_a.o: ..\include\state.h
+.\output\can_a.o: ..\include\can.h
+.\output\can_a.o: ..\include\dict.h
+.\output\can_a.o: ..\include\pos.h
+.\output\can_a.o: ..\include\history.h
+.\output\can_a.o: ..\include\io.h
+.\output\can_a.o: ..\include\bootloader.h
+.\output\can_a.o: ..\include\version.h

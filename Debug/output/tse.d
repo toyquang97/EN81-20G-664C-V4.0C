@@ -1,0 +1,11 @@
+.\output\tse.o: ..\src\tse.c
+.\output\tse.o: ..\include\typedef.h
+.\output\tse.o: ..\include\lpc1700.h
+.\output\tse.o: ..\include\parameter.h
+.\output\tse.o: ..\include\config.h
+.\output\tse.o: ..\include\canopen.h
+.\output\tse.o: ..\include\rtc.h
+.\output\tse.o: ..\include\state.h
+.\output\tse.o: ..\include\can.h
+.\output\tse.o: ..\include\text.h
+.\output\tse.o: ..\include\history.h

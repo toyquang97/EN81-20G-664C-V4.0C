@@ -1,0 +1,13 @@
+.\output\relev.o: ..\src\relev.c
+.\output\relev.o: ..\include\typedef.h
+.\output\relev.o: ..\include\parameter.h
+.\output\relev.o: ..\include\config.h
+.\output\relev.o: ..\include\canopen.h
+.\output\relev.o: ..\include\rtc.h
+.\output\relev.o: ..\include\nice5000.h
+.\output\relev.o: ..\include\state.h
+.\output\relev.o: ..\include\call.h
+.\output\relev.o: ..\include\can.h
+.\output\relev.o: ..\include\drive.h
+.\output\relev.o: ..\include\pos.h
+.\output\relev.o: ..\include\history.h

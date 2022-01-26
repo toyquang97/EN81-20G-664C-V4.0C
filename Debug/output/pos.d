@@ -1,0 +1,14 @@
+.\output\pos.o: ..\src\pos.c
+.\output\pos.o: ..\include\typedef.h
+.\output\pos.o: ..\include\lpc1700.h
+.\output\pos.o: ..\include\parameter.h
+.\output\pos.o: ..\include\config.h
+.\output\pos.o: ..\include\canopen.h
+.\output\pos.o: ..\include\rtc.h
+.\output\pos.o: ..\include\nice5000.h
+.\output\pos.o: ..\include\state.h
+.\output\pos.o: ..\include\io.h
+.\output\pos.o: ..\include\history.h
+.\output\pos.o: ..\include\Text.h
+.\output\pos.o: ..\include\Can.h
+.\output\pos.o: ..\include\Drive.h

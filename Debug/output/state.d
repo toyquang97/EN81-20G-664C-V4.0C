@@ -1,0 +1,17 @@
+.\output\state.o: ..\src\state.c
+.\output\state.o: ..\include\typedef.h
+.\output\state.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\state.o: ..\include\parameter.h
+.\output\state.o: ..\include\config.h
+.\output\state.o: ..\include\canopen.h
+.\output\state.o: ..\include\rtc.h
+.\output\state.o: ..\include\nice5000.h
+.\output\state.o: ..\include\state.h
+.\output\state.o: ..\include\can.h
+.\output\state.o: ..\include\text.h
+.\output\state.o: ..\include\drive.h
+.\output\state.o: ..\include\history.h
+.\output\state.o: ..\include\pos.h
+.\output\state.o: ..\include\io.h
+.\output\state.o: ..\include\lpc1700.h
+.\output\state.o: ..\include\version.h

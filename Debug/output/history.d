@@ -1,0 +1,13 @@
+.\output\history.o: ..\src\history.c
+.\output\history.o: ..\include\typedef.h
+.\output\history.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\output\history.o: ..\include\parameter.h
+.\output\history.o: ..\include\config.h
+.\output\history.o: ..\include\canopen.h
+.\output\history.o: ..\include\rtc.h
+.\output\history.o: ..\include\call.h
+.\output\history.o: ..\include\can.h
+.\output\history.o: ..\include\eeprom.h
+.\output\history.o: ..\include\history.h
+.\output\history.o: ..\include\text.h
+.\output\history.o: ..\include\nice5000.h

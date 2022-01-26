@@ -1,0 +1,10 @@
+.\output\init.o: ..\src\init.c
+.\output\init.o: ..\include\typedef.h
+.\output\init.o: ..\include\parameter.h
+.\output\init.o: ..\include\config.h
+.\output\init.o: ..\include\canopen.h
+.\output\init.o: ..\include\rtc.h
+.\output\init.o: ..\include\state.h
+.\output\init.o: ..\include\can.h
+.\output\init.o: ..\include\text.h
+.\output\init.o: ..\include\nice5000.h

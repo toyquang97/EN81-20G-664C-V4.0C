@@ -1,0 +1,15 @@
+.\output\res_trip.o: ..\src\res_trip.c
+.\output\res_trip.o: ..\include\typedef.h
+.\output\res_trip.o: ..\include\parameter.h
+.\output\res_trip.o: ..\include\config.h
+.\output\res_trip.o: ..\include\canopen.h
+.\output\res_trip.o: ..\include\rtc.h
+.\output\res_trip.o: ..\include\nice5000.h
+.\output\res_trip.o: ..\include\state.h
+.\output\res_trip.o: ..\include\call.h
+.\output\res_trip.o: ..\include\can.h
+.\output\res_trip.o: ..\include\drive.h
+.\output\res_trip.o: ..\include\pos.h
+.\output\res_trip.o: ..\include\io.h
+.\output\res_trip.o: ..\include\lpc1700.h
+.\output\res_trip.o: ..\include\history.h

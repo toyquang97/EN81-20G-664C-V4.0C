@@ -1,0 +1,10 @@
+.\output\parameter.o: ..\src\parameter.c
+.\output\parameter.o: ..\include\typedef.h
+.\output\parameter.o: ..\include\lpc1700.h
+.\output\parameter.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\output\parameter.o: ..\include\parameter.h
+.\output\parameter.o: ..\include\config.h
+.\output\parameter.o: ..\include\canopen.h
+.\output\parameter.o: ..\include\rtc.h
+.\output\parameter.o: ..\include\history.h
+.\output\parameter.o: ..\include\state.h

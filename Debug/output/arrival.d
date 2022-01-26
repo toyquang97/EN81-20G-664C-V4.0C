@@ -1,0 +1,15 @@
+.\output\arrival.o: ..\src\arrival.c
+.\output\arrival.o: ..\include\typedef.h
+.\output\arrival.o: ..\include\parameter.h
+.\output\arrival.o: ..\include\config.h
+.\output\arrival.o: ..\include\canopen.h
+.\output\arrival.o: ..\include\rtc.h
+.\output\arrival.o: ..\include\nice5000.h
+.\output\arrival.o: ..\include\state.h
+.\output\arrival.o: ..\include\call.h
+.\output\arrival.o: ..\include\can.h
+.\output\arrival.o: ..\include\pos.h
+.\output\arrival.o: ..\include\io.h
+.\output\arrival.o: ..\include\lpc1700.h
+.\output\arrival.o: ..\include\drive.h
+.\output\arrival.o: ..\include\history.h

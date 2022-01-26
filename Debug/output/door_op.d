@@ -1,0 +1,14 @@
+.\output\door_op.o: ..\src\door_op.c
+.\output\door_op.o: ..\include\typedef.h
+.\output\door_op.o: ..\include\parameter.h
+.\output\door_op.o: ..\include\config.h
+.\output\door_op.o: ..\include\canopen.h
+.\output\door_op.o: ..\include\rtc.h
+.\output\door_op.o: ..\include\state.h
+.\output\door_op.o: ..\include\call.h
+.\output\door_op.o: ..\include\can.h
+.\output\door_op.o: ..\include\drive.h
+.\output\door_op.o: ..\include\eeprom.h
+.\output\door_op.o: ..\include\history.h
+.\output\door_op.o: ..\include\io.h
+.\output\door_op.o: ..\include\lpc1700.h

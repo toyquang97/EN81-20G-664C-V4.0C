@@ -1,0 +1,15 @@
+.\output\evac.o: ..\src\evac.c
+.\output\evac.o: ..\include\typedef.h
+.\output\evac.o: ..\include\parameter.h
+.\output\evac.o: ..\include\config.h
+.\output\evac.o: ..\include\canopen.h
+.\output\evac.o: ..\include\rtc.h
+.\output\evac.o: ..\include\nice5000.h
+.\output\evac.o: ..\include\state.h
+.\output\evac.o: ..\include\call.h
+.\output\evac.o: ..\include\can.h
+.\output\evac.o: ..\include\drive.h
+.\output\evac.o: ..\include\io.h
+.\output\evac.o: ..\include\lpc1700.h
+.\output\evac.o: ..\include\pos.h
+.\output\evac.o: ..\include\history.h

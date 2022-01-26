@@ -1,0 +1,15 @@
+.\output\diving.o: ..\src\diving.c
+.\output\diving.o: ..\include\typedef.h
+.\output\diving.o: ..\include\parameter.h
+.\output\diving.o: ..\include\config.h
+.\output\diving.o: ..\include\canopen.h
+.\output\diving.o: ..\include\rtc.h
+.\output\diving.o: ..\include\nice5000.h
+.\output\diving.o: ..\include\state.h
+.\output\diving.o: ..\include\can.h
+.\output\diving.o: ..\include\call.h
+.\output\diving.o: ..\include\pos.h
+.\output\diving.o: ..\include\drive.h
+.\output\diving.o: ..\include\io.h
+.\output\diving.o: ..\include\lpc1700.h
+.\output\diving.o: ..\include\history.h

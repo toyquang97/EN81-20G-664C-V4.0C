@@ -1,0 +1,14 @@
+.\output\hwtest.o: ..\src\hwtest.c
+.\output\hwtest.o: ..\include\typedef.h
+.\output\hwtest.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\output\hwtest.o: ..\include\parameter.h
+.\output\hwtest.o: ..\include\config.h
+.\output\hwtest.o: ..\include\canopen.h
+.\output\hwtest.o: ..\include\rtc.h
+.\output\hwtest.o: ..\include\state.h
+.\output\hwtest.o: ..\include\can.h
+.\output\hwtest.o: ..\include\text.h
+.\output\hwtest.o: ..\include\lcd.h
+.\output\hwtest.o: ..\include\io.h
+.\output\hwtest.o: ..\include\lpc1700.h
+.\output\hwtest.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -1,0 +1,9 @@
+.\output\dict.o: ..\src\dict.c
+.\output\dict.o: ..\include\typedef.h
+.\output\dict.o: ..\include\parameter.h
+.\output\dict.o: ..\include\config.h
+.\output\dict.o: ..\include\canopen.h
+.\output\dict.o: ..\include\rtc.h
+.\output\dict.o: ..\include\text.h
+.\output\dict.o: ..\include\can.h
+.\output\dict.o: ..\include\nice5000.h

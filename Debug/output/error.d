@@ -1,0 +1,13 @@
+.\output\error.o: ..\src\error.c
+.\output\error.o: ..\include\typedef.h
+.\output\error.o: ..\include\parameter.h
+.\output\error.o: ..\include\config.h
+.\output\error.o: ..\include\canopen.h
+.\output\error.o: ..\include\rtc.h
+.\output\error.o: ..\include\state.h
+.\output\error.o: ..\include\call.h
+.\output\error.o: ..\include\can.h
+.\output\error.o: ..\include\io.h
+.\output\error.o: ..\include\lpc1700.h
+.\output\error.o: ..\include\eeprom.h
+.\output\error.o: ..\include\history.h

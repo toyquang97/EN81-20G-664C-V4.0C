@@ -1,0 +1,14 @@
+.\output\sc_error.o: ..\src\sc_error.c
+.\output\sc_error.o: ..\include\typedef.h
+.\output\sc_error.o: ..\include\parameter.h
+.\output\sc_error.o: ..\include\config.h
+.\output\sc_error.o: ..\include\canopen.h
+.\output\sc_error.o: ..\include\rtc.h
+.\output\sc_error.o: ..\include\state.h
+.\output\sc_error.o: ..\include\call.h
+.\output\sc_error.o: ..\include\can.h
+.\output\sc_error.o: ..\include\eeprom.h
+.\output\sc_error.o: ..\include\history.h
+.\output\sc_error.o: ..\include\io.h
+.\output\sc_error.o: ..\include\lpc1700.h
+.\output\sc_error.o: ..\include\Drive.h

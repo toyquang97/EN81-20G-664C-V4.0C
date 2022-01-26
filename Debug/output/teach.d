@@ -1,0 +1,14 @@
+.\output\teach.o: ..\src\teach.c
+.\output\teach.o: ..\include\typedef.h
+.\output\teach.o: ..\include\parameter.h
+.\output\teach.o: ..\include\config.h
+.\output\teach.o: ..\include\canopen.h
+.\output\teach.o: ..\include\rtc.h
+.\output\teach.o: ..\include\nice5000.h
+.\output\teach.o: ..\include\state.h
+.\output\teach.o: ..\include\call.h
+.\output\teach.o: ..\include\can.h
+.\output\teach.o: ..\include\io.h
+.\output\teach.o: ..\include\lpc1700.h
+.\output\teach.o: ..\include\drive.h
+.\output\teach.o: ..\include\text.h

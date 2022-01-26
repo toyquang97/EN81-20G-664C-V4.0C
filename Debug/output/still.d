@@ -1,0 +1,14 @@
+.\output\still.o: ..\src\still.c
+.\output\still.o: ..\include\typedef.h
+.\output\still.o: ..\include\parameter.h
+.\output\still.o: ..\include\config.h
+.\output\still.o: ..\include\canopen.h
+.\output\still.o: ..\include\rtc.h
+.\output\still.o: ..\include\state.h
+.\output\still.o: ..\include\call.h
+.\output\still.o: ..\include\can.h
+.\output\still.o: ..\include\io.h
+.\output\still.o: ..\include\lpc1700.h
+.\output\still.o: ..\include\pos.h
+.\output\still.o: ..\include\history.h
+.\output\still.o: ..\include\Nice5000.h

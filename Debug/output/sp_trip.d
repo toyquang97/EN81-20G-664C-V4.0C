@@ -1,0 +1,9 @@
+.\output\sp_trip.o: ..\src\sp_trip.c
+.\output\sp_trip.o: ..\include\typedef.h
+.\output\sp_trip.o: ..\include\parameter.h
+.\output\sp_trip.o: ..\include\config.h
+.\output\sp_trip.o: ..\include\canopen.h
+.\output\sp_trip.o: ..\include\rtc.h
+.\output\sp_trip.o: ..\include\eeprom.h
+.\output\sp_trip.o: ..\include\state.h
+.\output\sp_trip.o: ..\include\call.h

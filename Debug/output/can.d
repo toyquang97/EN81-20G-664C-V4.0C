@@ -1,0 +1,14 @@
+.\output\can.o: ..\src\can.c
+.\output\can.o: ..\include\typedef.h
+.\output\can.o: ..\include\lpc1700.h
+.\output\can.o: ..\include\parameter.h
+.\output\can.o: ..\include\config.h
+.\output\can.o: ..\include\canopen.h
+.\output\can.o: ..\include\rtc.h
+.\output\can.o: ..\include\state.h
+.\output\can.o: ..\include\can.h
+.\output\can.o: ..\include\call.h
+.\output\can.o: ..\include\history.h
+.\output\can.o: ..\include\lcd.h
+.\output\can.o: ..\include\text.h
+.\output\can.o: ..\include\io.h

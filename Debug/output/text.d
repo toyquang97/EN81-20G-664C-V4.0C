@@ -1,0 +1,12 @@
+.\output\text.o: ..\src\text.c
+.\output\text.o: ..\include\typedef.h
+.\output\text.o: ..\include\parameter.h
+.\output\text.o: ..\include\config.h
+.\output\text.o: ..\include\canopen.h
+.\output\text.o: ..\include\rtc.h
+.\output\text.o: ..\include\nice5000.h
+.\output\text.o: ..\include\text.h
+.\output\text.o: ..\include\history.h
+.\output\text.o: ..\include\state.h
+.\output\text.o: ..\include\version.h
+.\output\text.o: ..\include\load.h

@@ -1,0 +1,12 @@
+.\output\mcp2515.o: ..\src\mcp2515.c
+.\output\mcp2515.o: ..\include\typedef.h
+.\output\mcp2515.o: ..\include\lpc1700.h
+.\output\mcp2515.o: ..\include\mcp2515.h
+.\output\mcp2515.o: ..\include\parameter.h
+.\output\mcp2515.o: ..\include\config.h
+.\output\mcp2515.o: ..\include\canopen.h
+.\output\mcp2515.o: ..\include\rtc.h
+.\output\mcp2515.o: ..\include\state.h
+.\output\mcp2515.o: ..\include\history.h
+.\output\mcp2515.o: ..\include\call.h
+.\output\mcp2515.o: ..\include\nice5000.h

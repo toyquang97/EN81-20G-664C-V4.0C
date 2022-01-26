@@ -1,0 +1,13 @@
+.\output\eeprom.o: ..\src\eeprom.c
+.\output\eeprom.o: ..\include\typedef.h
+.\output\eeprom.o: ..\include\lpc1700.h
+.\output\eeprom.o: ..\include\lpc1700pincfg.h
+.\output\eeprom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\output\eeprom.o: ..\include\parameter.h
+.\output\eeprom.o: ..\include\config.h
+.\output\eeprom.o: ..\include\canopen.h
+.\output\eeprom.o: ..\include\rtc.h
+.\output\eeprom.o: ..\include\eeprom.h
+.\output\eeprom.o: ..\include\test.h
+.\output\eeprom.o: ..\include\io.h
+.\output\eeprom.o: ..\include\i2c.h

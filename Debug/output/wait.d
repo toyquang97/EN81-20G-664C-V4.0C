@@ -1,0 +1,9 @@
+.\output\wait.o: ..\src\wait.c
+.\output\wait.o: ..\include\typedef.h
+.\output\wait.o: ..\include\parameter.h
+.\output\wait.o: ..\include\config.h
+.\output\wait.o: ..\include\canopen.h
+.\output\wait.o: ..\include\rtc.h
+.\output\wait.o: ..\include\state.h
+.\output\wait.o: ..\include\call.h
+.\output\wait.o: ..\include\can.h

@@ -1,0 +1,11 @@
+.\output\hb_err.o: ..\src\hb_err.c
+.\output\hb_err.o: ..\include\typedef.h
+.\output\hb_err.o: ..\include\parameter.h
+.\output\hb_err.o: ..\include\config.h
+.\output\hb_err.o: ..\include\canopen.h
+.\output\hb_err.o: ..\include\rtc.h
+.\output\hb_err.o: ..\include\state.h
+.\output\hb_err.o: ..\include\call.h
+.\output\hb_err.o: ..\include\can.h
+.\output\hb_err.o: ..\include\io.h
+.\output\hb_err.o: ..\include\lpc1700.h

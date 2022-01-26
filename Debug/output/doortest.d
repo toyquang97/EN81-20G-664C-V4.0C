@@ -1,0 +1,10 @@
+.\output\doortest.o: ..\src\doortest.c
+.\output\doortest.o: ..\include\typedef.h
+.\output\doortest.o: ..\include\parameter.h
+.\output\doortest.o: ..\include\config.h
+.\output\doortest.o: ..\include\canopen.h
+.\output\doortest.o: ..\include\rtc.h
+.\output\doortest.o: ..\include\state.h
+.\output\doortest.o: ..\include\call.h
+.\output\doortest.o: ..\include\can.h
+.\output\doortest.o: ..\include\drive.h

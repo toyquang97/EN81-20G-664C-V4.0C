@@ -1,0 +1,15 @@
+.\output\can_b.o: ..\src\can_b.c
+.\output\can_b.o: ..\include\typedef.h
+.\output\can_b.o: ..\include\lpc1700.h
+.\output\can_b.o: ..\include\parameter.h
+.\output\can_b.o: ..\include\config.h
+.\output\can_b.o: ..\include\canopen.h
+.\output\can_b.o: ..\include\rtc.h
+.\output\can_b.o: ..\include\state.h
+.\output\can_b.o: ..\include\can.h
+.\output\can_b.o: ..\include\call.h
+.\output\can_b.o: ..\include\io.h
+.\output\can_b.o: ..\include\history.h
+.\output\can_b.o: ..\include\dict.h
+.\output\can_b.o: ..\include\bootloader.h
+.\output\can_b.o: ..\include\version.h
