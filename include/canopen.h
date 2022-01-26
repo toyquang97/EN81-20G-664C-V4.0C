@@ -44,14 +44,14 @@
 #define	CBC_ID					0x0D		/* node id of 1. CBC								*/
 #define	WEIGHT_ID				0x0D		/* node id of load measuring device					*/
 #define	DRV_ID					0x0E		// node id drive
-#define	MUL_FUNC			0x0F		// node id of ¸¨Öú¹¦ÄÜID
+#define	MUL_FUNC			0x0F		// node id of ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ID
 #define	TSE_ID					0x10		// node id of 1. TSE
 #define	READ_CARD_ID		0x20		// node id of 1. TSE
 #define	ESE_ID					0x10		// node id of 1. ESE
 //CAN_B
 #define	ACCESS_ID				0x02		// node id of 1. ACCESS(0x02--0x05)
 #define	ESE_ID					0x10		// node id of 1. ESE
-//Í¨ÓÃ
+//Í¨ï¿½ï¿½
 #define	INI_ID					0x7D		// node id of init
 
 //Virtual termial ID
@@ -148,20 +148,20 @@
 #define	MODROL_ACK_ERROR		0x80
 #define	MAX_SDO_RETRY			5
 
-#define	MODROL_SDO_INVALID_ADDR	0x00		// ·Ç·¨µØÖ·
-#define	MODROL_SDO_ERROR_LENGTH	0x10		// Êý¾Ý³¤¶È´íÎó
-#define	MODROL_SDO_INVALID_OP	0x11		// ·Ç·¨²Ù×÷(ÌØÕ÷×Ö´íÎó)
-#define	MODROL_SDO_OUT_OF_RANGE	0x30		// Ð´Èë²ÎÊý³¬·¶Î§
-#define	MODROL_SDO_REFUSE_ACCESS	0x22		// Çý¶¯Æ÷ÔËÐÐÖÐ£¬²»ÄÜ
+#define	MODROL_SDO_INVALID_ADDR	0x00		// ï¿½Ç·ï¿½ï¿½ï¿½Ö·
+#define	MODROL_SDO_ERROR_LENGTH	0x10		// ï¿½ï¿½ï¿½Ý³ï¿½ï¿½È´ï¿½ï¿½ï¿½
+#define	MODROL_SDO_INVALID_OP	0x11		// ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½)
+#define	MODROL_SDO_OUT_OF_RANGE	0x30		// Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î§
+#define	MODROL_SDO_REFUSE_ACCESS	0x22		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½
 
-#define	MODROL_CMD_ADDR			0xC0		// ÃüÁîµØÖ·
+#define	MODROL_CMD_ADDR			0xC0		// ï¿½ï¿½ï¿½ï¿½ï¿½Ö·
 
-#define	MODROL_CMD_TEACHIN		0x0300		// ×ÔÑ§Ï°
-#define	MODROL_CMD_RESET_PARA	0x0400		// ¸´Î»²ÎÊý
-#define	MODROL_CMD_CLEAR_ERR	0x0500		// Çå³ý¹ÊÕÏ
-#define	MODROL_CMD_REWRITE_EE	0x0700		// ÖØÐ´ EEPROM
-#define	MODROL_CMD_RESET		0x0001		// ¸´Î»
-#define	MODROL_CMD_SET_ENCODER	0x1000		// ÉèÖÃ±àÂëÆ÷¼ÆÊý
+#define	MODROL_CMD_TEACHIN		0x0300		// ï¿½ï¿½Ñ§Ï°
+#define	MODROL_CMD_RESET_PARA	0x0400		// ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
+#define	MODROL_CMD_CLEAR_ERR	0x0500		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define	MODROL_CMD_REWRITE_EE	0x0700		// ï¿½ï¿½Ð´ EEPROM
+#define	MODROL_CMD_RESET		0x0001		// ï¿½ï¿½Î»
+#define	MODROL_CMD_SET_ENCODER	0x1000		// ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 #define	MODROL_CMD_ACK_OK		0x01
 #define	MODROL_CMD_ACK_FAIL		0x02
@@ -639,7 +639,7 @@
 #define	REL_STOP_DIST			0x2434		// stop distance from re-levelling to 0 up/down
 #define	POSTYPE					0x2435		// Type of Positioning system
 #define	TARGETLIMIT				0x2436		// min. distance to start with v1/v2/v3
-#define	LCMODE_ACTFLOOR			0x2437		// mode if landing call pressed ín actual floor
+#define	LCMODE_ACTFLOOR			0x2437		// mode if landing call pressed ï¿½n actual floor
 #define	CARLIGHTTIMER			0x2438		// automatic switch off car light (0=disabled)
 #define	POSDIR					0x2439		// count direction encoder connected to HSE
 #define	DOORZONESWITCHSIZE		0x243A		// distance SGM on
@@ -1391,7 +1391,7 @@
 #define	AREA_MONITORING			0x11		// area monitoring connection request / acknowl.
 #define	FUNC_CTE_MODE					0x12
 #define	ACCESS_OP_IN			0x13
-#define	FIRE_FUNCTION		0x14		//¿¼ÂÇ¾É²úÆ·µÄ¼æÈÝÐÔ£¬Ê¹ÓÃÓë SPECIAL_FUNC Í¬ÑùµÄ¹¦ÄÜÂë
+#define	FIRE_FUNCTION		0x14		//ï¿½ï¿½ï¿½Ç¾É²ï¿½Æ·ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ô£ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ SPECIAL_FUNC Í¬ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½
 #define	CALL_TYPE			0x15
 
 // only for outputs
@@ -1646,7 +1646,7 @@
 #define	FIREFLOOR_IND			0xA6
 #define	UPS_EVAC_READY			0xA7
 #define	UPS_EVAC_READY_SPEAKER	0xA8
-#define	SAFETY_BEAM_SWITCH				0xA9		// Safety beam µ½Î»ÐÅºÅ
+#define	SAFETY_BEAM_SWITCH				0xA9		// Safety beam ï¿½ï¿½Î»ï¿½Åºï¿½
 #define	UCMP_LOCK			0xAA		
 #define	EMP_POWER			0xAB		
 #define	FIRE_BYPASS			0xAC
@@ -2777,7 +2777,7 @@
 //*******************************************************************************
 #define	CLOSE_DOOR				0x00		// Close door without limit force
 #define	CLOSE_DOOR_L			0x10		// Close door with limit force
-#define	CLOSE_DOOR_LS		0x20		// Close door with limit force and slow speed
+#define	CLOSE_DOOR_LS			0x20		// Close door with limit force and slow speed
 #define	OPEN_DOOR				0x30		// Open door without limit force
 #define	OPEN_DOOR_L				0x40		// Open door with limit force
 #define	CLOSE_DOOR_NUDGING		0x50		/* Close door with nudging (reduced speed)			*/
@@ -2920,7 +2920,7 @@
 #define	BUZZER_LEVELING		0x08
 #define	BUZZER_NORMAL			0x10
 
-//Ãù½ÐµÄÀàÐÍ
+//ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
 #define	SPEEKER_CONTINUE	0
 #define	SPEEKER_PAUSE			1
 #endif

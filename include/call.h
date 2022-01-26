@@ -7,7 +7,7 @@
 #define LANDINGCALL_DN		0x04				// call type is landing call down
 #define LANDINGCALL			0x08				// call type is landing call without direction
 #define LANDINGCALLDIR		0x06				// call type is landing call up or down
-#define SPECIAL_CALL			0x10				// call type is special call
+#define SPECIAL_CALL		0x10				// call type is special call
 #define ADVANCED_CALL		0x20				// call type is advanced call
 #define EMERGENCY_CALL		0x40				// call type is emergency call
 #define PRIOR_CARCALL		0x80				// call type is priority car call

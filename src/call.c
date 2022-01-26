@@ -950,7 +950,7 @@ BYTE get_moving_call (BYTE next_fl){
 				{
 					calltype = 0;							// clear call
 					callfloor = next_fl;					// stop in next floor
-					calldoors = 0;						//╡╩©╙це
+					calldoors = 0;						//О©╫О©╫О©╫О©╫О©╫О©╫
 					return (callfloor);						// return next floor to stop
 				}
 			}

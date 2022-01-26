@@ -943,9 +943,14 @@ void standstill_state (void)
 					carlighttimer = timer + (p.carlighttimer SEC);			/* retrigger timer								*/
 			}
 		// sua nudging
+		//if((firecall) && (!firekey)) {
+			//clearcalls (CARCALL | PRIOR_CARCALL);	
+			//clearcalls (ALL_HALL_CALLS);
+		
+		/*
 		if(level != p.fire_floor[0])
 		{
-				if(!(callpriority == C_FIREALARM))
+				if(!(callpriority == C_FIREMAN)) // C_FIREALARM
 				{
 					NudingMode = 0;
 					Nudging_timer_count = 0-1;
@@ -981,7 +986,7 @@ void standstill_state (void)
 		
 		if(NudingMode)
 		{
-			if(callpriority != C_FIREALARM)
+			if(callpriority != C_FIREMAN) //C_FIREALARM
 				{
 						Enabal_opendoor =1;
 						Nudging_Buz_timer_count = 0-1;
@@ -989,7 +994,7 @@ void standstill_state (void)
 						set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA); 
 						set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 0 , O_CANA); 
 				}
-		}
+		}*/
 		if (handle_dooropenpush ())							/* handle door open push						*/
 		{
 			doorstaystate = D_STAYTIME;
@@ -997,14 +1002,14 @@ void standstill_state (void)
 			((ct - timer) <= (doorstaytime_cc SEC)))			/* or open stay time with landing calls over		*/
 				ct = timer + (doorstaytime_cc SEC);			/* Timer for door open stay time with car call	*/
 		}
-		if(!Enabal_opendoor)
+		/*if(!Enabal_opendoor)
 		{
 			if(timer > Nudging_opendoor_timer_count)
 				{
 					Nudging_opendoor_timer_count = 0-1;
 					Enabal_opendoor = 1;
 				}
-		}
+		}*/
 		//sua nudging
 		handle_doorstoppush ();
 		if ((doorstopstate) || (she_photonsensor) || (she_doorstoppush))
