@@ -1920,11 +1920,11 @@
 #define	DOOR_OP					0x01		// door open switch or door open relay
 #define	DOOR_CL					0x02		// door close switch or door close relay
 #define	DOOR_REV				0x04		// door nudging switch or door nudging relay
-#define	DOOR_CL_LIMIT		0x08
+#define	DOOR_CL_LIMIT			0x08
 #define	DOOR_RAMP				0x08		// retiring ramp for revolving door
 #define	DOOR_CL_SLOW			0x10		// door close switch or door close relay slow
-#define	DOOR_REVOLV			0x20		/* contact on revolving door						*/
-#define	DOOR_ADD_RAMP		0x40		/* add. ramp on car door (while opening/closing)	*/
+#define	DOOR_REVOLV				0x20		/* contact on revolving door						*/
+#define	DOOR_ADD_RAMP			0x40		/* add. ramp on car door (while opening/closing)	*/
 #define	DOOR_ERR				0x80		/* contact on revolving door						*/
 
 /************************************************************************************************/

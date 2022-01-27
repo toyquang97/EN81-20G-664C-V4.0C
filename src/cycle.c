@@ -798,17 +798,17 @@ void set_call_priority (void){
 		firealarm_old = 0;
 		alarmfloor_flag = 0;
 	}
+
 	if (callpriority == C_FIREMAN)							/* fireman mode					*/
 	{
 		if (firemode)										/* fire key or fire call on			*/
-			callprioritytimer = timer + 15 SEC;	
-								/* retrigger timer		REMOVE 15 SEC			*/
+			callprioritytimer = timer ;	   					/* retrigger timer			*/
 		if (firekey || auto_fire)								/* fire key in car is on				*/
-		{
+		{ 
 			if (((!firecall_exist) || firecallstate)		// no fire call input or fire call ready
 					&& (!firekeymisuse))		// if key misused -> must be off before
-			{
-				enabled = PRIOR_CARCALL;					/* only priority car calls enabled	*/
+			{	
+				enabled = PRIOR_CARCALL;	/* only priority car calls enabled	*/
 				if ((level == firefloor) &&					/* lift is in fireman floor			*/
 				(!(p.fireman_function1 & FIREMAN1_DOOR_MAINFLOOR)))							/* and in fireman floor automatic door op.	*/
 					firedoormode = 0;						/* standard door opening			*/
@@ -831,15 +831,17 @@ void set_call_priority (void){
 			if (p.fireman_function1 & FIREMAN1_REPEAT_FIRECALL)								/* repeat fire call if fire key is off	*/
 				firekeystate = 0;							/* reset state of fire key			*/
 		}
-
+		
 		// start fire call trip	
 		if (firecall && (!firecall_old) &&						/* firecall switched on			*/
 		(!firekeystate))										/* but no fire key in car			*/
 		{
-			clearcalls (ALL_CALLS);							/* clear all calls					*/
+			clearcalls (ALL_CALLS);		/* clear all calls					*/
 			if ((!firekeystate) &&								/* firekey was not on or repeat fire call		*/
 			(firefloor >= p.bot_floor) && (firefloor <= p.top_floor))
 			{
+				set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,1 , O_CANA);
+				//set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 1 , O_CANA);   //buzzer on
 				calltab [firefloor].calltype |= PRIOR_CARCALL;	/* write call to call table			*/
 				calltab [firefloor].cc_door |= (firedoors & p.doorpos [firefloor]);
 				firecallstate = 1;							/* fire call started				*/
@@ -850,9 +852,12 @@ void set_call_priority (void){
 		// automatic change mode to fireman
 		if (p.fireman_function1 & FIREMAN1_AUTO_FIREMODE)									/* automatic fireman mode		*/
 		{
+				//set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 0 , O_CANA);   //buzzer on
+
 			if (firecall && (level == firefloor) &&				/* fire call is ready				*/
 			(doorstate != ALL_DOORS_CLOSED))				/* not all doors closed			*/
 				firecallready = 1;
+			
 			if (firecall && firecallready)						/* fire call input is on and firecall ready		*/
 				auto_fire = 1;								/* set firekey as on				*/
 			else
@@ -861,6 +866,7 @@ void set_call_priority (void){
 				{
 					firecallready = 0;
 					auto_fire = 0;							/* set firekey as off				*/
+					set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA);
 				}
 			}
 		}
