@@ -402,7 +402,7 @@ void standstill_state (void)
 		doorstaytime_nc = p.doorstaytime_nc;
 	}
 	if (landingcalldir)								/* floor reached by landing call					*/
-		ct = timer + (doorstaytime_lc SEC);				/* Timer for door open stay time with land.call	*/
+		ct = timer + (doorstaytime_lc SEC);			/* Timer for door open stay time with land.call	*/
 	else											/* floor reached by car call or without call		*/
 		ct = timer + (doorstaytime_cc SEC);			/* Timer for door open stay time with car call	*/
 	occupiedtimer = timer + 3 SEC;					/* delay timer after occupied state				*/
@@ -947,11 +947,11 @@ void standstill_state (void)
 			//clearcalls (CARCALL | PRIOR_CARCALL);	
 			//clearcalls (ALL_HALL_CALLS);
 		
-		if(callpriorityold != callpriority)
-		{
-			Nudging_timer_count = (0-1);
-			callpriorityold == callpriority;
-		}
+		// if(callpriorityold != callpriority)
+		// {
+		// 	Nudging_timer_count = (0-1);
+		// 	callpriorityold == callpriority;
+		// }
 		if(level != p.fire_floor[0])
 		{
 				if(!(callpriority == C_FIREALARM)) // C_FIREALARM

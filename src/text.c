@@ -1125,8 +1125,8 @@ const struct _paratext paratext[] = {
 	{	"PD1-04",		"Nudging[*2s]",		M_DOOR2PARA,	M_NUMBERPARA,		&p.nudgingtime[1],				sizeof(p.nudgingtime[1]),				0,	0,	0,	0,240,	0,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
 	{	"PD1-05",		"Opentime[s]",		M_DOOR2PARA,	M_NUMBERPARA,		&p.dooropentime[1],				sizeof(p.dooropentime[1]),				0,	0,	0,	0,120,30,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
 	{	"PD1-06",		"Closetime[s]",		M_DOOR2PARA,	M_NUMBERPARA,		&p.doorclosetime[1],			sizeof(p.doorclosetime[1]),				0,	0,	0,	0,120,30,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
-	{	"PD1-07",		"Open attempts",		M_DOOR2PARA,	M_NUMBERPARA,		&p.dooropenlimit[1],			sizeof(p.dooropenlimit[1]),				0,	0,	0,	0,100,4,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
-	{	"PD1-08",		"Closeattempts",		M_DOOR2PARA,	M_NUMBERPARA,		&p.doorcloselimit[1],			sizeof(p.doorcloselimit[1]),			0,	0,	0,	0,100,4,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
+	{	"PD1-07",		"Open attempts",	M_DOOR2PARA,	M_NUMBERPARA,		&p.dooropenlimit[1],			sizeof(p.dooropenlimit[1]),				0,	0,	0,	0,100,4,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
+	{	"PD1-08",		"Closeattempts",	M_DOOR2PARA,	M_NUMBERPARA,		&p.doorcloselimit[1],			sizeof(p.doorcloselimit[1]),			0,	0,	0,	0,100,4,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
 	{	"PD1-09",		"Switcht.[ms]",		M_DOOR2PARA,	M_NUMBERPARA,		&p.doorswitchtime[1],			sizeof(p.doorswitchtime[1]),			0,	0,	0,	0,1500,100,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
 	{	"PD1-10",		"Cls.delay[s]",		M_DOOR2PARA,	M_NUMBERPARA,		&p.doordelaytime[1],			sizeof(p.doordelaytime[1]),				0,	0,	0,	0,120,	0,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
 	{	"PD1-11",		"Relays",			M_DOOR2PARA,	M_NUMBERPARA,		&p.doorrelaymode[1],			sizeof(p.doorrelaymode[1]),				0,	0,(void *)relaymode,	0,	3,	0,DOUBLE_OBJECT,	0,	0,	0,	0,RIGHT_INSTALL	},
@@ -1335,9 +1335,9 @@ const struct _paratext paratext[] = {
 	{	"F2-17",		"F2-17",			M_NICE_F2,		M_NUMBERPARA,		&niv.F2_17,		sizeof(niv.F2_17),		0,	0,	0,	10,		1000,		30,		42 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_MAINTAIN},
 	{	"F2-18",		"F2-18",			M_NICE_F2,		M_NUMBERPARA,		&niv.F2_18,		sizeof(niv.F2_18),		0,	0,	0,	0,		500,		0,		1060 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_MAINTAIN},
 	{	"F2-19",		"F2-19",			M_NICE_F2,		M_NUMBERPARA,		&niv.F2_19,		sizeof(niv.F2_19),		0,	0,	0,	0,		60000,	350,	1061 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_MAINTAIN},
-	{	"F2-20",		"F2-20",			M_NICE_F2,		M_2BIT_DECIMAL,		&niv.F2_20,		sizeof(niv.F2_20),		0,	0,	0,	0,		4000,		0,		1784 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_MAINTAIN},//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
+	{	"F2-20",		"F2-20",			M_NICE_F2,		M_2BIT_DECIMAL,		&niv.F2_20,		sizeof(niv.F2_20),		0,	0,	0,	0,		4000,		0,		1784 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_MAINTAIN},//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
 	{	"F2-22",		"F2-22",			M_NICE_F2,		M_3BIT_DECIMAL,		&niv.F2_22,		sizeof(niv.F2_22),		0,	0,	0,	0,		9999,		0,		1605 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_MAINTAIN},
-	{ "F2-23",		"F2-23",			M_NICE_F2,		M_NUMBERPARA, 	&niv.F2_23, 	sizeof(niv.F2_23),		0,	0,	0,	100,	2000, 	600,		1606 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,D_READ,RIGHT_MAINTAIN},	//Ô¤·ÀÍòÒ»£¬Õâ¸öÏÈ×÷ÎªÖ»¶ÁÏî
+	{ "F2-23",		"F2-23",			M_NICE_F2,		M_NUMBERPARA, 	&niv.F2_23, 	sizeof(niv.F2_23),		0,	0,	0,	100,	2000, 	600,		1606 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,D_READ,RIGHT_MAINTAIN},	//Ô¤ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÖ»ï¿½ï¿½ï¿½ï¿½
 
 //F3 parameter
 	{	"F3-00",		"F3-00",			M_NICE_F3,		M_3BIT_DECIMAL,		&niv.F3_00,		sizeof(niv.F3_00),		0,	0,	0,	0,		30,			0,		46 + NICE_INDEX,		0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
@@ -1493,39 +1493,39 @@ const struct _paratext paratext[] = {
 //FA Parameter
 	{	"FA-06",		"FA-06",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_06,		sizeof(niv.FA_06),		0,	0,	0,	0,	65535,		0,	323 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_READ,		RIGHT_MAINTAIN},
 	{	"FA-07",		"FA-07",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_07,		sizeof(niv.FA_07),		0,	0,	0,	0,	100,		0,		324 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_READ,		RIGHT_MAINTAIN},
-	{	"FA-08",		"FA-08",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_08,		sizeof(niv.FA_08),		0,	0,	0,	0,	0,			0,		1201 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_READ,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
+	{	"FA-08",		"FA-08",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_08,		sizeof(niv.FA_08),		0,	0,	0,	0,	0,			0,		1201 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_READ,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
 	{	"FA-09",		"FA-09",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_09,		sizeof(niv.FA_09),		0,	0,	0,	0,	65535,		3,		325 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FA-10",		"FA-10",			M_NICE_FA,		M_2BIT_DECIMAL,		&niv.FA_10,		sizeof(niv.FA_10),		0,	0,	0,	50,	1000,		100,	326 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FA-11",		"FA-11",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_11,		sizeof(niv.FA_11),		0,	0,	0,	50,	100,		80,		327 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
-	{	"FA-12",		"FA-12",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_12,		sizeof(niv.FA_12),		0,	0,	0,	0,	0xFFFF,		0,		328 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-13",		"FA-13",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_13,		sizeof(niv.FA_13),		0,	0,	0,	0,	0,			0,		329 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
+	{	"FA-12",		"FA-12",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_12,		sizeof(niv.FA_12),		0,	0,	0,	0,	0xFFFF,		0,		328 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-13",		"FA-13",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_13,		sizeof(niv.FA_13),		0,	0,	0,	0,	0,			0,		329 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
 	{	"FA-14",		"FA-14",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_14,		sizeof(niv.FA_14),		0,	0,	0,	0,	0,			0,		1202 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
-	{	"FA-15",		"FA-15",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_15,		sizeof(niv.FA_15),		0,	0,	0,	0,	0xFFFF,		0,		1777 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-16",		"FA-16",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_16, 	sizeof(niv.FA_16),		0,	0,	0,	0,	0xFFFF, 	0,		1778 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-17",		"FA-17",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_17, 	sizeof(niv.FA_17),		0,	0,	0,	0,	0xFFFF, 	0,		1779 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-18",		"FA-18",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_18, 	sizeof(niv.FA_18),		0,	0,	0,	0,	0xFFFF, 	0,		1780 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-19",		"FA-19",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_19, 	sizeof(niv.FA_19),		0,	0,	0,	0,	0xFFFF, 	0,		1781 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-20",		"FA-20",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_20, 	sizeof(niv.FA_20),		0,	0,	0,	0,	0xFFFF, 	0,		1782 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-21",		"FA-21",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_21, 	sizeof(niv.FA_21),		0,	0,	0,	0,	0xFFFF, 	0,		1783 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-22",		"FA-22",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_22, 	sizeof(niv.FA_22),		0,	0,	0,	0,	0xFFFF, 	0,		1062 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-23",		"FA-23",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_23, 	sizeof(niv.FA_23),		0,	0,	0,	0,	0xFFFF, 	0,		1785 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-24",		"FA-24",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_24, 	sizeof(niv.FA_24),		0,	0,	0,	0,	0xFFFF, 	0,		1786 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-25",		"FA-25",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_25, 	sizeof(niv.FA_25),		0,	0,	0,	0,	0xFFFF, 	0,		1787 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-26",		"FA-26",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_26, 	sizeof(niv.FA_26),		0,	0,	0,	0,	0xFFFF, 	0,		1788 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-27",		"FA-27",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_27, 	sizeof(niv.FA_27),		0,	0,	0,	0,	0xFFFF, 	0,		1789 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-28",		"FA-28",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_28, 	sizeof(niv.FA_28),		0,	0,	0,	0,	0xFFFF, 	0,		1790 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-29",		"FA-29",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_29, 	sizeof(niv.FA_29),		0,	0,	0,	0,	0xFFFF, 	0,		1791 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{	"FA-30",		"FA-30",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_30, 	sizeof(niv.FA_30),		0,	0,	0,	0,	0xFFFF, 	0,		1792 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-31",		"FA-31",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_31, 	sizeof(niv.FA_31),		0,	0,	0,	0,	0xFFFF, 	0,		1793 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-32",		"FA-32",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_32, 	sizeof(niv.FA_32),		0,	0,	0,	0,	0xFFFF, 	0,		1794 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-33",		"FA-33",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_33, 	sizeof(niv.FA_33),		0,	0,	0,	0,	0xFFFF, 	0,		1795 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-34",		"FA-34",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_34, 	sizeof(niv.FA_34),		0,	0,	0,	0,	0xFFFF, 	0,		1796 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-35",		"FA-35",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_35, 	sizeof(niv.FA_35),		0,	0,	0,	0,	10, 	5,		1797 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-36",		"FA-36",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_36, 	sizeof(niv.FA_36),		0,	0,	0,	0,	150, 	100,	1798 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-37",		"FA-37",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_37, 	sizeof(niv.FA_37),		0,	0,	0,	0,	20, 	5,		1799 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-38",		"FA-38",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_38, 	sizeof(niv.FA_38),		0,	0,	0,	0,	20, 	5,		1800 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-39",		"FA-39",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_39, 	sizeof(niv.FA_39),		0,	0,	0,	0,	0xFFFF, 0,	1801 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
-	{ "FA-40",		"FA-40",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_40, 	sizeof(niv.FA_40),		0,	0,	0,	0,	0xFFFF, 0,	1802 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
+	{	"FA-15",		"FA-15",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_15,		sizeof(niv.FA_15),		0,	0,	0,	0,	0xFFFF,		0,		1777 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-16",		"FA-16",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_16, 	sizeof(niv.FA_16),		0,	0,	0,	0,	0xFFFF, 	0,		1778 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-17",		"FA-17",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_17, 	sizeof(niv.FA_17),		0,	0,	0,	0,	0xFFFF, 	0,		1779 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-18",		"FA-18",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_18, 	sizeof(niv.FA_18),		0,	0,	0,	0,	0xFFFF, 	0,		1780 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-19",		"FA-19",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_19, 	sizeof(niv.FA_19),		0,	0,	0,	0,	0xFFFF, 	0,		1781 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-20",		"FA-20",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_20, 	sizeof(niv.FA_20),		0,	0,	0,	0,	0xFFFF, 	0,		1782 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-21",		"FA-21",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_21, 	sizeof(niv.FA_21),		0,	0,	0,	0,	0xFFFF, 	0,		1783 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-22",		"FA-22",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_22, 	sizeof(niv.FA_22),		0,	0,	0,	0,	0xFFFF, 	0,		1062 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-23",		"FA-23",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_23, 	sizeof(niv.FA_23),		0,	0,	0,	0,	0xFFFF, 	0,		1785 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-24",		"FA-24",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_24, 	sizeof(niv.FA_24),		0,	0,	0,	0,	0xFFFF, 	0,		1786 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-25",		"FA-25",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_25, 	sizeof(niv.FA_25),		0,	0,	0,	0,	0xFFFF, 	0,		1787 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-26",		"FA-26",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_26, 	sizeof(niv.FA_26),		0,	0,	0,	0,	0xFFFF, 	0,		1788 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-27",		"FA-27",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_27, 	sizeof(niv.FA_27),		0,	0,	0,	0,	0xFFFF, 	0,		1789 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-28",		"FA-28",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_28, 	sizeof(niv.FA_28),		0,	0,	0,	0,	0xFFFF, 	0,		1790 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-29",		"FA-29",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_29, 	sizeof(niv.FA_29),		0,	0,	0,	0,	0xFFFF, 	0,		1791 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{	"FA-30",		"FA-30",			M_NICE_FA,		M_NUMBERPARA,		&niv.FA_30, 	sizeof(niv.FA_30),		0,	0,	0,	0,	0xFFFF, 	0,		1792 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-31",		"FA-31",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_31, 	sizeof(niv.FA_31),		0,	0,	0,	0,	0xFFFF, 	0,		1793 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-32",		"FA-32",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_32, 	sizeof(niv.FA_32),		0,	0,	0,	0,	0xFFFF, 	0,		1794 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-33",		"FA-33",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_33, 	sizeof(niv.FA_33),		0,	0,	0,	0,	0xFFFF, 	0,		1795 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-34",		"FA-34",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_34, 	sizeof(niv.FA_34),		0,	0,	0,	0,	0xFFFF, 	0,		1796 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-35",		"FA-35",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_35, 	sizeof(niv.FA_35),		0,	0,	0,	0,	10, 	5,		1797 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-36",		"FA-36",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_36, 	sizeof(niv.FA_36),		0,	0,	0,	0,	150, 	100,	1798 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-37",		"FA-37",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_37, 	sizeof(niv.FA_37),		0,	0,	0,	0,	20, 	5,		1799 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-38",		"FA-38",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_38, 	sizeof(niv.FA_38),		0,	0,	0,	0,	20, 	5,		1800 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-39",		"FA-39",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_39, 	sizeof(niv.FA_39),		0,	0,	0,	0,	0xFFFF, 0,	1801 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
+	{ "FA-40",		"FA-40",			M_NICE_FA,		M_NUMBERPARA, 	&niv.FA_40, 	sizeof(niv.FA_40),		0,	0,	0,	0,	0xFFFF, 0,	1802 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16, 	D_RW, 	RIGHT_MAINTAIN},	//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
 
 //FH Parameter
 	{	"FH-01",		"FH-01",			M_NICE_FH,		M_NUMBERPARA,		&niv.FH_01,		sizeof(niv.FH_01),		0,	0,	0,	0,	4,			0,		432 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
@@ -1534,7 +1534,7 @@ const struct _paratext paratext[] = {
 	{	"FH-04",		"FH-04",			M_NICE_FH,		M_1BIT_DECIMAL,		&niv.FH_04,		sizeof(niv.FH_04),		0,	0,	0,	0,	3599,		0,		438 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FH-05",		"FH-05",			M_NICE_FH,		M_1BIT_DECIMAL,		&niv.FH_05,		sizeof(niv.FH_05),		0,	0,	0,	0,	3599,		0,		439 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FH-06",		"FH-06",			M_NICE_FH,		M_NUMBERPARA,		&niv.FH_06,		sizeof(niv.FH_06),		0,	0,	0,	0,	15,			0,		437 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
-	{	"FH-07",		"FH-07",			M_NICE_FH,		M_NUMBERPARA,		&niv.FH_07,		sizeof(niv.FH_07),		0,	0,	0,	0,	0,			0,		440 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_READ,		RIGHT_MAINTAIN},//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
+	{	"FH-07",		"FH-07",			M_NICE_FH,		M_NUMBERPARA,		&niv.FH_07,		sizeof(niv.FH_07),		0,	0,	0,	0,	0,			0,		440 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_READ,		RIGHT_MAINTAIN},//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
 	{	"FH-08",		"FH-08",			M_NICE_FH,		M_NUMBERPARA,		&niv.FH_08,		sizeof(niv.FH_08),		0,	0,	0,	0,	65535,		0,		441 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FH-09",		"FH-09",			M_NICE_FH,		M_NUMBERPARA,		&niv.FH_09,		sizeof(niv.FH_09),		0,	0,	0,	0,	65535,		0,		442 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FH-10",		"FH-10",			M_NICE_FH,		M_NUMBERPARA,		&niv.FH_10,		sizeof(niv.FH_10),		0,	0,	0,	0,	65535,		0,		443 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
@@ -1554,14 +1554,14 @@ const struct _paratext paratext[] = {
 	{	"FH-28",		"FH-28",			M_NICE_FH,		M_2BIT_DECIMAL,		&niv.FH_28,		sizeof(niv.FH_28),		0,	0,	0,	0,	30000,		0,		457 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FH-29",		"FH-29",			M_NICE_FH,		M_NUMBERPARA,		&niv.FH_29,		sizeof(niv.FH_29),		0,	0,	0,	0,	200,		0,			458 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 
-//FF Parameter	ÎªÖ»¶Á²ÎÊý
+//FF Parameter	ÎªÖ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{	"FF-00",		"FF-00",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_00,		sizeof(niv.FF_00),		0,	0,	0,	0,	0xFFFF,		0,		548 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FF-01",		"FF-01",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_01,		sizeof(niv.FF_01),		0,	0,	0,	0,	0xFFFF,		0,		549 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FF-02",		"FF-02",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_02,		sizeof(niv.FF_02),		0,	0,	0,	0,	0xFFFF,		0,		550 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FF-03",		"FF-03",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_03,		sizeof(niv.FF_03),		0,	0,	0,	0,	0xFFFF,		0,		551 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FF-05",		"FF-05",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_05,		sizeof(niv.FF_05),		0,	0,	0,	0,	0xFFFF,		0,		552 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FF-06",		"FF-06",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_06,		sizeof(niv.FF_06),		0,	0,	0,	0,	0xFFFF,		0,		553 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
-	{	"FF-07",		"FF-07",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_07,		sizeof(niv.FF_07),		0,	0,	0,	0,	0xFFFF,		0,		554 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},//ÕâÒ»ÏîËµÃ÷ÊéÎ´Ìá¼°£¬ÐèÒª¹µÍ¨
+	{	"FF-07",		"FF-07",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_07,		sizeof(niv.FF_07),		0,	0,	0,	0,	0xFFFF,		0,		554 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},//ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Î´ï¿½á¼°ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Í¨
 	{	"FF-08",		"FF-08",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_08,		sizeof(niv.FF_08),		0,	0,	0,	0,	0xFFFF,		0,		555 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FF-09",		"FF-09",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_09,		sizeof(niv.FF_09),		0,	0,	0,	0,	0xFFFF,		0,		556 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},
 	{	"FF-10",		"FF-10",			M_NICE_FF,		M_NUMBERPARA,		&niv.FF_10,		sizeof(niv.FF_10),		0,	0,	0,	0,	0xFFFF,		0,		1937 + NICE_INDEX,	0,	D_VAR,	D_UNSIGNED16,		D_RW,		RIGHT_MAINTAIN},

@@ -9,7 +9,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\nice5000.h)(0x5CF036BA)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\pos.h)(0x5CFD8020)
 I (..\include\io.h)(0x5EFCFE18)
@@ -23,7 +23,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 F (..\src\can.c)(0x5E6858BA)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\can.o --omf_browse .\output\can.crf --depend .\output\can.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
@@ -34,12 +34,12 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
 I (..\include\can.h)(0x5B031D60)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\history.h)(0x5B31A28E)
 I (..\include\lcd.h)(0x54174D2C)
 I (..\include\text.h)(0x5EE9E73A)
 I (..\include\io.h)(0x5EFCFE18)
-F (..\src\can_a.c)(0x61F110FB)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\can_a.o --omf_browse .\output\can_a.crf --depend .\output\can_a.d)
+F (..\src\can_a.c)(0x61F1F2F0)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\can_a.o --omf_browse .\output\can_a.crf --depend .\output\can_a.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025318E)
 I (..\include\lpc1700.h)(0x514E0C70)
@@ -64,7 +64,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
 I (..\include\can.h)(0x5B031D60)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\history.h)(0x5B31A28E)
 I (..\include\dict.h)(0x5440780A)
@@ -80,7 +80,7 @@ I (..\include\rtc.h)(0x5CF09454)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\mcp2515.h)(0x5CF08B66)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\pos.h)(0x5CFD8020)
 I (..\include\dict.h)(0x5440780A)
 I (..\include\io.h)(0x5EFCFE18)
@@ -92,19 +92,19 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\history.h)(0x5B31A28E)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
-F (..\src\cycle.c)(0x61EFA6D1)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\cycle.o --omf_browse .\output\cycle.crf --depend .\output\cycle.d)
+F (..\src\cycle.c)(0x61F24CE1)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\cycle.o --omf_browse .\output\cycle.crf --depend .\output\cycle.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
 I (..\include\parameter.h)(0x5F061C82)
 I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\pos.h)(0x5CFD8020)
@@ -134,7 +134,7 @@ I (..\include\rtc.h)(0x5CF09454)
 I (..\include\nice5000.h)(0x5CF036BA)
 I (..\include\state.h)(0x5CEDFB5C)
 I (..\include\can.h)(0x5B031D60)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\pos.h)(0x5CFD8020)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\io.h)(0x5EFCFE18)
@@ -147,7 +147,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\eeprom.h)(0x5CEEFC68)
@@ -161,7 +161,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 F (..\src\drive.c)(0x5CF0720E)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\drive.o --omf_browse .\output\drive.crf --depend .\output\drive.d)
@@ -181,7 +181,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
 I (..\include\drive.h)(0x580817FC)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
@@ -206,7 +206,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\io.h)(0x5EFCFE18)
@@ -220,7 +220,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\pos.h)(0x5CFD8020)
 I (..\include\eeprom.h)(0x5CEEFC68)
@@ -234,7 +234,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
@@ -259,7 +259,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\nice5000.h)(0x5CF036BA)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\io.h)(0x5EFCFE18)
@@ -284,7 +284,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
@@ -295,7 +295,7 @@ I (..\include\parameter.h)(0x5F061C82)
 I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\eeprom.h)(0x5CEEFC68)
 I (..\include\history.h)(0x5B31A28E)
@@ -333,14 +333,14 @@ I (..\include\state.h)(0x5CEDFB5C)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\text.h)(0x5EE9E73A)
 I (..\include\nice5000.h)(0x5CF036BA)
-F (..\src\input.c)(0x61F110F2)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\input.o --omf_browse .\output\input.crf --depend .\output\input.d)
+F (..\src\input.c)(0x61F1F2F0)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\input.o --omf_browse .\output\input.crf --depend .\output\input.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
 I (..\include\parameter.h)(0x5F061C82)
 I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\history.h)(0x5B31A28E)
 I (..\include\io.h)(0x5EFCFE18)
@@ -353,7 +353,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\nice5000.h)(0x5CF036BA)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\io.h)(0x5EFCFE18)
@@ -369,7 +369,7 @@ I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\can.h)(0x5B031D60)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\text.h)(0x5EE9E73A)
 I (..\include\version.h)(0x5CF09C4C)
 I (..\include\history.h)(0x5B31A28E)
@@ -387,7 +387,7 @@ I (..\include\rtc.h)(0x5CF09454)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60253184)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025318E)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\text.h)(0x5EE9E73A)
 I (..\include\lcd.h)(0x54174D2C)
@@ -412,7 +412,7 @@ I (..\include\parameter.h)(0x5F061C82)
 I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\state.h)(0x5CEDFB5C)
 I (..\include\eeprom.h)(0x5CEEFC68)
@@ -436,7 +436,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
 I (..\include\history.h)(0x5B31A28E)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\nice5000.h)(0x5CF036BA)
 F (..\src\menu.c)(0x5F4318A2)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\menu.o --omf_browse .\output\menu.crf --depend .\output\menu.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
@@ -448,7 +448,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\text.h)(0x5EE9E73A)
 I (..\include\version.h)(0x5CF09C4C)
 I (..\include\eeprom.h)(0x5CEEFC68)
@@ -471,7 +471,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\nice5000.h)(0x5CF036BA)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\history.h)(0x5B31A28E)
@@ -494,7 +494,7 @@ I (..\include\can.h)(0x5B031D60)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
 I (..\include\drive.h)(0x580817FC)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\eeprom.h)(0x5CEEFC68)
 I (..\include\history.h)(0x5B31A28E)
 I (..\include\pos.h)(0x5CFD8020)
@@ -506,7 +506,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 F (..\src\parameter.c)(0x5EFE70A4)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\parameter.o --omf_browse .\output\parameter.crf --depend .\output\parameter.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
@@ -540,7 +540,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\nice5000.h)(0x5CF036BA)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\pos.h)(0x5CFD8020)
@@ -553,7 +553,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\nice5000.h)(0x5CF036BA)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\pos.h)(0x5CFD8020)
@@ -577,14 +577,14 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\eeprom.h)(0x5CEEFC68)
 I (..\include\history.h)(0x5B31A28E)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
 I (..\include\Drive.h)(0x580817FC)
-F (..\src\set_para.c)(0x5F34AFAA)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\set_para.o --omf_browse .\output\set_para.crf --depend .\output\set_para.d)
+F (..\src\set_para.c)(0x61F1F2F0)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\set_para.o --omf_browse .\output\set_para.crf --depend .\output\set_para.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60253184)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025318E)
@@ -610,7 +610,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\eeprom.h)(0x5CEEFC68)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 F (..\src\start.c)(0x5EEAE71A)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\start.o --omf_browse .\output\start.crf --depend .\output\start.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
 I (..\include\parameter.h)(0x5F061C82)
@@ -619,7 +619,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
 I (..\include\drive.h)(0x580817FC)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\pos.h)(0x5CFD8020)
 I (..\include\eeprom.h)(0x5CEEFC68)
@@ -644,14 +644,14 @@ I (..\include\pos.h)(0x5CFD8020)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
 I (..\include\version.h)(0x5CF09C4C)
-F (..\src\still.c)(0x61F11669)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\still.o --omf_browse .\output\still.crf --depend .\output\still.d)
+F (..\src\still.c)(0x61F246E2)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\still.o --omf_browse .\output\still.crf --depend .\output\still.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
 I (..\include\parameter.h)(0x5F061C82)
 I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
@@ -666,7 +666,7 @@ I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\nice5000.h)(0x5CF036BA)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
@@ -687,14 +687,14 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\drive.h)(0x580817FC)
 I (..\include\history.h)(0x5B31A28E)
 I (..\include\nice5000.h)(0x5CF036BA)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
-F (..\src\test.c)(0x5EEAE71A)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\test.o --omf_browse .\output\test.crf --depend .\output\test.d)
+F (..\src\test.c)(0x61F1F2F0)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\test.o --omf_browse .\output\test.crf --depend .\output\test.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025318E)
 I (..\include\parameter.h)(0x5F061C82)
@@ -712,7 +712,7 @@ I (..\include\version.h)(0x5CF09C4C)
 I (..\include\io.h)(0x5EFCFE18)
 I (..\include\lpc1700.h)(0x514E0C70)
 I (..\include\Can.h)(0x5B031D60)
-F (..\src\text.c)(0x5FF3AE5E)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\text.o --omf_browse .\output\text.crf --depend .\output\text.d)
+F (..\src\text.c)(0x61F1F5F8)(-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I ..\include-I.\RTE\_Target_1-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"C:\Users\Ha Thien Quang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-D__UVISION_VERSION="536" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\output\text.o --omf_browse .\output\text.crf --depend .\output\text.d)
 I (..\include\typedef.h)(0x5CEDFB5A)
 I (..\include\parameter.h)(0x5F061C82)
 I (..\include\config.h)(0x5EEA765A)
@@ -733,7 +733,7 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)
 I (..\include\pos.h)(0x5CFD8020)
 I (..\include\lcd.h)(0x54174D2C)
@@ -767,5 +767,5 @@ I (..\include\config.h)(0x5EEA765A)
 I (..\include\canopen.h)(0x61F0CD7B)
 I (..\include\rtc.h)(0x5CF09454)
 I (..\include\state.h)(0x5CEDFB5C)
-I (..\include\call.h)(0x61F0FB2B)
+I (..\include\call.h)(0x61F20D73)
 I (..\include\can.h)(0x5B031D60)

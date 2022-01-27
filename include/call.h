@@ -29,7 +29,7 @@ struct CallTab 									// Structure for call table
 	BYTE cc_door;								// doors for car call
 	BYTE lcu_door;								// doors for landing calls in up direction
 	BYTE lcd_door;								// doors for landing calls in up direction
-	BYTE lc_door;									// doors for landing calls with no direction
+	BYTE lc_door;								// doors for landing calls with no direction
 	BYTE sc_door;								// doors for special landing calls
 	BYTE ac_door;								// doors for advanced landing calls
 	BYTE ec_door;								// doors for emergency landing calls

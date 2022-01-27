@@ -801,7 +801,8 @@ void set_call_priority (void){
 	if (callpriority == C_FIREMAN)							/* fireman mode					*/
 	{
 		if (firemode)										/* fire key or fire call on			*/
-			callprioritytimer = timer;						/* retrigger timer					*/
+			callprioritytimer = timer + 15 SEC;	
+								/* retrigger timer		REMOVE 15 SEC			*/
 		if (firekey || auto_fire)								/* fire key in car is on				*/
 		{
 			if (((!firecall_exist) || firecallstate)		// no fire call input or fire call ready
@@ -830,6 +831,8 @@ void set_call_priority (void){
 			if (p.fireman_function1 & FIREMAN1_REPEAT_FIRECALL)								/* repeat fire call if fire key is off	*/
 				firekeystate = 0;							/* reset state of fire key			*/
 		}
+
+		// start fire call trip	
 		if (firecall && (!firecall_old) &&						/* firecall switched on			*/
 		(!firekeystate))										/* but no fire key in car			*/
 		{
@@ -843,6 +846,8 @@ void set_call_priority (void){
 				parkcall = firefloor + 1;
 			}
 		}
+	
+		// automatic change mode to fireman
 		if (p.fireman_function1 & FIREMAN1_AUTO_FIREMODE)									/* automatic fireman mode		*/
 		{
 			if (firecall && (level == firefloor) &&				/* fire call is ready				*/
