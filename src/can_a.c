@@ -102,14 +102,14 @@ void ReadCanA (void)
 				case (1):									// door state door 1
 				case (2):									// door state door 2
 				case (3):									// door state door 3
-          	// if((door_state[0] == DOOR_CLOSED) && (NudingMode))
-			// 		{
-			// 			Nudging_Buz_timer_count = 0-1;
-			// 			NudingMode = 0;
-			// 			set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA); 
-			// 			set_out (SPEAKER_BUZ, BUZZER_NORMAL, 0, EXISTING_DOORS, 0 , O_CANA); 
-			// 			Nudging_opendoor_timer_count = timer + 5 SEC;
-			// 		}
+          	if((door_state[0] == DOOR_CLOSED) && (NudingMode))
+					{
+						Nudging_Buz_timer_count = 0-1;
+						NudingMode = 0;
+						set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA); 
+						set_out (SPEAKER_BUZ, BUZZER_NORMAL, 0, EXISTING_DOORS, 0 , O_CANA); 
+						Nudging_opendoor_timer_count = timer + 5 SEC;
+					}
 
 					door_state [id - 1] = *(WORD *)&rxa [roa][2];		// read door state
 					if (door_state [id - 1] == DOOR_CLOSED)	// door is closed

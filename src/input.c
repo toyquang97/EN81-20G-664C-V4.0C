@@ -176,8 +176,8 @@ void handle_input (BYTE liftnumber, BYTE active)
 									}
 								else
 									dooropenpush = virt_in [IO_DOOR];
-//								if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL) &&(Enabal_opendoor))
-								if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL))
+								if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL) &&(Enabal_opendoor))
+							//	if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL))
 	
 									{
 										door = dooropenpush & p.doorpos[level];
