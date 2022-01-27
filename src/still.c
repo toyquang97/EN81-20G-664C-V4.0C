@@ -9,14 +9,6 @@
 #include "history.h"
 #include "Nice5000.h"
 
-DWORD Nudging_timer_count =0-1;
-BYTE  NudingMode =0;
-BYTE  Enabal_opendoor =1;
-BYTE hhhhhhhhh =0,tttttttt =0;
-DWORD Nudging_Buz_timer_count =0-1;
-DWORD Nudging_opendoor_timer_count =0-1;
-static BYTE callpriorityold;
-
 /****************************************************************************************************/
 /* Definitions for door open state																	*/
 /****************************************************************************************************/
@@ -56,7 +48,7 @@ void fire_door (BYTE doors, BYTE command)
 	{
 		case (OPEN_DOOR):
 			state = DOOR_CLOSED;
-			break;
+			break;					  
 		case (CLOSE_DOOR):
 			state = DOOR_OPENED;
 			break;
@@ -118,7 +110,7 @@ BYTE set_park_state (void)
 		parkingtimer = timer + (p.parkingtime SEC);		/* restart parking trip timer			*/
 		parkstate = p.doortable [adt][level];
 		if((p.cooperate_sel1 & COOP1_THROUGH_DOOR) && (p.doorpos [level] == (DOOR1 | DOOR2)))
-			{//��ǰ¥��Ϊ��ͨ�ţ���ѡ�� p.she_doornumber ����
+			{//µ±Ç°Â¥²ãÎª¹áÍ¨ÃÅ£¬ÔòÑ¡Ôñ p.she_doornumber ²ÎÊý
 				parkstate &= (p.she_doornumber & (DOOR1 | DOOR2));
 			}
 		else
@@ -136,7 +128,7 @@ BYTE set_park_state (void)
 	if (remote_switched_off &&						/* lift is remote switched off			*/
 	(callpriority == C_STANDARD))
 		parkstate = p.remote_off_door;
-
+	
 	if((callpriority == C_EVACUATION) && evacuation)
 		{
 			if(p.evac_door)
@@ -188,11 +180,9 @@ BYTE set_park_state (void)
 /****************************************************************************************************/
 BYTE handle_dooropenpush (void)
 {
-
 	BYTE i = 0;
 	static BYTE dooropenpush_old = 0;
-	if(!Enabal_opendoor)
-		return 0;
+
 	dooropenpush &= p.doorpos [level];				/* only use existing shaft doors		*/
 	if (callpriority == C_FIREMAN)					/* lift is in fireman mode				*/
 	{
@@ -231,14 +221,14 @@ BYTE handle_dooropenpush (void)
 /****************************************************************************************************/
 /* Handle door stop push																*/
 /****************************************************************************************************/
-void handle_doorstoppush (void){
+void handle_doorstoppush (void){	
 	if(p.landingcall_push & PUSH_STOP_SHIP)
-		{
+		{			
 			doorstoppush &= p.doorpos [level];				/* only use existing shaft doors		*/
 			if(doorstoppush & DOOR1)
 				{
 					if(doorstate & DOOR2)
-						{//��2��عرգ�����û��ִ�п��Ŷ���
+						{//ÃÅ2Îñ±Ø¹Ø±Õ£¬²¢ÇÒÃ»ÓÐÖ´ÐÐ¿ªÃÅ¶¯×÷
 							if(doorstoppush_sheopen_flag != DOOR1)
 								{
 									doorstoppush_sheopen_flag = DOOR1;
@@ -248,7 +238,7 @@ void handle_doorstoppush (void){
 								}
 						}
 					else if(doorstoppush_sheclose_flag != DOOR2)
-						{//��2δ�رգ��ȹر���2
+						{//ÃÅ2Î´¹Ø±Õ£¬ÏÈ¹Ø±ÕÃÅ2
 							set_door (DOOR2, CLOSE_DOOR);	/* send door command				*/
 							doorstoppush_sheclose_flag = DOOR2;
 							doorstoppush_sheopen_flag = 0;
@@ -257,7 +247,7 @@ void handle_doorstoppush (void){
 			else if(doorstoppush == DOOR2)
 				{
 					if(doorstate & DOOR1)
-						{//��1��عرգ�����û��ִ�п��Ŷ���
+						{//ÃÅ1Îñ±Ø¹Ø±Õ£¬²¢ÇÒÃ»ÓÐÖ´ÐÐ¿ªÃÅ¶¯×÷
 							if(doorstoppush_sheopen_flag != DOOR2)
 								{
 									doorstoppush_sheopen_flag = DOOR2;
@@ -267,7 +257,7 @@ void handle_doorstoppush (void){
 								}
 						}
 					else if(doorstoppush_sheclose_flag != DOOR1)
-						{//��1δ�رգ��ȹر���1
+						{//ÃÅ1Î´¹Ø±Õ£¬ÏÈ¹Ø±ÕÃÅ1
 							set_door (DOOR1, CLOSE_DOOR); /* send door command				*/
 							doorstoppush_sheclose_flag = DOOR1;
 							doorstoppush_sheopen_flag = 0;
@@ -287,7 +277,7 @@ void handle_doorstoppush (void){
 					if((doorstopstate) && (p.landingcall_push & PUSH_ALARM))
 						{
 							bFunc_flag |= FUNC_DOORSTOP_TIMEOUT;
-							set_out(SPEAKER_BUZ, BUZZER_NORMAL, 5, 0, 1, O_CANA | O_CANB | O_HSE);		//����5s
+							set_out(SPEAKER_BUZ, BUZZER_NORMAL, 5, 0, 1, O_CANA | O_CANB | O_HSE);		//Ãù½Ð5s							
 						}
 					doorstopstate = 0;
 				}
@@ -311,7 +301,7 @@ void handle_doorstoppush (void){
 				}
 				else										/* no new doors to stop 			*/
 					doorstopstate = 0;						/* switch off door stop state 		*/
-			}
+			} 
 			doorstoppush = 0; 							/* to be done 					*/
 		}
 }
@@ -319,7 +309,7 @@ void handle_doorstoppush (void){
 BYTE she_parkdoor(void){
 	if((!(p.cooperate_sel1 & COOP1_THROUGH_DOOR)) || (!she_calldoor_double))
 		return 1;
-
+	
 	return 0;
 }
 
@@ -356,7 +346,7 @@ void standstill_state (void)
 	BYTE door = 0;
 	BYTE shutoff_power = 0;
 	BYTE check_all_DL = 0;
-	BYTE check_door_short = 0;
+	BYTE check_door_short = 0;	
 	BYTE ulsi_out = 0;
 	BYTE ulsi_on_enable = 0;
 	BYTE ulsi_off_enable = 0;
@@ -367,9 +357,9 @@ void standstill_state (void)
 	target_floor = level;
 	overload = 0;
 	fullload = 0;
-	zeroload = 0;
+	zeroload = 0;	
 	bTestDL = 0;
-	dl_short_test_finish = 0;			//ÿ���ڽ������ģʽ�����¼�������̽�
+	dl_short_test_finish = 0;			//Ã¿´ÎÔÚ½øÈë´ýÌÝÄ£Ê½£¬ÖØÐÂ¼ì²âÃÅËø¶Ì½Ó
 	carlight_switched_off = 0;
 	send_hse_state ();								/* send new state on CAN bus					*/
 	calls_off = 0;									/* enable calls								*/
@@ -385,9 +375,9 @@ void standstill_state (void)
 	if(!(p.landingcall_push & PUSH_STOP_SHIP))
 		{
 			doorstoppush = 0;
-			doorstopstate = 0;
+			doorstopstate = 0;	
 		}
-	doorstoppush_sheopen_flag = 0;
+	doorstoppush_sheopen_flag = 0; 			
 	doorstoppush_sheclose_flag = 0;
 	if (level == p.main_floor)
 	{
@@ -468,7 +458,7 @@ void standstill_state (void)
 #if SRU_OLD
 	if (!p.relevel)
 #endif
-	{//�µ�20/50��׼������״̬��K2�Ȳ�����
+	{//ÐÂµÄ20/50±ê×¼£¬´ýÌÝ×´Ì¬£¬K2ÏÈ²»¹¤×÷
 		if (state_ulsi != SWITCH_OFF)
 			ulsi_off_timer = timer + 1 SEC;
 		SetSwitch(SWITCH_ULSI, SWITCH_OFF);
@@ -480,8 +470,8 @@ void standstill_state (void)
 		}
 	while (1)
 	{
-		cycle ();									/*do all cyclic functions						*/
-		set_state ();								/*set new state								*/
+		cycle ();									/* do all cyclic functions						*/
+		set_state ();								/* set new state								*/
 		if (hse_state != H_STANDSTILL)				/* state changed								*/
 		{
 			if (carlight_switched_off)				/* car light is switched off						*/
@@ -525,7 +515,7 @@ void standstill_state (void)
 
 			return;							/* go to new state							*/
 		}
-
+		
 		special_trip ();								/* handle special trips							*/
 		if (doorstaystate == D_CLOSING)				/* all doors are closing						*/
 			doormode = ALL_DOORS_CLOSED;		/* mark all doors as already closed				*/
@@ -604,7 +594,7 @@ void standstill_state (void)
 							set_out (SPECIAL_FUNC, DOOR_CLOSE, 0, EXISTING_DOORS, 0, O_CANA);
 							door_close_open = 0;
 							cl_op_fg = 0;
-						}
+						}			
 					
 #if	SRU_NEW
 					if(main_relay_status)
@@ -618,7 +608,7 @@ void standstill_state (void)
 					return;
 				}
 				else if(doorstate != ALL_DOORS_CLOSED)
-					{
+					{						
 						if((doorstate & DOOR1) == 0)
 							move_dooropen_flag = 1;
 						else if((doorstate & DOOR2) == 0)
@@ -641,7 +631,7 @@ void standstill_state (void)
 				if((p.cooperate_sel1 & COOP1_THROUGH_DOOR) &&
 						(p.doorpos [target_floor] == (DOOR1 | DOOR2)))
 					{
-						door = doornew;		//����֮ǰ���Ų���
+						door = doornew;		//±£´æÖ®Ç°µÄÃÅ²ÎÊý
 						she_calldir = landingcalldir >> 1;
 						if(doorstate != ALL_DOORS_CLOSED)
 							{
@@ -650,14 +640,14 @@ void standstill_state (void)
 								else if((doorstate == (DOOR1 | DOOR3)) && (doornew & DOOR2))
 									doornew = DOOR2;
 								else
-									doornew = 0;
+									doornew = 0;	
 							}
 						else
 							{
-								if(doornew == (DOOR1 | DOOR2))
+								if(doornew == (DOOR1 | DOOR2))								
 									doornew = DOOR1;
-								else if(doornew & DOOR1)
-									doornew = DOOR1;
+								else if(doornew & DOOR1)		
+									doornew = DOOR1;								
 								else if(doornew & DOOR2)
 									doornew = DOOR2;
 								else
@@ -688,16 +678,16 @@ void standstill_state (void)
 						doorstate &= ~doornew;				/* mark doors as open						*/
 						if((p.custumer1 & CUSTUMER1_SHE_MODE) && (p.doorpos [target_floor] == (DOOR1 | DOOR2)))
 							{
-								set_out (CAR_CALL, level + 1, 0, doornew, 0, O_CANA);		//����ָʾ��
+								set_out (CAR_CALL, level + 1, 0, doornew, 0, O_CANA);		//Ïû³ýÖ¸Ê¾µÆ
 								if(she_calldir == DIR_UP)
-									i = HALL_CALL_UP;
+									i = HALL_CALL_UP; 					
 								else if(she_calldir == DIR_DN)
 									i = HALL_CALL_DOWN;
 								else
 									i = HALL_CALL_UP;
 								set_out (HALL_CALL, i, level + 1, doornew, 0, O_CANB);
-
-								calltab [level].calltype &= ~calltype;
+								
+								calltab [level].calltype &= ~calltype; 
 							}
 					}
 				}
@@ -741,17 +731,17 @@ void standstill_state (void)
 					handle_landingcalls = 0;					/* don't handle landing calls from actual floor	*/
 				else
 					handle_landingcalls = 1;					/* handle landing calls from actual floor			*/
-
+				
 				if(calldir != calldir_old)
 					{
 						if(p.clear_cc_opp_dir && (calldir != DIR_NULL) && callpriority == C_STANDARD)
-							{//ֻ����ͨ����������
+							{//Ö»¶ÔÆÕÍ¨ºôÌÝ×ö´¦Àí
 								if(calldir_old == DIR_UP)
 									{
 										for(i=p.bot_floor; i<level; i++)
 											{
 												if(calltab[i].calltype & CARCALL)
-													{
+													{ 													
 														set_out (CAR_CALL, i + 1, 0, calltab[i].cc_door, 0, O_CANA | O_HSE);
 														calltab[i].calltype &= ~CARCALL;
 														calltab[i].cc_door = 0;
@@ -763,7 +753,7 @@ void standstill_state (void)
 										for(i=level; i<p.top_floor; i++)
 											{
 												if(calltab[i].calltype & CARCALL)
-													{
+													{ 													
 														set_out (CAR_CALL, i + 1, 0, calltab[i].cc_door, 0, O_CANA | O_HSE);
 														calltab[i].calltype &= ~CARCALL;
 														calltab[i].cc_door = 0;
@@ -885,7 +875,7 @@ void standstill_state (void)
 								ct = timer + (doorstaytime_cc SEC);
 								doorstate &= ~i;			/* mark doors as open						*/
 							}
-						}
+						}						
 					}
 				}
 				if (safety_circuit & SC3)						/* door and safety circuit shaft door closed		*/
@@ -926,14 +916,14 @@ void standstill_state (void)
 			{
 				if(p.carlighttimer && 						/* and switch off car light enabled 			*/
 					(carlighttimer < timer))						/* and car light timer over 					*/
-					{
+					{ 					
 						if (!light_switch_status && carlight_flag)
 							{
-								carlight_flag = 0;
+								carlight_flag = 0;							
 								set_out (CARLIGHT, 0, 0, 0, 0, (O_CANA|O_CANB|O_HSE));			/* switch car light off (relay on)				*/
 								carlight_switched_off = 1;					/* save new state 							*/
 							}
-					}
+					}				
 			}
 
 		if (doorstate != ALL_DOORS_CLOSED)				/* not all doors closed						*/
@@ -942,63 +932,6 @@ void standstill_state (void)
 						&& ((callpriority != C_FIREALARM) || ((p.evac_fire_carlightmode & 0x02) == 0)))
 					carlighttimer = timer + (p.carlighttimer SEC);			/* retrigger timer								*/
 			}
-		// sua nudging
-		//if((firecall) && (!firekey)) {
-			//clearcalls (CARCALL | PRIOR_CARCALL);	
-			//clearcalls (ALL_HALL_CALLS);
-		
-		if(callpriorityold != callpriority)
-		{
-			Nudging_timer_count = (0-1);
-			callpriorityold == callpriority;
-		}
-		if(level != p.fire_floor[0])
-		{
-				if(!(callpriority == C_FIREALARM)) // C_FIREALARM
-				{
-					NudingMode = 0;
-					Nudging_timer_count = 0-1;
-					Nudging_Buz_timer_count = 0-1;
-				}
-				else
-				{
-					if((Nudging_timer_count == (0-1)) && (door_state[0] != DOOR_CLOSED) )
-					{
-						Nudging_timer_count = timer+ 15 SEC;
-					}
-				}
-				if( timer > Nudging_timer_count  )
-				{
-					//over 2min
-					Nudging_timer_count = 0-1;
-					set_door(ALL_DOORS_CLOSED,CLOSE_DOOR); // close door
-					//out nudging
-					set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,1 , O_CANA);  
-					set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 1 , O_CANA);   //buzzer on
-					set_out (SPECIAL_FUNC, DOOR_OPEN, 0, EXISTING_DOORS, 0, O_CANA);  //turn off open led
-					set_out (SPECIAL_FUNC, DOOR_CLOSE, 0, EXISTING_DOORS, 1, O_CANA); //turn on open led
-					NudingMode = 1;
-					Enabal_opendoor =0;
-					Nudging_Buz_timer_count = timer +4 SEC;
-				}
-				if( timer > Nudging_Buz_timer_count  )
-				{
-					set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 1 , O_CANA);
-					Nudging_Buz_timer_count = timer +4 SEC;
-				}
-		}
-		
-		if(NudingMode)
-		{
-			if(callpriority != C_FIREALARM) //C_FIREALARM
-				{
-						Enabal_opendoor =1;
-						Nudging_Buz_timer_count = 0-1;
-						NudingMode = 0;
-						set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA); 
-						set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 0 , O_CANA); 
-				}
-		}
 		if (handle_dooropenpush ())							/* handle door open push						*/
 		{
 			doorstaystate = D_STAYTIME;
@@ -1006,15 +939,6 @@ void standstill_state (void)
 			((ct - timer) <= (doorstaytime_cc SEC)))			/* or open stay time with landing calls over		*/
 				ct = timer + (doorstaytime_cc SEC);			/* Timer for door open stay time with car call	*/
 		}
-		if(!Enabal_opendoor)
-		{
-			if(timer > Nudging_opendoor_timer_count)
-				{
-					Nudging_opendoor_timer_count = 0-1;
-					Enabal_opendoor = 1;
-				}
-		}
-		//sua nudging
 		handle_doorstoppush ();
 		if ((doorstopstate) || (she_photonsensor) || (she_doorstoppush))
 		{
@@ -1035,10 +959,10 @@ void standstill_state (void)
 		}
 		if(!(p.landingcall_push & PUSH_STOP_SHIP))
 			doorclosepush_act = doorclosepush & (~dooropenpush) & (~doorstopstate) & p.doorpos [level];
-		else
+		else			
 			doorclosepush_act = doorclosepush & (~dooropenpush) & (~doorstoppush) & p.doorpos [level];
 		if ((callpriority == C_FIREMAN) && (!firekey) && (!auto_fire))
-					doorclosepush_act = 0;							/* ignore door close push 					*/
+					doorclosepush_act = 0;							/* ignore door close push 					*/		
 		if (doorclosepush_act != doorclosepush_old)				/* door close push changed					*/
 		{
 			if (doorclosepush_act)							/* doors to close								*/
@@ -1134,11 +1058,11 @@ void standstill_state (void)
 				}
 			}
 		}
-
+		
 		if (check_dl_short && (!door_short_conn))
-		{//������·�Ķ̽Ӽ��
+		{//ÃÅËø»ØÂ·µÄ¶Ì½Ó¼ì²â
 			if((door_state [0] == DOOR_OPENED) || (door_state [1] == DOOR_OPENED))
-				{//ֻ�ڿ���״̬��������̽�
+				{//Ö»ÔÚ¿ªÃÅ×´Ì¬¼ì²âÃÅËø¶Ì½Ó				
 					if(p.door_connect)
 						{
 							i = SC3;
@@ -1148,9 +1072,9 @@ void standstill_state (void)
 						{
 							i = SC2;
 							door = SC3;
-						}
+						}					
 					if((dl_shorted & i) || (safety_circuit & i))
-						{
+						{ 								
 							if (!(general_error & G_DL_SHORTED))
 								{
 									general_error |= G_DL_SHORTED;
@@ -1159,14 +1083,14 @@ void standstill_state (void)
 								}
 						}
 					if(!check_door_short)
-						{//����ƽ�㹦��
+						{//ÎÞÔÙÆ½²ã¹¦ÄÜ
 							if(!ulsi_on_enable)
 								{
 									dlshortchktimer = timer + 5;		//
 									ulsi_on_enable = 1;
 								}
 							if((state_ulsi == SWITCH_OFF) && (dlshortchktimer < timer) && (!ulsi_out) && ulsi_on_enable)
-								{
+								{									
 									if (door_zone & POS_SGM)
 										{
 											SetSwitch(SWITCH_ULSI, SWITCH_ON);
@@ -1196,7 +1120,7 @@ void standstill_state (void)
 //													SetSwitch(SWITCH_ULSI, SWITCH_OFF);
 //												}
 //											dlshortchktimer = timer + 1 SEC;
-//											check_door_short = 1; 	//�Ѿ���⵽�̽ӣ����
+//											check_door_short = 1; 	//ÒÑ¾­¼ì²âµ½¶Ì½Ó£¬Íê³É
 //											dl_short_test_finish = 1;
 											
 #if	SRU_NEW											
@@ -1216,13 +1140,13 @@ void standstill_state (void)
 											SetSwitch(SWITCH_ULSI, SWITCH_OFF);
 										}
 //									dlshortchktimer = timer + 1 SEC;
-									check_door_short = 1; 	//�Ѿ���⵽�̽ӣ����
+									check_door_short = 1; 	//ÒÑ¾­¼ì²âµ½¶Ì½Ó£¬Íê³É
 									dl_short_test_finish = 1;								
 								}
 #endif	
-						}
+						}					
 				}
-		}
+		}		
 
 #if	SRU_NEW
 //		if((p.relevel) && dl_short_test_finish)
@@ -1253,13 +1177,13 @@ void standstill_state (void)
 			{
 				set_out (SPECIAL_FUNC, DOOR_CLOSE, 0, EXISTING_DOORS, 0, O_CANA);
 				doorclosepush_ind = 0;
-			}
+			}			
 			if(door_close_open & 0x03)
 				{
 					if(!cl_op_fg)
-						{
+						{							
 							set_out (SPECIAL_FUNC, DOOR_OPEN, 0, EXISTING_DOORS, 0, O_CANA);
-							cl_op_timer = mstimer + 3;	//15ms �ٿ����Ű�ť��
+							cl_op_timer = mstimer + 3;	//15ms ÔÙ¿ª¹ØÃÅ°´Å¥µÆ
 							cl_op_fg = 1;
 						}
 					else if((cl_op_timer < mstimer) && (cl_op_fg == 1))
@@ -1271,9 +1195,9 @@ void standstill_state (void)
 			else if(door_close_open == 8)
 				{
 					if(!cl_op_fg)
-						{
+						{ 						
 							set_out (SPECIAL_FUNC, DOOR_CLOSE, 0, EXISTING_DOORS, 0, O_CANA);
-							cl_op_timer = mstimer + 3;
+							cl_op_timer = mstimer + 3;	
 							cl_op_fg = 1;
 						}
 					else if((cl_op_timer < mstimer) && (cl_op_fg == 1))
@@ -1309,7 +1233,7 @@ void standstill_state (void)
 		(!(calltab [p.up_peak_parkfloor].calltype & LANDINGCALL_UP)))
 			calltab [p.up_peak_parkfloor].calltype |= LANDINGCALL_UP;
 
-//�ж�ǿ���ź�
+//ÅÐ¶ÏÇ¿¼õÐÅºÅ
 	if (level == p.bot_floor)
 		{
 			if (door_zone & POS_SDD1)
@@ -1366,7 +1290,7 @@ void standstill_state (void)
 		}
 
 		if(emp_power)
-			{//Ӧ����Դ����
+			{//Ó¦¼±µçÔ´¹¦ÄÜ 
 				if (((door_zone & POS_SGM) && (level == emp_floor)) ||
 						((poserror) ||									/* lift in level zone or positioning error	*/
 						(doorcommand))) 								/* or already doorcommand 		*/
@@ -1387,52 +1311,52 @@ void standstill_state (void)
 									}
 								if(door)
 									{
-										doorcommand = 1;
+										doorcommand = 1;					
 										level_display (level, O_ALL);
 										set_door (door, OPEN_DOOR); 			/* open doors 								*/
-										set_out (SPECIAL_FUNC, UPS_EVAC_READY_SPEAKER, 0, 0, 1, (O_CANA|O_CANB|O_HSE)); 	//The car display will show "Overload", which is not good
-										shutoff_delay = timer + 30 SEC; 	//Turn off UPS power after 30S
+										set_out (SPECIAL_FUNC, UPS_EVAC_READY_SPEAKER, 0, 0, 1, (O_CANA|O_CANB|O_HSE)); 	//½ÎÏáÏÔÊ¾Æ÷»áÏÔÊ¾"Overload",²»ºÃ
+										shutoff_delay = timer + 30 SEC; 	//30SºóÇÐ¶ÏUPSµçÔ´
 									}
 							}
 						else
 							{
 								if(shutoff_delay < timer + 15 SEC)
-									{//The buzzer will beep for 15 seconds and then turn off
+									{//·äÃùÆ÷Ãù½Ð 15S ºó¹Ø±Õ
 										if(!speaker_fg)
 											{
 												speaker_fg = 1;
-												set_out (SPECIAL_FUNC, UPS_EVAC_READY_SPEAKER, 0, 0, 0, (O_CANA|O_CANB|O_HSE)); 	//The car display will show "Overload", which is not good
-											}
+												set_out (SPECIAL_FUNC, UPS_EVAC_READY_SPEAKER, 0, 0, 0, (O_CANA|O_CANB|O_HSE)); 	//½ÎÏáÏÔÊ¾Æ÷»áÏÔÊ¾"Overload",²»ºÃ
+											} 						
 									}
 								if ((shutoff_delay < timer) && ((door_state[0] == DOOR_OPENED) || (door_state[1] == DOOR_OPENED)))
 									{
 										if (!shutoff_power)
 											{
 												shutoff_power = 1;
-												set_out (SPECIAL_FUNC, UPS_EVAC_READY, 0, 0, 1, O_HSE); 	//Wait for 1 minute to turn off the UPS output
+												set_out (SPECIAL_FUNC, UPS_EVAC_READY, 0, 0, 1, O_HSE); 	//µÈ´ý 1 ·ÖÖÓ¹Ø±ÕUPSÊä³ö
 											}
 									}
 							}
 					}
 			}
 
-	if((p.cooperate_sel1 & COOP1_THROUGH_DOOR) &&
+	if((p.cooperate_sel1 & COOP1_THROUGH_DOOR) && 
 			(p.doorpos [level] == (DOOR1 | DOOR2)))
-		{
+		{			
 			switch(she_calldoor_double)
 				{
-					case (DOOR1 | DOOR2):
+					case (DOOR1 | DOOR2): 			
 						if(doorstaystate == D_STAYTIME)
-							{//���Ŵ���
+							{//¿ªÃÅ´ýÌÝ
 								door = she_calldoor_double & p.she_doornumber;
 								if(!door)
 									door = DOOR1;
 								she_calldoor_double = (she_calldoor_double - door) % (DOOR1 | DOOR2);
 								set_door (door, OPEN_DOOR); 	/* close all not already closed doors 	*/
 								doorstate &= ~door;
-								set_out (CAR_CALL, level + 1, 0, door, 0, O_CANA);		//����ָʾ��
+								set_out (CAR_CALL, level + 1, 0, door, 0, O_CANA);		//Ïû³ýÖ¸Ê¾µÆ
 								if(she_calldir == DIR_UP)
-									i = HALL_CALL_UP;
+									i = HALL_CALL_UP; 					
 								else if(she_calldir == DIR_DN)
 									i = HALL_CALL_DOWN;
 								else
@@ -1440,7 +1364,7 @@ void standstill_state (void)
 								set_out (HALL_CALL, i, level + 1, door, 0, O_CANB);
 							}
 						break;
-
+		
 					case DOOR1:
 					case DOOR2:
 						if((doorstaystate == D_CLOSED) || (doorstate == ALL_DOORS_CLOSED))
@@ -1459,7 +1383,7 @@ void standstill_state (void)
 								ct = timer + (doorstaytime_cc SEC); 	/* Timer for door open stay time with car call	*/
 								set_out (CAR_CALL, level + 1, 0, she_calldoor_double, 0, O_CANA);
 								if(she_calldir == DIR_UP)
-									i = HALL_CALL_UP;
+									i = HALL_CALL_UP; 					
 								else if(she_calldir == DIR_DN)
 									i = HALL_CALL_DOWN;
 								else
@@ -1484,7 +1408,7 @@ void standstill_state (void)
 					}
 				check_all_DL = 1;
 				landings_off = 1;
-				p.relevel = 0;			//�ֶ����Ե�ʱ�����ȡ����ƽ�㹦��
+				p.relevel = 0;			//ÊÖ¶¯²âÊÔµÄÊ±ºò±ØÐëÈ¡ÏûÔÙÆ½²ã¹¦ÄÜ
 			}
 	}
 }

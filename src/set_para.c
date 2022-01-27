@@ -45,8 +45,8 @@ void set_parameter (void)
 	else
 		p.tse_extnums = 3;
 	p.arrowtype = ARROW_SCROLL;
-	p.doorzoneswitchsize = 225;			// Ä¬ÈÏ¿¨°å³¤¶È225mm(Êµ¼ÊÔ¼300mm)
-	p.exe_number = 2;				//Ä¬ÈÏÇé¿öÏÂÓÐ1¸öÀ©Õ¹°å£¬ÓÃÓÚ¿ØÖÆ¹ñ
+	p.doorzoneswitchsize = 225;			// Ä¬ï¿½Ï¿ï¿½ï¿½å³¤ï¿½ï¿½225mm(Êµï¿½ï¿½Ô¼300mm)
+	p.exe_number = 2;				//Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½å£¬ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½Æ¹ï¿½
 	p.fan_mode = FAN_AUTOMATIC;
 	p.max_speed = 400;
 	p.ucmp_speed = 300;
@@ -54,7 +54,7 @@ void set_parameter (void)
 // P1 Timer parameter
 	p.parkingtime = 300;
 	p.triptime = 45;
-	p.carlighttimer = 300;				//½ÎÏáµÆ¿ªÆôÊ±¼ä´Ó60¸ü¸ÄÎª300
+	p.carlighttimer = 300;				//ï¿½ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½60ï¿½ï¿½ï¿½ï¿½Îª300
 	p.doorstaytime_cc = 3;
 	p.doorstaytime_lc = 5;
 	p.doorstaytime_nc = 10;
@@ -75,7 +75,7 @@ void set_parameter (void)
 	p.brake_on_delay = 600;
 	p.max_brake_on = 2000;
 	p.max_start = 1500;
-	p.wait_for_brake = 1500;				//Ô¤·ÀÐÂ±§Õ¢°åµÄÑÓÊ±³¬Ê±
+	p.wait_for_brake = 1500;				//Ô¤ï¿½ï¿½ï¿½Â±ï¿½Õ¢ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê±
 	p.max_stop = 2000;
 	p.brake_off_delay = 600;
 	p.max_brake_off = 5000;
@@ -101,7 +101,7 @@ void set_parameter (void)
 	p.pos_dooropen = 100;
 	p.relevel = 0;
 	p.relevel_trip = 0;
-	p.ucmp_enable = 0;			//³ö³§ÉèÖÃ²»Æô¶¯ UCM ¹¦ÄÜ
+	p.ucmp_enable = 0;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½ UCM ï¿½ï¿½ï¿½ï¿½
 	p.ucmp_door_height = 2000;
 	p.ucmp_car_apron = 750;
 	p.ucmp_hall_apron = 350;
@@ -110,15 +110,15 @@ void set_parameter (void)
 	p.ucmp_test_speed = 0;
 
 // PA Internal param.	
-	language = ENGLISH;				//Ê¹ÓÃÊý×Ö²ÎÊý
+	language = ENGLISH;				//Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½ï¿½ï¿½
 	p.lift_func_sel1 = 139;//LIFTFUN1_DOORSHORT_REVEL | LIFTFUN1_PRESS_CLOSEBUTTOM 	| LIFTFUN1_CHECK_ROOM_TEMP | LIFTFUN1_CHECK_OVERSPEED;
-	p.lcd_backlight = 66;	//Ä¬ÈÏµÈ´ý2min£¬°µÁÁ
+	p.lcd_backlight = 66;	//Ä¬ï¿½ÏµÈ´ï¿½2minï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	p.evac_door = 1;			//Ä¬ÈÏ·¢µç»ú³·ÀëÍê±Ï¿ªÃÅ
+	p.evac_door = 1;			//Ä¬ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½
 	p.landingcall_push = 0;
-	p.ups_direction_mode = UPS_DIR_SEL;		//Ä¬ÈÏARD¾ÈÔ®Ê±²ÉÓÃÖ÷°å·½Ïò
-	p.canbus_check = 2;		//Ä¬ÈÏÆô¶¯Ê±²»¼ì²â canbus ¹ÊÕÏ
-	p.emp_power_door = 3;	//Ä¬ÈÏÓ¦¼±µçÔ´³·ÀëÊ±Ä¬ÈÏ¿ªÆô2¸öÃÅ
+	p.ups_direction_mode = UPS_DIR_SEL;		//Ä¬ï¿½ï¿½ARDï¿½ï¿½Ô®Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å·½ï¿½ï¿½
+	p.canbus_check = 2;		//Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ canbus ï¿½ï¿½ï¿½ï¿½
+	p.emp_power_door = 3;	//Ä¬ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ê±Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½
 	p.door_connect = 0;
 	p.she_doornumber = 0;
 	p.brake_check_auto = 0;
@@ -153,7 +153,7 @@ void set_parameter (void)
 // PD2~PD15
 	for (i = 0; i < MAX_FLOOR; i++)
 	{
-		p.doorpos [i] = 0x01;								// ³ö³§Ä¬ÈÏ¶¼ÊÇÖ»ÓÐ1¸öÃÅ
+		p.doorpos [i] = 0x01;								// ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ï¶ï¿½ï¿½ï¿½Ö»ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½
 		for (j = 0; j < MAX_DOORTABLE; j++) 			// PD4~PD15 Door release
 			p.doortable [j][i] = HSE_MARIN[p.doornumber];
 		p.parkdoor [i] = p.doorpos [i]; 				// PD3- Door park mode
@@ -207,10 +207,10 @@ void set_parameter (void)
 	
 // PR3 evacuation run
 	p.evacuationdelay = 0;
-	p.evacuationtime = 0;		//Ä¬ÈÏÖµ¸ÄÎª0s²»Æô¶¯£¬ÐÅºÅ´«µÝÏÂÒ»²ã
+	p.evacuationtime = 0;		//Ä¬ï¿½ï¿½Öµï¿½ï¿½Îª0sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ´ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 	p.evac_autoreturn = 1;
-	p.evac_fire_carlightmode = 3;		//Ä¬ÈÏ¹ØµÆ
-	p.carlight_fan_time_fire = 5;		//Ä¬ÈÏ¹ØµÆÊ±¼äÎª5s	
+	p.evac_fire_carlightmode = 3;		//Ä¬ï¿½Ï¹Øµï¿½
+	p.carlight_fan_time_fire = 5;		//Ä¬ï¿½Ï¹Øµï¿½Ê±ï¿½ï¿½Îª5s	
 
 // PR6 firemen run adj.
 	p.fire_doorclosemode = 3;
@@ -228,7 +228,7 @@ void set_parameter (void)
 	
 // PR8 remote off
 	p.remote_off_floor = p.bot_floor;
-	p.remote_off_door = 0;		//±£³Ö¹ØÃÅ×´Ì¬
+	p.remote_off_door = 0;		//ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½×´Ì¬
 	p.remote_off_func = REMOTE_LIGHT;
 	p.remote_starttime = 0;
 	p.remote_stoptime = 0;
@@ -251,7 +251,7 @@ void set_parameter (void)
 	p.autocall_dir = HALL_CALL_UP | HALL_CALL_DOWN;
 	p.cooperate_sel1 = 16;//COOP1_INSP_RETURN
 	p.cooperate_sel2 = COOP2_CL_LIMIT;
-	p.arrivegong_starttime = 22;		//Ò¹¼äÔÚ22:00--8:00È¡Ïûµ½Õ¾ÖÓ
+	p.arrivegong_starttime = 22;		//Ò¹ï¿½ï¿½ï¿½ï¿½22:00--8:00È¡ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½
 	p.arrivegong_stoptime = 8;
 
 // PR14 anti nuisance
@@ -720,7 +720,7 @@ void set_parameter (void)
 		p.ese_inpar[i][0][IO_BASIC_FUNC] = HALL_CALL;
 		p.ese_inpar[i][1][IO_BASIC_FUNC] = HALL_CALL;
 
-		p.ese_outpar[i][0][IO_BASIC_FUNC] = HALL_CALL;				//Êä³öÊÇ¹Ì¶¨µÄ
+		p.ese_outpar[i][0][IO_BASIC_FUNC] = HALL_CALL;				//ï¿½ï¿½ï¿½ï¿½Ç¹Ì¶ï¿½ï¿½ï¿½
 		p.ese_outpar[i][1][IO_BASIC_FUNC] = HALL_CALL;
 		p.ese_outpar[i][2][IO_BASIC_FUNC] = LIGHT_FUNC;
 		p.ese_outpar[i][2][IO_SUB_FUNC] = HALL_LANTERN_UP;
@@ -728,7 +728,7 @@ void set_parameter (void)
 		p.ese_outpar[i][3][IO_SUB_FUNC] = HALL_LANTERN_DN;
 
 		if (p.controltype == SINGLE_CALL)
-		{//µ¥Ñ¡Ä£Ê½
+		{//ï¿½ï¿½Ñ¡Ä£Ê½
 			p.ese_inpar[i][0][IO_SUB_FUNC] = HALL_CALL_NO_DIR;
 			p.ese_inpar[i][1][IO_SUB_FUNC] = HALL_CALL_NO_DIR;
 
@@ -736,7 +736,7 @@ void set_parameter (void)
 			p.ese_outpar[i][1][IO_SUB_FUNC] = HALL_CALL_NO_DIR;
 		}
 		else
-		{//¼¯Ñ¡Ä£Ê½
+		{//ï¿½ï¿½Ñ¡Ä£Ê½
 			p.ese_inpar[i][0][IO_SUB_FUNC] = HALL_CALL_UP;
 			p.ese_inpar[i][1][IO_SUB_FUNC] = HALL_CALL_DOWN;
 
@@ -781,7 +781,7 @@ void set_parameter (void)
 		ese_enabled [i] = 0xffffffff;
 	ese_enabled[p.ese_number/32] = HSE_MARIN[p.ese_number%32];
 
-//Ôö¼ÓÀ©Õ¹°åµÄÊäÈëÊä³ö EXE
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ EXE
 	ClrWdt();
 	memset(exe_para.exe_inpar, 0x00, sizeof(exe_para.exe_inpar));
 	memset(exe_para.exe_outpar, 0x00, sizeof(exe_para.exe_outpar));
@@ -862,7 +862,7 @@ void set_parameter (void)
 void config_double_door(void){
 	BYTE i, j, k = 0, m;
 
-//ÏÈÉèÖÃËùÓÐÃÅ±í
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½
 	for (i = p.bot_floor; i <= p.top_floor; ++i)
 		{
 			for (j = 0; j < MAX_DOORTABLE; j++) 			// PD4~PD15 Door release
@@ -870,9 +870,9 @@ void config_double_door(void){
 			p.parkdoor [i] = p.doorpos [i]; 				// PD3- Door park mode
 		}
 	
-//Êµ¼ÊµÄ²ãÃÅ
+//Êµï¿½ÊµÄ²ï¿½ï¿½ï¿½
 	for (i = p.bot_floor; i <= p.top_floor; ++i)
-		{//²ãÃÅµÄÅäÖÃ: Íâºô°å¿ª2¸öÃÅ, Ö÷ÒªÊÇÂ¥²ãÐèÒªÅäÖÃÕýÈ·		
+		{//ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½å¿ª2ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Òªï¿½ï¿½Â¥ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·		
 			for (j = 0; j < p.doornumber; ++j)
 				{
 					if (p.doorpos[i] & (1 << j))
@@ -909,7 +909,7 @@ void config_double_door(void){
 				}
 		}
 
-//ÅäÖÃ½ÎÃÅ
+//ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ï¿½
 	for(j = 0; j < p.tse_number; j++)
 		{
 			k = 0;
@@ -934,7 +934,7 @@ void config_double_door(void){
 						}
 					else if((p.tse_inpar [j][m][IO_BASIC_FUNC] == SPECIAL_FUNC) &&
 									((p.tse_inpar [j][m][IO_SUB_FUNC] == DOOR_CLOSE) 	|| (p.tse_inpar [j][m][IO_SUB_FUNC] == DOOR_OPEN)))
-						{//¿ª¹ØÃÅÅäÖÃ
+						{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							if(((p.open_close_door & CONFIG_CLOSE_DOOR) && (p.tse_inpar [j][m][IO_SUB_FUNC] == DOOR_CLOSE))
 									|| ((p.open_close_door & CONFIG_OPEN_DOOR) && (p.tse_inpar [j][m][IO_SUB_FUNC] == DOOR_OPEN)))
 								{
@@ -959,7 +959,7 @@ void floor_name_change(WORD row){
 	unit = (BYTE)p.sign[row];
 
 	if((ten == '-') && (unit >= '0') && (unit <= '9'))
-		{//¸ü¸ÄÎª¸ºÂ¥²ã
+		{//ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Â¥ï¿½ï¿½
 			j = unit - '0';
 			for(i = row; i < row + j; i++)
 				{
@@ -981,7 +981,7 @@ void floor_name_change(WORD row){
 		}
 	else if(((!ten ) || (ten == ' ') || ((ten > '0') && (ten <= '9'))) && 
 					((unit >= '0') && (unit <= '9')))
-		{//Â¥²ãË³Ðò±ä¸ü			
+		{//Â¥ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½			
 			if((!ten) || (ten == ' '))				
 				j = unit - '0';
 			else
@@ -997,7 +997,7 @@ void floor_name_change(WORD row){
 				}
 		}
 	else
-		{//ÆäËüÂ¥²ãÔò²»±ä¸ü
+		{//ï¿½ï¿½ï¿½ï¿½Â¥ï¿½ï¿½ï¿½ò²»±ï¿½ï¿½
 		}
 
 }

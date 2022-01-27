@@ -43,11 +43,11 @@ void AddChksum(void * pointer, WORD size, DWORD * sum)
 }
 
 //***************************************************
-// º¯ÊýÃû: GetChecksum
-// ¹¦ÄÜ: ¼ÆËã²ÎÊýµÄÐ£Ñé<²Î¼ûeeprom.h>
-// Èë²Î: ÎÞ
-// ³ö²Î: ÎÞ
-// ·µ»ØÖµ: Ð£ÑéºÍ
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: GetChecksum
+// ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½<ï¿½Î¼ï¿½eeprom.h>
+// ï¿½ï¿½ï¿½: ï¿½ï¿½
+// ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½
+// ï¿½ï¿½ï¿½ï¿½Öµ: Ð£ï¿½ï¿½ï¿½
 //***************************************************
 DWORD GetChecksum(void * pointer, WORD size)
 {
@@ -57,11 +57,11 @@ DWORD GetChecksum(void * pointer, WORD size)
 }
 
 //***************************************************
-// º¯ÊýÃû: VerifyChecksum
-// ¹¦ÄÜ: Ð£Ñé EEPROM µÄÄÚÈÝÊÇ·ñÓÐÐ§
-// Èë²Î: ÎÞ
-// ³ö²Î: ÎÞ
-// ·µ»ØÖµ: 0 ÓÐÐ§;1 ÎÞÐ§
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: VerifyChecksum
+// ï¿½ï¿½ï¿½ï¿½: Ð£ï¿½ï¿½ EEPROM ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ð§
+// ï¿½ï¿½ï¿½: ï¿½ï¿½
+// ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½
+// ï¿½ï¿½ï¿½ï¿½Öµ: 0 ï¿½ï¿½Ð§;1 ï¿½ï¿½Ð§
 //***************************************************
 BYTE VerifyChecksum (void)
 {
@@ -89,7 +89,7 @@ BYTE VerifyChecksum (void)
 		return 0x00;
 	}
 
-//Ð£ÑéºÍ³ö´í
+//Ð£ï¿½ï¿½Í³ï¿½ï¿½ï¿½
 	ClrWdt();
 	memset(&p, 0x00, sizeof(p));
 	memset(&errorhist, 0x00, sizeof(errorhist));
@@ -129,7 +129,7 @@ void set_floorhigth(void){
 			floor_higth[0] = 0;
 			floor_higth[1] = 950;
 			for(i = 2; i < MAX_FLOOR - 1; i++)
-				floor_higth[i] = floor_higth[i - 1] + 350;		//Éè¶¨Ã¿²ã3.5m
+				floor_higth[i] = floor_higth[i - 1] + 350;		//ï¿½è¶¨Ã¿ï¿½ï¿½3.5m
 			floor_higth[MAX_FLOOR - 1] = floor_higth[MAX_FLOOR - 2] + 850;
 		}
 	else if(p.simulation == SIMULATION_DRIVE)
@@ -137,7 +137,7 @@ void set_floorhigth(void){
 			floor_higth[0] = 0;
 			floor_higth[1] = 1000;
 			for(i = 2; i < MAX_FLOOR - 1; i++)
-				floor_higth[i] = floor_higth[i - 1] + 400;		//Éè¶¨Ã¿²ã3.5m
+				floor_higth[i] = floor_higth[i - 1] + 400;		//ï¿½è¶¨Ã¿ï¿½ï¿½3.5m
 			floor_higth[MAX_FLOOR - 1] = floor_higth[MAX_FLOOR - 2] + 1000;
 		}
 }
@@ -169,13 +169,13 @@ void LoadDefaultPara (void){
 		p.tse_extnums = 3;
 	p.loadtype = ANALOG_ON_CDU;
 	p.arrowtype = ARROW_SCROLL;
-	p.doorzoneswitchsize = 225; 		// Ä¬ÈÏ¿¨°å³¤¶È268mm(Êµ¼ÊÔ¼300mm)
-	p.exe_number = 0;				//Ä¬ÈÏÇé¿öÏÂÓÐ1¸öÀ©Õ¹°å£¬ÓÃÓÚ¿ØÖÆ¹ñ
+	p.doorzoneswitchsize = 225; 		// Ä¬ï¿½Ï¿ï¿½ï¿½å³¤ï¿½ï¿½268mm(Êµï¿½ï¿½Ô¼300mm)
+	p.exe_number = 0;				//Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½å£¬ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½Æ¹ï¿½
 	
 // P1 Timer parameter
 	p.parkingtime = 300;
 	p.triptime = 45;
-	p.carlighttimer = 300;				//½ÎÏáµÆ¿ªÆôÊ±¼ä´Ó60¸ü¸ÄÎª300
+	p.carlighttimer = 300;				//ï¿½ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½60ï¿½ï¿½ï¿½ï¿½Îª300
 	p.doorstaytime_cc = 3;
 	p.doorstaytime_lc = 5;
 	p.doorstaytime_nc = 10;
@@ -196,7 +196,7 @@ void LoadDefaultPara (void){
 	p.brake_on_delay = 600;
 	p.max_brake_on = 2000;
 	p.max_start = 1500;
-	p.wait_for_brake = 1500;				//Ô¤·ÀÐÂ±§Õ¢°åµÄÑÓÊ±³¬Ê±
+	p.wait_for_brake = 1500;				//Ô¤ï¿½ï¿½ï¿½Â±ï¿½Õ¢ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê±
 	p.max_stop = 2000;
 	p.brake_off_delay = 600;
 	p.max_brake_off = 5000;
@@ -222,16 +222,16 @@ void LoadDefaultPara (void){
 	p.pos_dooropen = 100;
 	p.relevel = 0;
 	p.relevel_trip = 0;
-	p.ucmp_enable = 0;			//³ö³§ÉèÖÃ²»Æô¶¯ UCM ¹¦ÄÜ
+	p.ucmp_enable = 0;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½ UCM ï¿½ï¿½ï¿½ï¿½
 
 // PA Internal param. 
-	language = ENGLISH; 			//Ê¹ÓÃÊý×Ö²ÎÊý
+	language = ENGLISH; 			//Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½ï¿½ï¿½
 	p.lift_func_sel1 = 0;
-	p.evac_door = 1;			//Ä¬ÈÏ·¢µç»ú³·ÀëÍê±Ï¿ªÃÅ
+	p.evac_door = 1;			//Ä¬ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½
 	p.landingcall_push = 0;
-	p.ups_direction_mode =  UPS_DIR_SEL; 	//Ä¬ÈÏARD¾ÈÔ®Ê±²ÉÓÃÖ÷°å·½Ïò
-	p.canbus_check = 1; 	//Ä¬ÈÏÆô¶¯Ê±²»¼ì²â canbus ¹ÊÕÏ
-	p.emp_power_door = 3; //Ä¬ÈÏÓ¦¼±µçÔ´³·ÀëÊ±Ä¬ÈÏ¿ªÆô2¸öÃÅ
+	p.ups_direction_mode =  UPS_DIR_SEL; 	//Ä¬ï¿½ï¿½ARDï¿½ï¿½Ô®Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å·½ï¿½ï¿½
+	p.canbus_check = 1; 	//Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ canbus ï¿½ï¿½ï¿½ï¿½
+	p.emp_power_door = 3; //Ä¬ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ê±Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½
 	p.custumer1 = 0;
 	
 // PD0-PD1 Door parameter
@@ -262,7 +262,7 @@ void LoadDefaultPara (void){
 // PD2~PD15
 	for (i = 0; i < MAX_FLOOR; i++)
 	{
-		p.doorpos [i] = 0x01; 							// ³ö³§Ä¬ÈÏ¶¼ÊÇÖ»ÓÐ1¸öÃÅ
+		p.doorpos [i] = 0x01; 							// ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ï¶ï¿½ï¿½ï¿½Ö»ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½
 		for (j = 0; j < MAX_DOORTABLE; j++) 			// PD4~PD15 Door release
 			p.doortable [j][i] = HSE_MARIN[p.doornumber];
 		p.parkdoor [i] = p.doorpos [i]; 				// PD3- Door park mode
@@ -313,10 +313,10 @@ void LoadDefaultPara (void){
 	
 // PR3 evacuation run
 	p.evacuationdelay = 0;
-	p.evacuationtime = 0; 	//Ä¬ÈÏÖµ¸ÄÎª0s²»Æô¶¯£¬ÐÅºÅ´«µÝÏÂÒ»²ã
+	p.evacuationtime = 0; 	//Ä¬ï¿½ï¿½Öµï¿½ï¿½Îª0sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ´ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 	p.evac_autoreturn = 1;
-	p.evac_fire_carlightmode = 3; 	//Ä¬ÈÏ¹ØµÆ
-	p.carlight_fan_time_fire = 5; 	//Ä¬ÈÏ¹ØµÆÊ±¼äÎª5s
+	p.evac_fire_carlightmode = 3; 	//Ä¬ï¿½Ï¹Øµï¿½
+	p.carlight_fan_time_fire = 5; 	//Ä¬ï¿½Ï¹Øµï¿½Ê±ï¿½ï¿½Îª5s
 	
 // PR6 firemen run adj.
 	p.fire_doorclosemode = 3;
@@ -334,7 +334,7 @@ void LoadDefaultPara (void){
 	
 // PR8 remote off
 	p.remote_off_floor = p.bot_floor;
-	p.remote_off_door = 0;		//±£³Ö¹ØÃÅ×´Ì¬
+	p.remote_off_door = 0;		//ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½×´Ì¬
 	p.remote_off_func = REMOTE_LIGHT;
 	
 // PR9 clock run
@@ -355,7 +355,7 @@ void LoadDefaultPara (void){
 	p.autocall_dir = HALL_CALL_UP | HALL_CALL_DOWN;
 	p.cooperate_sel1 = 16;//COOP1_INSP_RETURN
 	p.cooperate_sel2 = 0;
-	p.arrivegong_starttime = 22;		//Ò¹¼äÔÚ22:00--8:00È¡Ïûµ½Õ¾ÖÓ
+	p.arrivegong_starttime = 22;		//Ò¹ï¿½ï¿½ï¿½ï¿½22:00--8:00È¡ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½
 	p.arrivegong_stoptime = 8;
 
 // PR13 car fam
@@ -523,7 +523,7 @@ void LoadDefaultPara (void){
 	p.hse_outpar [0][IO_BASIC_FUNC] = DRIVE_OUT;
 	p.hse_outpar [0][IO_SUB_FUNC] = D_MAIN;
 	if(p.simulation == SIMULATION_DRIVE)
-		{//Ôö¼Ó SDD1, SDU1 ¹¦ÄÜµÄÊä³ö	
+		{//ï¿½ï¿½ï¿½ï¿½ SDD1, SDU1 ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½	
 			p.hse_outpar [1][IO_BASIC_FUNC] = DRIVE_OUT;
 			p.hse_outpar [1][IO_SUB_FUNC] = D_BRAKE;
 			
@@ -536,13 +536,13 @@ void LoadDefaultPara (void){
 			p.hse_ex_outpar [0][IO_STATE] = POLARITY_BIT;
 		}
 	else if(p.simulation == SIMULATION_AUTO)
-		{//Ôö¼Ó SDD1, SDU1 ¹¦ÄÜµÄÊä³ö		
+		{//ï¿½ï¿½ï¿½ï¿½ SDD1, SDU1 ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½		
 			p.hse_outpar [1][IO_BASIC_FUNC] = POS_IN;
 			p.hse_outpar [1][IO_SUB_FUNC] = POS_UPLS;
 			p.hse_outpar [2][IO_BASIC_FUNC] = POS_IN;
 			p.hse_outpar [2][IO_SUB_FUNC] = POS_LPLS;
 		}
-//Ôö¼Ó MSI ¹¦ÄÜµÄÊä³ö	
+//ï¿½ï¿½ï¿½ï¿½ MSI ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½	
 	p.hse_outpar [3][IO_BASIC_FUNC] = POS_IN;
 	p.hse_outpar [3][IO_SUB_FUNC] = POS_SGM;
 
@@ -620,7 +620,7 @@ void LoadDefaultPara (void){
 	p.fve_inpar[11][IO_DOOR] = DOOR1;
 	p.fve_inpar[11][IO_STATE] = POLARITY_BIT;
 
-	p.fve_inpar[12][IO_BASIC_FUNC] = DOOR_IO;			//ÃÅ2ÒÔ¼°ËùÓÐ¹âÄ»ÐÅºÅ½ûÖ¹
+	p.fve_inpar[12][IO_BASIC_FUNC] = DOOR_IO;			//ï¿½ï¿½2ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½Ð¹ï¿½Ä»ï¿½ÅºÅ½ï¿½Ö¹
 	p.fve_inpar[12][IO_SUB_FUNC] = DOOR_OP;
 	p.fve_inpar[12][IO_DOOR] = DOOR2;
 	p.fve_inpar[12][IO_STATE] = POLARITY_BIT;
@@ -667,7 +667,7 @@ void LoadDefaultPara (void){
 	p.fve_outpar [4][IO_SUB_FUNC] = DOOR_OP;
 	p.fve_outpar [4][IO_DOOR] = DOOR1;
 	
-	p.fve_outpar [5][IO_BASIC_FUNC] = DOOR_IO;	//ÃÅ2¿ª¹ØÃÅÊä³ö½ûÖ¹
+	p.fve_outpar [5][IO_BASIC_FUNC] = DOOR_IO;	//ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹
 	p.fve_outpar [5][IO_SUB_FUNC] = DOOR_CL;
 	p.fve_outpar [5][IO_DOOR] = DOOR2;
 	p.fve_outpar [5][IO_ENABLE] = DISABLE;
@@ -794,7 +794,7 @@ void LoadDefaultPara (void){
 		p.ese_inpar[i][0][IO_BASIC_FUNC] = HALL_CALL;
 		p.ese_inpar[i][1][IO_BASIC_FUNC] = HALL_CALL;
 
-		p.ese_outpar[i][0][IO_BASIC_FUNC] = HALL_CALL;				//Êä³öÊÇ¹Ì¶¨µÄ
+		p.ese_outpar[i][0][IO_BASIC_FUNC] = HALL_CALL;				//ï¿½ï¿½ï¿½ï¿½Ç¹Ì¶ï¿½ï¿½ï¿½
 		p.ese_outpar[i][1][IO_BASIC_FUNC] = HALL_CALL;
 		p.ese_outpar[i][2][IO_BASIC_FUNC] = LIGHT_FUNC;
 		p.ese_outpar[i][2][IO_SUB_FUNC] = HALL_LANTERN_UP;
@@ -843,7 +843,7 @@ void LoadDefaultPara (void){
 		ese_enabled [i] = 0xffffffff;
 	ese_enabled[p.ese_number/32] = HSE_MARIN[p.ese_number%32];
 
-//Ôö¼ÓÀ©Õ¹°åµÄÊäÈëÊä³ö EXE
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ EXE
 	ClrWdt();
 	memset(exe_para.exe_inpar, 0x00, sizeof(exe_para.exe_inpar));
 	memset(exe_para.exe_outpar, 0x00, sizeof(exe_para.exe_outpar));
@@ -927,7 +927,7 @@ void LoadDefaultPara (void){
 	password_maintain = 0;
 }
 
-//ÔËÐÐ¿ØÖÆ,
+//ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½,
 void handle_drive(void){
 	static BYTE wait = 0;
 	static DWORD wt = 0;
@@ -936,54 +936,54 @@ void handle_drive(void){
 	
 	switch(nice5000_running_step)
 		{
-			case RCMD2_STEP_IDLE:		//´ý»ú×´Ì¬
+			case RCMD2_STEP_IDLE:		//ï¿½ï¿½ï¿½ï¿½×´Ì¬
 				if(nice5000_Tcmd_data1 & NICE5000_TCMD1_RUN)
-					{//½ÓÊÕµ½Ö÷°åµÄÔËÐÐÖ¸Áî
+					{//ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
 						if(!wait)
 							{
 								wait = 1;
 								dt = timer + 5;
-								wt = timer + 5 SEC;		///5sµÈ´ýÂß¼­°å×¼±¸Ê±¼ä
+								wt = timer + 5 SEC;		///5sï¿½È´ï¿½ï¿½ß¼ï¿½ï¿½ï¿½×¼ï¿½ï¿½Ê±ï¿½ï¿½
 							}
 						else if((wait == 1) && (dt < timer))
-							{//·¢ËÍÔËÐÐÃüÁî				
-								if((nice5000_Tcmd_data4 & 0xF8) == 0xF8) 	//Âß¼­°åÒÑ¾­×¼±¸ºÃ
+							{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½				
+								if((nice5000_Tcmd_data4 & 0xF8) == 0xF8) 	//ï¿½ß¼ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½×¼ï¿½ï¿½ï¿½ï¿½
 									{
 										if(nice5000_Tcmd_data1 & (NICE5000_TCMD1_DOWN | NICE5000_TCMD1_UP))
 											{
 												nice5000_Rcmd_data1 |= NICE5000_RCMD1_RUN;
 												dt = timer + 5;
-												wt = timer + 5 SEC; 	///5sµÈ´ýÂß¼­°å×¼±¸Ê±¼ä
+												wt = timer + 5 SEC; 	///5sï¿½È´ï¿½ï¿½ß¼ï¿½ï¿½ï¿½×¼ï¿½ï¿½Ê±ï¿½ï¿½
 												wait = 2; 
 											}
 										else
 											wait = 0;
 									}
 								else if(wt < timer)
-									{//µÈ´ý5sÂß¼­°å»¹Î´×¼±¸ºÃ
+									{//ï¿½È´ï¿½5sï¿½ß¼ï¿½ï¿½å»¹Î´×¼ï¿½ï¿½ï¿½ï¿½
 										wait = 0;								
 									}
 							}
 						else if((wait == 2) && (dt < timer))
-							{//·¢ËÍ¿ªÕ¢ÃüÁî
+							{//ï¿½ï¿½ï¿½Í¿ï¿½Õ¢ï¿½ï¿½ï¿½ï¿½
 								if(nice5000_Rcmd_data1 & NICE5000_RCMD1_RUN)
 									{
 										nice5000_Rcmd_data1 |= NICE5000_RCMD1_BRAKE;
 										wait = 0;
 										nice5000_running_step = RCMD2_STEP_STARTING;
-										dt = timer + 5;		//1500msÆô¶¯Ê±¼ä
-										wt = timer + 5 SEC; 	///5sµÈ´ýÂß¼­°å×¼±¸Ê±¼ä
+										dt = timer + 5;		//1500msï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+										wt = timer + 5 SEC; 	///5sï¿½È´ï¿½ï¿½ß¼ï¿½ï¿½ï¿½×¼ï¿½ï¿½Ê±ï¿½ï¿½
 									}
 								else if(wt < timer)
 									wait = 0;
 							}
 					}
 				else
-					{//Î´ÊÕµ½ÔËÐÐÃüÁî,½«µçÌÝÍ£¿¿ÔÚµ±Ç°Â¥²ã						
+					{//Î´ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½Úµï¿½Ç°Â¥ï¿½ï¿½						
 					}						
 				break;
 
-			case RCMD2_STEP_STARTING:		//ÕýÔÚ¼ÓËÙ
+			case RCMD2_STEP_STARTING:		//ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½
 			case RCMD2_STEP_ACC_STARTING	:
 			case RCMD2_STEP_ACC_DOING:				
 			case RCMD2_STEP_ACC_ENDING:				
@@ -996,12 +996,12 @@ void handle_drive(void){
 				else					
 					{
 						nice5000_running_step = RCMD2_STEP_IDLE;						
-						nice5000_Rcmd_data1 &= ~(NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE);		//¹Ø±Õ±§Õ¢
+						nice5000_Rcmd_data1 &= ~(NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE);		//ï¿½Ø±Õ±ï¿½Õ¢
 						wait = 0;
 					}
 				break;
 
-			case RCMD2_STEP_EVEN_SPEED:			//ÔÈËÙÔËÐÐ				
+			case RCMD2_STEP_EVEN_SPEED:			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½				
 				if((nice5000_Rcmd_data1 & (NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE))
 						== (NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE))
 					{
@@ -1010,25 +1010,25 @@ void handle_drive(void){
 								if(!wait)
 									{
 										wait = 1;
-										dt = timer + 5;			//½øÈëÄ¿±êÂ¥²ãµÈ´ý 2s ºó¼õËÙ
+										dt = timer + 5;			//ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Â¥ï¿½ï¿½È´ï¿½ 2s ï¿½ï¿½ï¿½ï¿½ï¿½
 									}
 								if((wait == 1) && (dt < timer))
 									{
 										wait = 0;
 										nice5000_running_step = RCMD2_STEP_DEC_STARTING;
-										dt = timer + 5;		//¿ªÊ¼¼õËÙ,½øÈë arrive ×´Ì¬,È»ºóµÈ´ý 1.5s¸ø³ö0ËÙ±êÖ¾
+										dt = timer + 5;		//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ arrive ×´Ì¬,È»ï¿½ï¿½È´ï¿½ 1.5sï¿½ï¿½ï¿½ï¿½0ï¿½Ù±ï¿½Ö¾
 									}								
 							}	
 					}
 				else
 					{
 						nice5000_running_step = RCMD2_STEP_IDLE;						
-						nice5000_Rcmd_data1 &= ~(NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE);		//¹Ø±Õ±§Õ¢
+						nice5000_Rcmd_data1 &= ~(NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE);		//ï¿½Ø±Õ±ï¿½Õ¢
 						wait = 0;
 					}
 				break;
 
-			case RCMD2_STEP_DEC_STARTING:				//¼õËÙ		
+			case RCMD2_STEP_DEC_STARTING:				//ï¿½ï¿½ï¿½ï¿½		
 			case RCMD2_STEP_DEC_DOING:
 			case RCMD2_STEP_DEC_ENDING:
 				if((nice5000_Rcmd_data1 & (NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE))
@@ -1039,7 +1039,7 @@ void handle_drive(void){
 								if((door_zone & POS_SGM) &&
 										((level == target_floor) || (callpriority == C_FIREALARM) || (callpriority == C_FIREMAN)))
 									{
-										nice5000_Rcmd_data1 |= NICE5000_RCMD1_ZEROSPD;		//¸ø³öÁãËÙ±êÖ¾
+										nice5000_Rcmd_data1 |= NICE5000_RCMD1_ZEROSPD;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù±ï¿½Ö¾
 										nice5000_running_step = RCMD2_STEP_0SPD_STOPPING;						
 										wait = 0;
 										dt = timer + 5;
@@ -1050,7 +1050,7 @@ void handle_drive(void){
 				else
 					{
 						nice5000_running_step = RCMD2_STEP_IDLE;						
-						nice5000_Rcmd_data1 &= ~(NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE);		//¹Ø±Õ±§Õ¢
+						nice5000_Rcmd_data1 &= ~(NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE);		//ï¿½Ø±Õ±ï¿½Õ¢
 						wait = 0;
 					}
 				break;
@@ -1060,7 +1060,7 @@ void handle_drive(void){
 					{
 						if((!wait) && (dt < timer))
 							{
-								nice5000_Rcmd_data1 &= ~NICE5000_RCMD1_BRAKE;		//¹Ø±Õ±§Õ¢
+								nice5000_Rcmd_data1 &= ~NICE5000_RCMD1_BRAKE;		//ï¿½Ø±Õ±ï¿½Õ¢
 								wait = 1;
 								dt = timer + 5;
 							}
@@ -1074,9 +1074,9 @@ void handle_drive(void){
 								if(!(nice5000_Tcmd_data1 & (NICE5000_TCMD1_RUN | NICE5000_TCMD1_DOWN
 											| NICE5000_TCMD1_UP | NICE5000_TCMD1_BRAKE)))
 									{
-										nice5000_running_step = RCMD2_STEP_IDLE; 		//½øÈëÍ£ÌÝ
+										nice5000_running_step = RCMD2_STEP_IDLE; 		//ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½
 										nice5000_Rcmd_data1 &= ~(NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE
-																			| NICE5000_RCMD1_DOWN | NICE5000_RCMD1_UP | NICE5000_RCMD1_ZEROSPD); 	//³·³ýÁãËÙ±êÖ¾
+																			| NICE5000_RCMD1_DOWN | NICE5000_RCMD1_UP | NICE5000_RCMD1_ZEROSPD); 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù±ï¿½Ö¾
 										wait = 0;
 									}
 							}
@@ -1084,7 +1084,7 @@ void handle_drive(void){
 				else if(wt < timer)
 					{
 						nice5000_running_step = RCMD2_STEP_IDLE;						
-						nice5000_Rcmd_data1 &= ~(NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE);		//¹Ø±Õ±§Õ¢
+						nice5000_Rcmd_data1 &= ~(NICE5000_RCMD1_RUN | NICE5000_RCMD1_BRAKE);		//ï¿½Ø±Õ±ï¿½Õ¢
 						wait = 0;
 					}
 				break;
@@ -1106,7 +1106,7 @@ void pos_control(void){
 	WORD * ptr = NULL;
 
 	if(p.simulation == SIMULATION_AUTO)
-		{//´¿·ÂÕæ
+		{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			switch(hse_state)
 				{
 					case H_START:
@@ -1157,11 +1157,11 @@ void pos_control(void){
 					pos = INIT_POSITION + floor_higth[level];
 				}
 			if((p.bot_floor <= level) && (level <= p.top_floor))
-				{//´¦ÀíMSI 
+				{//ï¿½ï¿½ï¿½ï¿½MSI 
 					if(!msi_output)
 						{
 							if((pos > floor_higth[level] - 30 + INIT_POSITION) && (pos < floor_higth[level] + 30 + INIT_POSITION))
-								{//ÃÅÇøÄÚ
+								{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 									set_out (POS_IN, POS_SGM, 0, 0, 1, O_HSE);
 									msi_output = 1;
 								}
@@ -1174,7 +1174,7 @@ void pos_control(void){
 						}
 				}
 			if(!sdd1_output)
-				{//SDD1´¦Àí
+				{//SDD1ï¿½ï¿½ï¿½ï¿½
 					if(pos < floor_higth[p.bot_floor] + 150 + INIT_POSITION)
 						{
 							sdd1_output = 1;			
@@ -1187,7 +1187,7 @@ void pos_control(void){
 					set_out (POS_IN, POS_LPLS, 0, 0, 1, O_HSE);
 				}
 			if(!sdu1_output)
-				{//SDU1´¦Àí
+				{//SDU1ï¿½ï¿½ï¿½ï¿½
 					if(pos > floor_higth[p.top_floor] - 150 + INIT_POSITION)
 						{
 							sdu1_output = 1;			
@@ -1222,17 +1222,17 @@ void pos_control(void){
 				}
 		}
 	else if(p.simulation == SIMULATION_DRIVE)
-		{//Ä£Äâ¾®µÀÐÅºÅ
+		{//Ä£ï¿½â¾®ï¿½ï¿½ï¿½Åºï¿½
 			if ((!p.setup_ready) || (!p.motor_tuned) || (nice5000_Rcmd_data2 & NICE5000_RCMD2_SETUP_READY))
-				{//Î´Ñ§Ï°¾®µÀ								
+				{//Î´Ñ§Ï°ï¿½ï¿½ï¿½ï¿½								
 					pos = (((DWORD)nice5000_Rstore_pulseH) << 16) + nice5000_Rstore_pulseL;
 					if(floor)
-						{//´¦ÀíMSI
+						{//ï¿½ï¿½ï¿½ï¿½MSI
 							if(!msi_output)
 								{
 									if((pos > (DWORD)(floor_higth[floor] - 30) * p.simu_mult + INIT_POSITION) &&
 											(pos < ((DWORD)(floor_higth[floor] + 30) * p.simu_mult + INIT_POSITION)))
-										{//ÃÅÇøÄÚ
+										{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 											set_out (POS_IN, POS_SGM, 0, 0, 1, O_HSE);
 											msi_output = 1;
 										}
@@ -1249,7 +1249,7 @@ void pos_control(void){
 							if(!msi_output)
 								{
 									if((pos > INIT_POSITION - 30 * p.simu_mult) && (pos < INIT_POSITION + 30 * p.simu_mult))
-										{//ÃÅÇøÄÚ
+										{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 											set_out (POS_IN, POS_SGM, 0, 0, 1, O_HSE);
 											msi_output = 1;
 										}
@@ -1261,7 +1261,7 @@ void pos_control(void){
 								}
 						}
 					if(!sdd1_output)
-						{//SDD1´¦Àí
+						{//SDD1ï¿½ï¿½ï¿½ï¿½
 							if(pos < ((DWORD)(floor_higth[0] + 150) * p.simu_mult + INIT_POSITION))
 								{
 									sdd1_output = 1;			
@@ -1274,7 +1274,7 @@ void pos_control(void){
 							set_out (POS_IN, POS_LPLS, 0, 0, 1, O_HSE);
 						}
 					if(!sdu1_output)
-						{//SDU1´¦Àí
+						{//SDU1ï¿½ï¿½ï¿½ï¿½
 							if(pos > ((DWORD)(floor_higth[p.top_floor] - 150) * p.simu_mult + INIT_POSITION))
 								{
 									sdu1_output = 1;			
@@ -1309,7 +1309,7 @@ void pos_control(void){
 						}
 				}
 			else
-				{//ÒÑ¾­Ñ§Ï°ÁË¾®µÀ//MSI				
+				{//ï¿½Ñ¾ï¿½Ñ§Ï°ï¿½Ë¾ï¿½ï¿½ï¿½//MSI				
 					pos = 100000ul;							
 					if(level <= p.top_floor)
 						{
@@ -1323,7 +1323,7 @@ void pos_control(void){
 							if(!msi_output)
 								{
 									if((dCurrentPulse > pos - tiv.F4_04/2 + 200) && (dCurrentPulse < pos + tiv.F4_04/2 - 200))
-										{//ÃÅÇøÄÚ
+										{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 											set_out (POS_IN, POS_SGM, 0, 0, 1, O_HSE);
 											msi_output = 1;
 										}
@@ -1337,7 +1337,7 @@ void pos_control(void){
 //SDD1					
 					pos = 100000ul;				
 					if(!sdd1_output)
-						{//SDD1´¦Àí
+						{//SDD1ï¿½ï¿½ï¿½ï¿½
 							if(dCurrentPulse < pos + 150 * p.simu_mult)
 								{
 									sdd1_output = 1;			
@@ -1359,7 +1359,7 @@ void pos_control(void){
 							pos += tiv.F4_04;
 						} 						
 					if(!sdu1_output)
-						{//SDU1´¦Àí
+						{//SDU1ï¿½ï¿½ï¿½ï¿½
 							if(dCurrentPulse > pos - 150 * p.simu_mult)
 								{
 									sdu1_output = 1;			

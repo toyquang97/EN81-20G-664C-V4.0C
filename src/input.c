@@ -7,8 +7,7 @@
 #include "history.h"
 #include "io.h"
 
-extern BYTE  NudingMode;
-extern BYTE  Enabal_opendoor;
+
 /****************************************************************************************************/
 /* handle input																						*/
 /* active: 0=SDO message; 1=PDO message;															*/
@@ -54,7 +53,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 									insp |= (1 << ((virt_in [IO_SUB_FUNC] & 0xF0) >> 4));
 									if(insp & INSP_PITBOX_ACTIVE)
 										{
-//											set_out(SPECIAL_FUNC, RESET_PITBOX, 0, 0, 1, O_CANA | O_CANB);		//������λָʾ��
+//											set_out(SPECIAL_FUNC, RESET_PITBOX, 0, 0, 1, O_CANA | O_CANB);		//µãÁÁ¸´Î»Ö¸Ê¾µÆ
 											pitbox_reset_active |= PIO_0;
 										}
 								}
@@ -65,15 +64,15 @@ void handle_input (BYTE liftnumber, BYTE active)
 										{
 											pitbox_reset_active |= PIO_1;
 											insp |= INSP_PITBOX_ACTIVE;
-											set_out(SPECIAL_FUNC, RESET_PITBOX, 0, 0, 1, O_CANA | O_CANB);		//������λָʾ��
+											set_out(SPECIAL_FUNC, RESET_PITBOX, 0, 0, 1, O_CANA | O_CANB);		//µãÁÁ¸´Î»Ö¸Ê¾µÆ
 										}
 								}
 						}				
-//�����������ȼ�		
+//¼ìÐÞÇø·ÖÓÅÏÈ¼¶		
 					else
 						{
 							if(insp & INSP_TOPCAR_ACTIVE)
-								{//���ް�ť����								
+								{//¼ìÐÞ°´Å¥°´ÏÂ								
 									if((virt_in [IO_SUB_FUNC] == INSP_TOPCAR_UP) || (virt_in [IO_SUB_FUNC] == INSP_TOPCAR_DOWN))
 										{
 											if (virt_in [IO_STATE]) 					/* switch is on 							*/
@@ -99,7 +98,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 								insp_dir_pit = 0;
 							
 							if((insp & (INSP_TOPCAR_ACTIVE | INSP_PITBOX_ACTIVE)) == (INSP_TOPCAR_ACTIVE | INSP_PITBOX_ACTIVE))
-								{//�ζ�������׿Ӽ���ͬʱ��Ч
+								{//½Î¶¥¼ìÐÞÓëµ×¿Ó¼ìÐÞÍ¬Ê±ÓÐÐ§
 									insp_dir = insp_dir_pit & insp_dir_top;
 								}
 							else if(insp & (INSP_TOPCAR_ACTIVE | INSP_PITBOX_ACTIVE))
@@ -167,7 +166,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 							{
 								if((p.cooperate_sel1 & COOP1_THROUGH_DOOR) && 
 										(virt_in [IO_DOOR] == (DOOR1 | DOOR2)))
-									{//��ͨ�ŵĴ���
+									{//¹áÍ¨ÃÅµÄ´¦Àí
 										door = virt_in [IO_DOOR] & p.doorpos[level] & p.she_doornumber;
 										if(door)
 											dooropenpush = door;
@@ -176,9 +175,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 									}
 								else
 									dooropenpush = virt_in [IO_DOOR];
-								if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL) &&(Enabal_opendoor))
-							//	if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL))
-	
+								if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL))
 									{
 										door = dooropenpush & p.doorpos[level];
 										if(door)
@@ -227,7 +224,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 								{
 									she_doorstoppush |= door;
 									++she_doorstoppush_count;
-									if(she_doorstoppush_count > 2)		//���ֻ����2�� HOLD ����
+									if(she_doorstoppush_count > 2)		//×î¶àÖ»´æÔÚ2¸ö HOLD ¿ª¹Ø
 										she_doorstoppush_count = 2;
 								}
 							else
@@ -244,7 +241,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 										she_doorstoppush = 0;
 								}							
 							if(she_doorstoppush)
-								{// HOLD ���صĴ���
+								{// HOLD ¿ª¹ØµÄ´¦Àí
 									door = she_doorstoppush & p.doorpos[level] & p.she_doornumber;
 									if(door)
 										doorstoppush = door;
@@ -350,7 +347,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 					break;
 					
 
-//=========================             �����Ǻ�����صĹ���               =========================
+//=========================             ÒÔÏÂÊÇºôÌÝÏà¹ØµÄ¹¦ÄÜ               =========================
 					case (KEY_SPECIAL):
 						special_key = virt_in [IO_STATE]; 	/* save state of special key on 				*/
 						break;
@@ -414,7 +411,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 						ups_brake = virt_in [IO_STATE];
 						break;
 						
-//����Ӧ����Դ����
+//Ôö¼ÓÓ¦¼±µçÔ´¹¦ÄÜ
 					case (EMP_POWER): 					/* fireman call 								*/
 						emp_power = virt_in [IO_STATE];
 						if (emp_power)
@@ -423,9 +420,9 @@ void handle_input (BYTE liftnumber, BYTE active)
 								emp_doors = virt_in [IO_DOOR];			/* save doors for fire call 					*/
 							}
 						break;
-//����Ӧ����Դ����
+//Ôö¼ÓÓ¦¼±µçÔ´¹¦ÄÜ
 
-					case (EVACUATION_ACTIVE): 						/* evacuation on / off	evac_active �ź���enable�ź�ͬ��������evac_active��ǰ 					*/
+					case (EVACUATION_ACTIVE): 						/* evacuation on / off	evac_active ÐÅºÅÓëenableÐÅºÅÍ¬²½£¬»òÕßevac_activeÔÚÇ° 					*/
 						if ((!evacuation) && (virt_in [IO_STATE]))
 							{ 									/* evacuation switched on 					*/
 								evacuation = 1;
@@ -540,7 +537,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 					case RESET_PITBOX:
 						if((!virt_in [IO_STATE]) && (bFunc_flag & FUNC_PITBOX_RESET_HOLD))
 							{
-								i = INSP_PITBOX_ACTIVE;			//��Ҫ��λ��ť�ͷŲſ��Ը�λ
+								i = INSP_PITBOX_ACTIVE;			//ÐèÒª¸´Î»°´Å¥ÊÍ·Å²Å¿ÉÒÔ¸´Î»
 								bFunc_flag &= ~FUNC_PITBOX_RESET_HOLD;
 							}
 						else
@@ -558,7 +555,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 							}
 						break;
 
-//=======================              ��������������              ====================================
+//=======================              ÒÔÏÂÊÇÏû·À¹¦ÄÜ              ====================================
 					case (FIRE_SERVICE_ENABLE): 			/* fireman service enabled						*/
 						firekey = virt_in [IO_STATE];
 						break;
@@ -593,7 +590,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 								if (callpriority == C_FIREALARM)			/* ignore input if lift not in fire alarm state */
 									firealarmreturn = 1;
 								else if((callpriority == C_FIREMAN) && (!firekey) && (!auto_fire))
-									{//����Ա���в�����
+									{//Ïû·ÀÔ±ÔËÐÐ²»´¦Àí
 										firecall = 0;
 										firemode = 0; 									
 									}
@@ -757,14 +754,14 @@ void handle_input (BYTE liftnumber, BYTE active)
 				door_io [i] &= ~NOT_AVAILABLE;
 	  	}
 			if(virt_in [IO_SUB_FUNC] == DOOR_REV)
-				{//��ȫ����
+				{//°²È«´¥°å
 					if (virt_in [IO_STATE]) 							/* light screen is on (interrupted) 			*/
 						ls_state |= (virt_in [IO_DOOR] << 4);
 					else
 						ls_state &= ~(virt_in [IO_DOOR] << 4);
 				}
 			if(virt_in [IO_SUB_FUNC] == DOOR_CL_LIMIT)
-				{//���ŵ�λ����
+				{//¹ØÃÅµ½Î»¿ª¹Ø
 					if (virt_in [IO_STATE]) 							/* light screen is on (interrupted) 			*/
 						door_closeswitch_limit |= virt_in [IO_DOOR];
 					else
@@ -933,7 +930,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 								zeroload &&								/* car is empty								*/
 								(callpriority == C_STANDARD) &&
 								number_of_calls (p.max_cc_empty, CARCALL))
-						{/* do nothing	��������¶�����ݲ��Ǽ�							*/
+						{/* do nothing	¿ÕÔØÇé¿öÏÂ¶à¸öºôÌÝ²»µÇ¼Ç							*/
 						}
 						else
 						{										/* set call acknowledgement					*/
