@@ -999,6 +999,8 @@ void standstill_state (void)
 						set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 0 , O_CANA); 
 				}
 		}
+
+		///
 		if (handle_dooropenpush ())							/* handle door open push						*/
 		{
 			doorstaystate = D_STAYTIME;
@@ -1006,6 +1008,8 @@ void standstill_state (void)
 			((ct - timer) <= (doorstaytime_cc SEC)))			/* or open stay time with landing calls over		*/
 				ct = timer + (doorstaytime_cc SEC);			/* Timer for door open stay time with car call	*/
 		}
+		///// sua nugding
+
 		if(!Enabal_opendoor)
 		{
 			if(timer > Nudging_opendoor_timer_count)
