@@ -840,8 +840,6 @@ void set_call_priority (void){
 			if ((!firekeystate) &&								/* firekey was not on or repeat fire call		*/
 			(firefloor >= p.bot_floor) && (firefloor <= p.top_floor))
 			{
-				set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,1 , O_CANA);
-				//set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 1 , O_CANA);   //buzzer on
 				calltab [firefloor].calltype |= PRIOR_CARCALL;	/* write call to call table			*/
 				calltab [firefloor].cc_door |= (firedoors & p.doorpos [firefloor]);
 				firecallstate = 1;							/* fire call started				*/
@@ -866,7 +864,6 @@ void set_call_priority (void){
 				{
 					firecallready = 0;
 					auto_fire = 0;							/* set firekey as off				*/
-					set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA);
 				}
 			}
 		}

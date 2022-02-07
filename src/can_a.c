@@ -59,7 +59,7 @@ void WriteCanA (void)
 // ����ֵ: ��
 //***************************************************
 extern DWORD Nudging_timer_count;
-extern BYTE  NudingMode;
+extern BYTE  NugdingMode;
 extern DWORD Nudging_Buz_timer_count;
 extern DWORD Nudging_opendoor_timer_count;
 void ReadCanA (void)
@@ -102,10 +102,10 @@ void ReadCanA (void)
 				case (1):									// door state door 1
 				case (2):									// door state door 2
 				case (3):									// door state door 3
-          	if((door_state[0] == DOOR_CLOSED) && (NudingMode))
+          	if((door_state[0] == DOOR_CLOSED) && (NugdingMode))
 					{
 						Nudging_Buz_timer_count = 0-1;
-						NudingMode = 0;
+						NugdingMode = 0;
 						set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA); 
 						set_out (SPEAKER_BUZ, BUZZER_NORMAL, 0, EXISTING_DOORS, 0 , O_CANA); 
 						Nudging_opendoor_timer_count = timer + 5 SEC;

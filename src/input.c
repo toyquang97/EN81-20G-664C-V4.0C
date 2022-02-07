@@ -7,7 +7,7 @@
 #include "history.h"
 #include "io.h"
 
-extern BYTE  NudingMode;
+extern BYTE  NugdingMode;
 extern BYTE  Enabal_opendoor;
 /****************************************************************************************************/
 /* handle input																						*/
@@ -163,7 +163,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 					if ((!virt_in [IO_FLOOR]) ||			/* door open push inside the car				*/
 						((virt_in [IO_FLOOR] - 1) == level))	/* door open push in a landing					*/
 					{
-						if (virt_in [IO_STATE])			/* door open push presses						*/
+						if (virt_in [IO_STATE] && (Enabal_opendoor))			/* door open push presses and enable when nuding on					*/
 							{
 								if((p.cooperate_sel1 & COOP1_THROUGH_DOOR) && 
 										(virt_in [IO_DOOR] == (DOOR1 | DOOR2)))
@@ -176,7 +176,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 									}
 								else
 									dooropenpush = virt_in [IO_DOOR];
-								if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL) &&(Enabal_opendoor))
+								if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL) )
 							//	if ((!door_close_open) && (!firedoormode) && (hse_state == H_STANDSTILL))
 	
 									{

@@ -10,7 +10,7 @@
 #include "Nice5000.h"
 
 DWORD Nudging_timer_count =0-1;
-BYTE  NudingMode =0;
+BYTE  NugdingMode =0;
 BYTE  Enabal_opendoor =1;
 BYTE hhhhhhhhh =0,tttttttt =0;
 DWORD Nudging_Buz_timer_count =0-1;
@@ -191,8 +191,6 @@ BYTE handle_dooropenpush (void)
 
 	BYTE i = 0;
 	static BYTE dooropenpush_old = 0;
-	if(!Enabal_opendoor)
-		return 0;
 	dooropenpush &= p.doorpos [level];				/* only use existing shaft doors		*/
 	if (callpriority == C_FIREMAN)					/* lift is in fireman mode				*/
 	{
@@ -947,54 +945,55 @@ void standstill_state (void)
 			//clearcalls (CARCALL | PRIOR_CARCALL);	
 			//clearcalls (ALL_HALL_CALLS);
 		
-		// if(callpriorityold != callpriority)
-		// {
-		// 	Nudging_timer_count = (0-1);
-		// 	callpriorityold == callpriority;
-		// }
-		if(level != p.fire_floor[0])
+		if(callpriorityold != callpriority)
 		{
-				if(!(callpriority == C_FIREALARM)) // C_FIREALARM
-				{
-					NudingMode = 0;
-					Nudging_timer_count = 0-1;
-					Nudging_Buz_timer_count = 0-1;
-				}
-				else
-				{
+			Nudging_timer_count = (0-1);
+			callpriorityold = callpriority;
+			if(((callpriority == C_FIREALARM) && (level != p.fire_floor[0])) ||((callpriority == C_FIREMAN) && (level != firefloor)))
+			{
 					if((Nudging_timer_count == (0-1)) && (door_state[0] != DOOR_CLOSED) )
 					{
 						Nudging_timer_count = timer+ 15 SEC;
 					}
-				}
-				if( timer > Nudging_timer_count  )
-				{
-					//over 2min
-					Nudging_timer_count = 0-1;
-					set_door(ALL_DOORS_CLOSED,CLOSE_DOOR); // close door
-					//out nudging
-					set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,1 , O_CANA);  
-					set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 1 , O_CANA);   //buzzer on
-					set_out (SPECIAL_FUNC, DOOR_OPEN, 0, EXISTING_DOORS, 0, O_CANA);  //turn off open led
-					set_out (SPECIAL_FUNC, DOOR_CLOSE, 0, EXISTING_DOORS, 1, O_CANA); //turn on open led
-					NudingMode = 1;
-					Enabal_opendoor =0;
-					Nudging_Buz_timer_count = timer +4 SEC;
-				}
-				if( timer > Nudging_Buz_timer_count  )
-				{
-					set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 1 , O_CANA);
-					Nudging_Buz_timer_count = timer +4 SEC;
-				}
+					// if(!(callpriority == C_FIREALARM)) // C_FIREALARM
+					// {
+					// 	NugdingMode = 0;
+					// 	Nudging_timer_count = 0-1;
+					// 	Nudging_Buz_timer_count = 0-1;
+					// }
+					// else
+					// {
+						
+					// }
+
+			}
 		}
-		
-		if(NudingMode)
+		if( timer > Nudging_timer_count  )
 		{
-			if(callpriority != C_FIREALARM) //C_FIREALARM
+			//over 2min
+			Nudging_timer_count = 0-1;
+			set_door(ALL_DOORS_CLOSED,CLOSE_DOOR); // close door
+			//out nudging
+			set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,1 , O_CANA);  
+			set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 1 , O_CANA);   //buzzer on
+			set_out (SPECIAL_FUNC, DOOR_OPEN, 0, EXISTING_DOORS, 0, O_CANA);  //turn off open led
+			set_out (SPECIAL_FUNC, DOOR_CLOSE, 0, EXISTING_DOORS, 1, O_CANA); //turn on open led
+			NugdingMode = 1;
+			Enabal_opendoor =0;
+			Nudging_Buz_timer_count = timer +4 SEC;
+		}
+		if( timer > Nudging_Buz_timer_count  )
+		{
+			set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 1 , O_CANA);
+			Nudging_Buz_timer_count = timer +4 SEC;
+		}
+		if(NugdingMode)
+		{
+			if((callpriority != C_FIREALARM) && (callpriority != C_FIREMAN)) //C_FIREALARM
 				{
 						Enabal_opendoor =1;
 						Nudging_Buz_timer_count = 0-1;
-						NudingMode = 0;
+						NugdingMode = 0;
 						set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA); 
 						set_out (SPEAKER_BUZ, BUZZER_FIRE, 0, EXISTING_DOORS, 0 , O_CANA); 
 				}
@@ -1290,7 +1289,7 @@ void standstill_state (void)
 					cl_op_fg = 0;
 				}
 			else if(((door_state[0] == DOOR_CLOSED) && (door_close_open & 1))
-						|| ((door_state[1] == DOOR_CLOSED) && (door_close_open & 2)))
+						|| ((door_state[1] == DOOR_CLOSED) && (door_close_open & 2)) && (!NugdingMode))
 				{
 					set_out (SPECIAL_FUNC, DOOR_CLOSE, 0, EXISTING_DOORS, 0, O_CANA);
 					door_close_open = 0;
