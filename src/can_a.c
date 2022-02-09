@@ -11,6 +11,7 @@
 #include "io.h"
 #include "bootloader.h"
 #include "version.h"
+#include <limits.h>
 
 
 //***************************************************
@@ -58,10 +59,11 @@ void WriteCanA (void)
 // ����: ��
 // ����ֵ: ��
 //***************************************************
-extern DWORD Nudging_timer_count;
-extern BYTE  NugdingMode;
-extern DWORD Nudging_Buz_timer_count;
-extern DWORD Nudging_opendoor_timer_count;
+extern DWORD nudgingTimerCount;
+extern BYTE  isNudgingMode;
+extern DWORD nudgingTimerBuzCount;
+extern DWORD nudgingTimerOpenDoorCount;
+
 void ReadCanA (void)
 {
 	WORD wordvalue;
@@ -102,14 +104,14 @@ void ReadCanA (void)
 				case (1):									// door state door 1
 				case (2):									// door state door 2
 				case (3):									// door state door 3
-          	if((door_state[0] == DOOR_CLOSED) && ((Nudging_timer_count != 0-1) || (NugdingMode)))
+          	if((door_state[0] == DOOR_CLOSED) && ((nudgingTimerCount != UINT_MAX) || (isNudgingMode)))
 					{
-						Nudging_timer_count =0-1;
-						Nudging_Buz_timer_count = 0-1;
-						NugdingMode = 0;
+						nudgingTimerCount =UINT_MAX;
+						nudgingTimerBuzCount = UINT_MAX;
+						isNudgingMode = 0;
 						set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA); 
 						set_out (SPEAKER_BUZ, BUZZER_NORMAL, 0, EXISTING_DOORS, 0 , O_CANA); 
-						Nudging_opendoor_timer_count = timer + 5 SEC;
+						nudgingTimerOpenDoorCount = timer + 5 SEC;
 					}
 
 					door_state [id - 1] = *(WORD *)&rxa [roa][2];		// read door state
