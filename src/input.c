@@ -7,8 +7,8 @@
 #include "history.h"
 #include "io.h"
 
-extern BYTE  NugdingMode;
-extern BYTE  Enabal_opendoor;
+extern BYTE  isNudgingMode;
+extern BYTE  enableOpenDoor;
 /****************************************************************************************************/
 /* handle input																						*/
 /* active: 0=SDO message; 1=PDO message;															*/
@@ -163,7 +163,7 @@ void handle_input (BYTE liftnumber, BYTE active)
 					if ((!virt_in [IO_FLOOR]) ||			/* door open push inside the car				*/
 						((virt_in [IO_FLOOR] - 1) == level))	/* door open push in a landing					*/
 					{
-						if (virt_in [IO_STATE] && (Enabal_opendoor))			/* door open push presses and enable when nuding on					*/
+						if (virt_in [IO_STATE] && (enableOpenDoor))			/* door open push presses and enable when nuding on					*/
 							{
 								if((p.cooperate_sel1 & COOP1_THROUGH_DOOR) && 
 										(virt_in [IO_DOOR] == (DOOR1 | DOOR2)))
