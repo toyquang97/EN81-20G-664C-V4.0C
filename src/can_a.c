@@ -102,8 +102,9 @@ void ReadCanA (void)
 				case (1):									// door state door 1
 				case (2):									// door state door 2
 				case (3):									// door state door 3
-          	if((door_state[0] == DOOR_CLOSED) && (NugdingMode))
+          	if((door_state[0] == DOOR_CLOSED) && ((Nudging_timer_count != 0-1) || (NugdingMode)))
 					{
+						Nudging_timer_count =0-1;
 						Nudging_Buz_timer_count = 0-1;
 						NugdingMode = 0;
 						set_out (DOOR_IO, DOOR_REV, 0, EXISTING_DOORS,0 , O_CANA); 

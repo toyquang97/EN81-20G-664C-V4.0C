@@ -6,7 +6,7 @@
 #include "canopen.h"
 #include "rtc.h"
 
-//Ä£ÄâÔËÐÐÊ¹ÓÃ³£Á¿
+//Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã³ï¿½ï¿½ï¿½
 #define	SIMULATION_AUTO		2
 #define	SIMULATION_DRIVE		1
 
@@ -37,7 +37,7 @@
 #define MAX_ESE_OUT			8
 #define MAX_ACCESS_IN			8
 #define MAX_ACCESS_OUT			4
-#define MAX_ESE_PER_F_D		3					//Ã¿²ãÃ¿¸öÃÅ×î¶à¶ÔÓ¦µÄese¸öÊý
+#define MAX_ESE_PER_F_D		3					//Ã¿ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½eseï¿½ï¿½ï¿½ï¿½
 #define MAX_ESE_DW			((MAX_ESE+31)/32)
 #define	MAX_IO_TYPE		7
 
@@ -188,65 +188,65 @@
 #define	CARD_TYPE_ATTEND		6
 #define	CARD_TYPE_LIFTOFF		7
 
-//±äÁ¿ bFunc_flag µÄÎ»¶¨Òå
-#define	FUNC_MSI_CHANGE				0x01		//ÃÅÇøÐÅºÅ±ä»¯
-#define	FUNC_DOORSTOP_TIMEOUT	0x02		//ÑÓÊ±¹ØÃÅ°´Å¥Ê±¼äµ½
-#define	FUNC_ARRIVEGONG_TIMEIN	0x04		//µ½Õ¾ÖÓÒ¹¼äÊ±¼äµ½
-#define	FUNC_FIRE_DOORCLOSE			0x10		//·äÃùÆ÷Ãù½ÐµÄÊ±¼äµ½
-#define	FUNC_OVERSPEEP_ACTIVE		0x40	//¶ËÕ¾³¬ËÙ±êÖ¾
-#define	FUNC_CANA_INIT					0x80	//CANA ³õÊ¼»¯±êÖ¾
-#define	FUNC_CANA_ERROR				0x100	//CANA ´íÎó±êÖ¾
-#define	FUNC_SDD1_SDU1_ON				0x1000	///2¸öÒ»¼¶Ç¿¼õÐÅºÅÉúÐ§±êÖ¾
+//ï¿½ï¿½ï¿½ï¿½ bFunc_flag ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
+#define	FUNC_MSI_CHANGE				0x01		//ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ±ä»¯
+#define	FUNC_DOORSTOP_TIMEOUT	0x02		//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Å°ï¿½Å¥Ê±ï¿½äµ½
+#define	FUNC_ARRIVEGONG_TIMEIN	0x04		//ï¿½ï¿½Õ¾ï¿½ï¿½Ò¹ï¿½ï¿½Ê±ï¿½äµ½
+#define	FUNC_FIRE_DOORCLOSE			0x10		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ê±ï¿½äµ½
+#define	FUNC_OVERSPEEP_ACTIVE		0x40	//ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½Ù±ï¿½Ö¾
+#define	FUNC_CANA_INIT					0x80	//CANA ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ö¾
+#define	FUNC_CANA_ERROR				0x100	//CANA ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
+#define	FUNC_SDD1_SDU1_ON				0x1000	///2ï¿½ï¿½Ò»ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½Ð§ï¿½ï¿½Ö¾
 #define	FUNC_PITBOX_RESET_HOLD		0x2000	
 
-//±äÁ¿ p.fan_mode µÄÎ»¶¨Òå
-#define	FAN_AUTOMATIC		0x01		//×Ô¶¯Ä£Ê½
-#define	FAN_FIRE					0x02		//Ïû·À×´Ì¬ÏÂ·çÉÈ²»¹¤×÷
+//ï¿½ï¿½ï¿½ï¿½ p.fan_mode ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
+#define	FAN_AUTOMATIC		0x01		//ï¿½Ô¶ï¿½Ä£Ê½
+#define	FAN_FIRE					0x02		//ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½Â·ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½
 
-//±äÁ¿ p.ups_direction_mode µÄÎ»¶¨Òå
-#define	UPS_DIR_SEL		0x01		//Ñ¡Ôñ±äÆµÆ÷µÄ·½Ïò
-#define	UPS_NO_TIME	0x02		//¾ÈÔ®Ê±²»¼ì²âÔËÐÐÊ±¼ä
-#define	UPS_ALARM		0x04		//¾ÈÔ®Ê±½ÎÏá·äÃùÆ÷Ãù½Ð
-#define	UPS_RETURN		0x08		//¾ÈÔ®µÄÍË³öÑ¡Ôñ(0: ¿ªÃÅÍ£µçÍË³ö£¬1: ¹ØÃÅÍ£µçÍË³ö)
+//ï¿½ï¿½ï¿½ï¿½ p.ups_direction_mode ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
+#define	UPS_DIR_SEL		0x01		//Ñ¡ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
+#define	UPS_NO_TIME	0x02		//ï¿½ï¿½Ô®Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+#define	UPS_ALARM		0x04		//ï¿½ï¿½Ô®Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define	UPS_RETURN		0x08		//ï¿½ï¿½Ô®ï¿½ï¿½ï¿½Ë³ï¿½Ñ¡ï¿½ï¿½(0: ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½1: ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½Ë³ï¿½)
 
-//±äÁ¿ p.cooperate_sel1 µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.cooperate_sel1 ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	COOP1_ARRIVE_NIGHTGONG	0x01
 #define	COOP1_DIVING_NOTIME			0x02
 #define	COOP1_DIVING_GONG				0x04
 #define	COOP1_INSP_RETURN				0x10
 #define	COOP1_THROUGH_DOOR			0x20
 
-//±äÁ¿ p.cooperate_sel2 µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.cooperate_sel2 ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	COOP2_CL_LIMIT	0x80
 
 
-//±äÁ¿ p.landingcall_push µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.landingcall_push ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	PUSH_NOT_OPEN	0x01
 #define	PUSH_ALARM			0x02
 #define	PUSH_STOP_SHIP	0x04
 
-//±äÁ¿ p.forced_stop µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.forced_stop ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	FORCED_TIME	0x01
 #define	FORCED_INPUT	0x02
 
-//±äÁ¿ p.remote_off_func µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.remote_off_func ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	REMOTE_LIGHT		0x01
 #define	REMOTE_CALL		0x02
 #define	REMOTE_TIME		0x04
 
-//±äÁ¿ p.attend_carcall µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.attend_carcall ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	ATTEND_HALLCALL_CARENABLE	0x01
 #define	ATTEND_CANCEL_CALL					0x02
 #define	ATTEND_DOOR_MODE					0x10
 #define	ATTEND_SPEEKER							0x20
 
-//±äÁ¿ p.custumer1 µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.custumer1 ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	CUSTUMER1_SHE_MODE				0x02
 
-//±äÁ¿ p.normal_cc_advanced µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.normal_cc_advanced ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	VIPRUN_CARCALL_ENABLE		0x01
 
-//±äÁ¿ p.firealarm_function µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.firealarm_function ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	FIREALARM_FORCE_CLOSE			0x01
 #define	FIREALARM_DOORPARK_MODE	0x02
 #define	FIREALARM_DYNAMIC				0x04
@@ -255,7 +255,7 @@
 #define	FIREALARM_CROSS_FIREFLOOR	0x20
 #define	FIREALARM_DISP_LIGHT			0x40
 
-//±äÁ¿ p.fireman_function1 µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.fireman_function1 ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	FIREMAN1_DOOR_MAINFLOOR		0x01
 #define	FIREMAN1_PHASE1_DOORSPEED		0x02
 #define	FIREMAN1_PHASE2_DOORSPEED		0x04
@@ -263,7 +263,7 @@
 #define	FIREMAN1_RETURN_MAINFLOOR	0x10
 #define	FIREMAN1_AUTO_FIREMODE			0x20
 
-//±äÁ¿ p.lift_func_sel1 µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.lift_func_sel1 ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	LIFTFUN1_DOORSHORT_REVEL			0x01
 #define	LIFTFUN1_PRESS_CLOSEBUTTOM			0x02
 #define	LIFTFUN1_CHECK_ROOM_TEMP			0x08
@@ -271,14 +271,14 @@
 #define	LIFTFUN1_BYPASSLC_DOORZONE			0x20
 #define	LIFTFUN1_CHECK_OVERSPEED			0x80
 
-//±äÁ¿ p.call_disable_enable µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ p.call_disable_enable ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	CALL_DISEN_DISCALL		0x01
 #define	CALL_DISEN_ENCALL			0x02
 #define	CALL_DISEN_AUTO_CC		0x04
 #define	CALL_DISEN_AUTO_LC		0x08
 #define	CALL_DISEN_PRIORITY		0x10
 
-//±äÁ¿ ls_state µÄÎ»¶¨Òå
+//ï¿½ï¿½ï¿½ï¿½ ls_state ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 #define	LS_STATE_DOOR1		0x01
 #define	LS_STATE_DOOR2		0x02
 #define	LS_STATE_DOOR3		0x04
@@ -287,12 +287,12 @@ struct Parameter
 {
 	BYTE ucmp_enable;
 	BYTE ucmp_test_dir;			
-	BYTE emp_power_door;		///0: ²»¿ªÃÅ  1: ¿ªÃÅ1  2: ¿ªÃÅ2   3: ¿ªÃÅ1£¬ÃÅ2
-	BYTE custumer1;				//ÓÃ»§¹¦ÄÜµÄÑ¡ÔñÄ£Ê½			
+	BYTE emp_power_door;		///0: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  1: ï¿½ï¿½ï¿½ï¿½1  2: ï¿½ï¿½ï¿½ï¿½2   3: ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½2
+	BYTE custumer1;				//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Üµï¿½Ñ¡ï¿½ï¿½Ä£Ê½			
 	BYTE bot_floor;	// bottom floor (0 - 62)
 	BYTE top_floor;	// top floor (1 - 63)
 
-	BYTE back3;			//×Ö¶ÔÆë£¬Ôö¼Ó 2byte, Ò»¹² 6byte
+	BYTE back3;			//ï¿½Ö¶ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ 2byte, Ò»ï¿½ï¿½ 6byte
 	BYTE back4;
 	BYTE back5;
 	BYTE arrivegong_stoptime;
@@ -361,8 +361,8 @@ struct Parameter
 	BYTE dn_peak_stop_h3;							// stop  time for down peak traffic
 	BYTE dn_peak_stop_m3;							// stop  time for down peak traffic
 	DWORD level [MAX_FLOOR - 6];					// floor positions (absolute)
-	WORD ucmp_door_height;						//½ÎÏáÃÅ¸ß¶È
-	WORD ucmp_car_apron;						//½ÎÏá»¤½Å°å³¤¶È
+	WORD ucmp_door_height;						//ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ß¶ï¿½
+	WORD ucmp_car_apron;						//ï¿½ï¿½ï¿½á»¤ï¿½Å°å³¤ï¿½ï¿½
 	WORD arrival_speed;							// speed limit for advanced door opening
 	BYTE adv_door_op;							// advanced door opening: yes=1, no=0
 	BYTE relevel;								// re-levelling enabled: yes=1, no=0
@@ -381,7 +381,7 @@ struct Parameter
 	BYTE remote_off_floor;						// floor for remote switch off
 	BYTE remote_off_door;						// doors for remote switch off
 	BYTE remote_off_func;						// car light state when remote switch off
-	BYTE fan_mode;								// ·çÉÈ¹¤×÷Ä£Ê½Éè¶¨
+	BYTE fan_mode;								// ï¿½ï¿½ï¿½È¹ï¿½ï¿½ï¿½Ä£Ê½ï¿½è¶¨
 
 	BYTE remote_starttime;
 	WORD fan_time;								// cabin fan: time delay
@@ -431,12 +431,12 @@ struct Parameter
 	BYTE back20;
 
 	BYTE fireman_function1;
-			//	bit0: 1-->Ïû·À»ùÕ¾µÄÃÅÊôÓÚÏû·ÀÃÅ    									0-->Ïû·À»ùÕ¾µÄÃÅ×Ô¶¯´ò¿ª 
-			//bit1: 1-->Ïû·ÀµÚ I ½×¶Î£¬µÍËÙ¹ØÃÅ 										0-->Ïû·ÀµÚ I ½×¶Î£¬Õý³£¹ØÃÅ
-			//bit2: 1-->Ïû·ÀµÚ II ½×¶Î£¬µÍËÙ¹ØÃÅ 									0-->Ïû·ÀµÚ II ½×¶Î£¬Õý³£¹ØÃÅ
-			//bit3: 1-->Ïû·ÀÔ±ÐÅºÅÏû³ýºó£¬µçÌÝ×Ô¶¯ÖØ·µÏû·À»ùÕ¾   			0-->²»×Ô¶¯£¬ÐèÒªÈËÎªºôÌÝ
-			//bit4: 1-->´ïµ½Ïû·À»ùÕ¾²Å¿ÉÒÔÍË³öÏû·À×´Ì¬(bit3=0)   			0-->²»ÐèÒªµ½´ïÏû·À»ùÕ¾¾Í¿ÉÒÔÍË³ö
-			//bit5: 1-->fire call ÐÅºÅ×Ô¶¯½øÈëÏû·ÀÔ±(Ò²¿ÉÒÔ×Ô¶¯ÍË³ö)		0-->ÐèÒªÏû·ÀÔ±¿ª¹Ø
+			//	bit0: 1-->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½    									0-->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ 
+			//bit1: 1-->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ I ï¿½×¶Î£ï¿½ï¿½ï¿½ï¿½Ù¹ï¿½ï¿½ï¿½ 										0-->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ I ï¿½×¶Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			//bit2: 1-->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ II ï¿½×¶Î£ï¿½ï¿½ï¿½ï¿½Ù¹ï¿½ï¿½ï¿½ 									0-->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ II ï¿½×¶Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			//bit3: 1-->ï¿½ï¿½ï¿½ï¿½Ô±ï¿½Åºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬µï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾   			0-->ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½
+			//bit4: 1-->ï¿½ïµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬(bit3=0)   			0-->ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½Í¿ï¿½ï¿½ï¿½ï¿½Ë³ï¿½
+			//bit5: 1-->fire call ï¿½Åºï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±(Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½Ë³ï¿½)		0-->ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
 	BYTE timer_clearcall;						// clear calls if timer trip
 	BYTE timertrip_start;						// time to start timer trip
 	BYTE timertrip_stop;						// time to stop timer trip
@@ -464,13 +464,13 @@ struct Parameter
 	BYTE back19;
 	BYTE parkdoor [MAX_FLOOR];					// park state of door in different floors
 	BYTE parkdoormode [MAX_DOOR];				// bit0: general park state of every door
-																			//bit7: =0 ¿ªÃÅ°´Å¥´ò¿ª¶ÔÓ¦µÄÃÅ    1: Ö»´ò¿ªÎ´¹Ø±ÕµÄÃÅ
+																			//bit7: =0 ï¿½ï¿½ï¿½Å°ï¿½Å¥ï¿½ò¿ª¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½    1: Ö»ï¿½ï¿½Î´ï¿½Ø±Õµï¿½ï¿½ï¿½
 	WORD doorrelaytime_cl [MAX_DOOR];			// max. door close relay on time
 	BYTE rampmode [MAX_DOOR];					// mode for retiring ramp on / off
 	BYTE ramptiming [MAX_DOOR];					// retiring ramp off before or after car door
 	WORD doorstoptime;							// time for door stop push
 	WORD dooropendelay [MAX_DOOR];				// door open delay after retiring ramp off
-	WORD ucmp_car_distance;					//ÌüÃÅµØ¿²µ½½ÎÏáÃÅµØ¿²µÄ¾àÀë
+	WORD ucmp_car_distance;					//ï¿½ï¿½ï¿½ÅµØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅµØ¿ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½
 	WORD rampdelay [MAX_DOOR];					// retiring ramp on delay after revolving door
 	WORD doorstaytime_main_cc;					// door stay time if only car call (main floor)
 	WORD doorstaytime_main_lc;					// door stay time if also hall call (main floor)
@@ -487,10 +487,10 @@ struct Parameter
 	BYTE up_peak_parkfloor;						// park floor in up peak traffic
 	BYTE dn_peak_parkfloor;						// park floor in down peak traffic
 
-	BYTE cooperate_sel1;		//µçÌÝ¹¦ÄÜÑ¡Ôñ 
+	BYTE cooperate_sel1;		//ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ 
 	BYTE arrivegong_starttime;
-	BYTE cooperate_sel2;		//µçÌÝ¹¦ÄÜÑ¡Ôñ 
-		//bit7: 1-->ÆôÓÃ½ÎÃÅ¹ØÃÅµ½Î»µÄ»úÐµ¿ª¹Ø(Ö»¶ÔÃÅÅÔÂ·×°ÖÃÓÐÐ§)			0-->²ÉÓÃ±ê×¼Ä£Ê½
+	BYTE cooperate_sel2;		//ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ 
+		//bit7: 1-->ï¿½ï¿½ï¿½Ã½ï¿½ï¿½Å¹ï¿½ï¿½Åµï¿½Î»ï¿½Ä»ï¿½Ðµï¿½ï¿½ï¿½ï¿½(Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·×°ï¿½ï¿½ï¿½ï¿½Ð§)			0-->ï¿½ï¿½ï¿½Ã±ï¿½×¼Ä£Ê½
 	WORD evacuationtime;						// max. waiting time for evacuation enable	
 	BYTE evaction_waittime;
 	BYTE back30;									
@@ -512,25 +512,25 @@ struct Parameter
 	BYTE forced_stoptime;
 	
 	BYTE back31;		
-	WORD brake_check_time;		//±§Õ¢Á¦×Ô¶¯¼ì²âµÄÊ±¼ä(Ç§Î»°ÙÎ»: Ð¡Ê±     Ê®Î»¸öÎ»: ·ÖÖÓ)
+	WORD brake_check_time;		//ï¿½ï¿½Õ¢ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½(Ç§Î»ï¿½ï¿½Î»: Ð¡Ê±     Ê®Î»ï¿½ï¿½Î»: ï¿½ï¿½ï¿½ï¿½)
 	BYTE back21;		
-	BYTE lcd_backlight;		//LCDÍâºôµÄ±³¹â¿ØÖÆ	
+	BYTE lcd_backlight;		//LCDï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
 	BYTE loadtype;
 	BYTE arrowtype;
 	BYTE back29;
 
-	BYTE back12;			//ÓïÒô±¨Õ¾µÄÓïÑÔÑ¡Ôñ
-	WORD adlimit[C_LOADTYPE_CNT];			// Ä£ÄâÁ¿³ÆÖØ¼ÇÂ¼µÄADÖµ
+	BYTE back12;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
+	WORD adlimit[C_LOADTYPE_CNT];			// Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½Â¼ï¿½ï¿½ADÖµ
 	BYTE back24;	
 
-	BYTE brake_check_cycle;				//±§Õ¢Á¦×Ô¶¯¼ì²âµÄÖÜÆÚ(ÒÔÌìÎªµ¥Î»:1-31Ìì)
+	BYTE brake_check_cycle;				//ï¿½ï¿½Õ¢ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Î»:1-31ï¿½ï¿½)
 	WORD ucmp_speed;		
 	WORD back26;
 	WORD back27;
 	BYTE antifainttime;
 	BYTE liop_cop_door;
 
-	BYTE brake_check_auto;		//±§Õ¢Á¦×Ô¶¯¼ì²âÊ¹ÄÜ±êÖ¾
+	BYTE brake_check_auto;		//ï¿½ï¿½Õ¢ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ü±ï¿½Ö¾
 	BYTE back2;
 	DWORD limittimes;
 	struct Time t_limit;
@@ -544,30 +544,30 @@ struct Parameter
 	WORD F5_X6;
 	WORD F5_X7;
 	WORD F5_X8;
-	BYTE fx_active;							// ÊÇ·ñÊ¹ÄÜ·âÐÇ¹¦ÄÜ
+	BYTE fx_active;							// ï¿½Ç·ï¿½Ê¹ï¿½Ü·ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½
 
 	BYTE back8;		
-	WORD fx_offtime;							// ¶Ï¿ªÔËÐÐ½Ó´¥Æ÷ÖÁ±ÕºÏ·âÐÇÖ®¼äµÄÑÓ³ÙÊ±¼ä
-	WORD fx_ontime;							// ¶Ï¿ª·âÐÇÖÁ±ÕºÏÔËÐÐ½Ó´¥Æ÷Ö®¼äµÄÑÓ³ÙÊ±¼ä
+	WORD fx_offtime;							// ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ð½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÕºÏ·ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Ó³ï¿½Ê±ï¿½ï¿½
+	WORD fx_ontime;							// ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õºï¿½ï¿½ï¿½ï¿½Ð½Ó´ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Ó³ï¿½Ê±ï¿½ï¿½
 
 	BYTE back23;			
-	BYTE door_connect;				//ÃÅËøµÄÁ¬½Ó·½Ê½(1: ÐÂ·½Ê½(²ãÃÅÔÚÇ°£¬½ÎÃÅÔÚºó); 0: ¾É·½Ê½(½ÎÃÅÔÚÇ°£¬²ãÃÅÔÚºó))
+	BYTE door_connect;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½Ê½(1: ï¿½Â·ï¿½Ê½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½); 0: ï¿½É·ï¿½Ê½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½))
 	WORD brake_feedback_dly;
 	WORD brake_off_sig_dly;
 	WORD doorzoneswitchsize;
-	WORD ucmp_hall_apron;			//ÌüÃÅ»¤½Å°å³¤¶È
+	WORD ucmp_hall_apron;			//ï¿½ï¿½ï¿½Å»ï¿½ï¿½Å°å³¤ï¿½ï¿½
 	BYTE simulation;
 	BYTE back13;
 	WORD rsttrip_stop_dly;
-	BYTE lift_func_sel1;			//µçÌÝ¹¦ÄÜÑ¡Ôñ
+	BYTE lift_func_sel1;			//ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
 	BYTE back17;
-	BYTE evac_door;								//·¢µç»ú³·ÀëÍê³ÉÃÅ±£³Ö×´Ì¬(0: ¹ØÃÅ  1: ¿ªÃÅ)
-	BYTE evac_fire_carlightmode;		//·¢µç»ú³·ÀëÒÔ¼°»ð¾¯³·Àë½áÊø½ÎÏáµÆÄ£Ê½: 0-->2ÖÖ·½Ê½¶¼¿ªµÆ 1-->·¢µç»ú³·Àë¹ØµÆ 2-->»ð¾¯³·Àë¹ØµÆ 3-->2ÖÖ·½Ê½¶¼¹ØµÆ
-	BYTE ups_direction_mode;			//UPS ¹¦ÄÜ²ÎÊý
+	BYTE evac_door;								//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½×´Ì¬(0: ï¿½ï¿½ï¿½ï¿½  1: ï¿½ï¿½ï¿½ï¿½)
+	BYTE evac_fire_carlightmode;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ð¾¯³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½: 0-->2ï¿½Ö·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1-->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ 2-->ï¿½ð¾¯³ï¿½ï¿½ï¿½Øµï¿½ 3-->2ï¿½Ö·ï¿½Ê½ï¿½ï¿½ï¿½Øµï¿½
+	BYTE ups_direction_mode;			//UPS ï¿½ï¿½ï¿½Ü²ï¿½ï¿½ï¿½
 	BYTE back28;	
 	BYTE fve_ex_inpar [3][MAX_IO_TYPE];
-	BYTE hse_ex_inpar [5][MAX_IO_TYPE];			//Mcu À©Õ¹°åµÄÊäÈë(Ò»¹²3¸ö£¬Ô¤Áô2¸ö)
-	BYTE hse_ex_outpar [4][MAX_IO_TYPE];			//Mcu À©Õ¹°åµÄÊä³ö(Ò»¹²2¸ö£¬Ô¤Áô2¸ö)
+	BYTE hse_ex_inpar [5][MAX_IO_TYPE];			//Mcu ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Ò»ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½2ï¿½ï¿½)
+	BYTE hse_ex_outpar [4][MAX_IO_TYPE];			//Mcu ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Ò»ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½2ï¿½ï¿½)
 
 	WORD carlight_fan_time_fire; 						// automatic switch off car light (0=disabled)
 
@@ -575,7 +575,7 @@ struct Parameter
 
 };
 
-//Ôö¼ÓÀ©Õ¹²ÎÊý
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½
 struct exu_parameter{
 	BYTE exe_inpar [MAX_EXE][MAX_EXE_IN][MAX_IO_TYPE];	// free programmable inputs of TSE
 	BYTE exe_outpar [MAX_EXE][MAX_EXE_OUT][MAX_IO_TYPE];	// free programmable outputs of TSE
@@ -626,10 +626,10 @@ extern BYTE password_right;
 #define C_TEST_PERDAY		1
 #define C_TEST_PERWEEK	2
 
-extern DWORD tripcount;							// ÐÐ³Ì¼ÆÊý
-extern DWORD op_time;							// ¹¤×÷Ê±¼ä
+extern DWORD tripcount;							// ï¿½Ð³Ì¼ï¿½ï¿½ï¿½
+extern DWORD op_time;							// ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 
-extern BYTE testtrip;							// ²âÊÔÔËÐÐ
+extern BYTE testtrip;							// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 extern BYTE testtimes;
 extern DWORD testtimer;
 extern BYTE start_test_trip;				// start test trip (simulate call)
@@ -642,7 +642,7 @@ extern BYTE test_interval;
 extern BYTE iv_para_valid;
 extern BYTE dummy;
 
-extern BYTE language;							// ÓïÑÔ
+extern BYTE language;							// ï¿½ï¿½ï¿½ï¿½
 extern DWORD para_checksum;
 extern BYTE write_checksum;
 
@@ -829,11 +829,11 @@ extern BYTE dir_attendance;			// direction changed while car attendance
 extern BYTE call_bypass;			// bypass a floor while car attendance
 extern BYTE hallcall_bypass;		// bypass a hall call while car attendance
 extern BYTE fire_bypass;			//bypass firealaem
-extern BYTE doorstoppush_sheopen_flag;		//¿ªÃÅ±êÖ¾
-extern BYTE doorstoppush_sheclose_flag;		//¹ØÃÅÃÅ±êÖ¾
+extern BYTE doorstoppush_sheopen_flag;		//ï¿½ï¿½ï¿½Å±ï¿½Ö¾
+extern BYTE doorstoppush_sheclose_flag;		//ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½Ö¾
 extern BYTE she_photonsensor;
 extern BYTE she_calldoor_double;
-extern BYTE she_calldir;		//ºôÌÝÊ±¹áÍ¨ÃÅµÄ´¦Àí
+extern BYTE she_calldir;		//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Í¨ï¿½ÅµÄ´ï¿½ï¿½ï¿½
 extern BYTE she_doorstoppush;
 extern BYTE she_doorstoppush_count;
 
@@ -993,9 +993,9 @@ extern BYTE floortried [MAX_FLOOR];
 #define ALL_DOORS_CLOSED	0x07	// all doors closed in door state
 #define EXISTING_DOORS		0x07	// filter for door bits door 1 - 3
 #define TXERRORLIMIT		100//20//5		// set tx error after 5 heartbeat messages
-#define NOT_AVAILABLE		0x80	// state not available  ¸ü¸ÄÎª2S
+#define NOT_AVAILABLE		0x80	// state not available  ï¿½ï¿½ï¿½ï¿½Îª2S
 #define MAX_DIVING_FAIL		4
-#define	INIT_POSITION			100000
+#define	INIT_POSITION		100000
 
 extern BYTE hse_state;				// HSE state
 extern BYTE hse_text;				// Text for HSE state
@@ -1230,7 +1230,7 @@ extern BYTE emop_btn_stick;
 #define ESE_SET_OUT				12						// set outputs
 #define ESE_SLAVE				13						// HSE is not master
 #define ESE_HBINI_TIMER			(8*2)
-#define ESE_HBCHK_TIMER			(15*2)		//ÔËÐÐÖ®ºó 5S ¼ì²âÍâºôÐÄÌø
+#define ESE_HBCHK_TIMER			(15*2)		//ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ 5S ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 #define GSE_WATCH				0
 #define GSE_BUS_OFF				10
@@ -1279,13 +1279,13 @@ extern BYTE bTestLoad;
 extern BYTE bForceResetTrip;
 extern BYTE bTest_IlsSwitch;
 extern BYTE bBreak_check_enable;
-extern BYTE bFx_check_enable;			///0: È¡Ïû·âÐÇ¹¦ÄÜ		1: ¼ì²â·âÐÇ¹¦ÄÜ
-extern BYTE bTemp_check_enable;			///0: È¡Ïû¿ØÖÆ¹ñÎÂ¶È¼ì²â		1: ¼ì²â¿ØÖÆ¹ñÎÂ¶È
+extern BYTE bFx_check_enable;			///0: È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½		1: ï¿½ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½
+extern BYTE bTemp_check_enable;			///0: È¡ï¿½ï¿½ï¿½ï¿½ï¿½Æ¹ï¿½ï¿½Â¶È¼ï¿½ï¿½		1: ï¿½ï¿½ï¿½ï¿½ï¿½Æ¹ï¿½ï¿½Â¶ï¿½
 extern BYTE bTestDL;
 extern BYTE bTest_SIL;	
 extern BYTE	forced_stop;
-extern BYTE bTest_brake;					///1: ²âÊÔ±§Õ¢Á¦
-extern BYTE brake_value;					//²âÊÔ±§Õ¢Á¦µÄ½áÂÛ: 1: ºÏ¸ñ    2: ²»ºÏ¸ñ
+extern BYTE bTest_brake;					///1: ï¿½ï¿½ï¿½Ô±ï¿½Õ¢ï¿½ï¿½
+extern BYTE brake_value;					//ï¿½ï¿½ï¿½Ô±ï¿½Õ¢ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½: 1: ï¿½Ï¸ï¿½    2: ï¿½ï¿½ï¿½Ï¸ï¿½
 extern BYTE brake_value_old;
 extern BYTE brake_check_forced;
 extern BYTE brake_check_data;
@@ -1320,14 +1320,14 @@ extern BYTE landingcall_push;
 extern BYTE landingcall_actfloor;
 extern BYTE door_close_open;
 extern BYTE cl_op_fg;
-extern WORD floor_higth[MAX_FLOOR];	//Â¥¸ß
+extern WORD floor_higth[MAX_FLOOR];	//Â¥ï¿½ï¿½
 extern BYTE floor_record_fg[MAX_FLOOR];
 extern WORD menu_keytimer;
 extern BYTE send_pos_fg;
 extern BYTE car_alarm;
 extern BYTE door_short_conn;
 
-//ÅÐ¶ÏÇ¿¼õËùÓÃ±äÁ¿
+//ï¿½Ð¶ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½
 #define	C_SDS_UNWORK_CHECKTIMES		5
 extern BYTE check_sdd1_working_status;
 extern BYTE check_sdu1_working_status;
@@ -1353,7 +1353,7 @@ extern	DWORD canb_error_count;
 extern	DWORD canc_error_count;
 extern	BYTE can_error_timer;
 extern	DWORD canb_heartbeat_time;
-#define	CANB_HEARTBEAT_NOTREAD		72000		///2 Ð¡Ê±¼ÇÂ¼Ò»´ÎCANBµÄÐÄÌø
+#define	CANB_HEARTBEAT_NOTREAD		72000		///2 Ð¡Ê±ï¿½ï¿½Â¼Ò»ï¿½ï¿½CANBï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 extern	DWORD bFunc_flag;
 extern	BYTE steel_broke;
