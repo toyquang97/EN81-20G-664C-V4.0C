@@ -15,7 +15,7 @@ BYTE  Enabal_opendoor =1;
 BYTE hhhhhhhhh =0,tttttttt =0;
 DWORD Nudging_Buz_timer_count =0-1;
 DWORD Nudging_opendoor_timer_count =0-1;
-static BYTE callpriorityold;
+static BYTE callpriorityold = 0;
 
 /****************************************************************************************************/
 /* Definitions for door open state																	*/
@@ -941,10 +941,6 @@ void standstill_state (void)
 					carlighttimer = timer + (p.carlighttimer SEC);			/* retrigger timer								*/
 			}
 		// sua nudging
-		//if((firecall) && (!firekey)) {
-			//clearcalls (CARCALL | PRIOR_CARCALL);	
-			//clearcalls (ALL_HALL_CALLS);
-		
 		if(callpriorityold != callpriority)
 		{
 			Nudging_timer_count = (0-1);
@@ -953,22 +949,15 @@ void standstill_state (void)
 			{
 					if((Nudging_timer_count == (0-1)) && (door_state[0] != DOOR_CLOSED) )
 					{
-						Nudging_timer_count = timer+ 15 SEC;
+						Nudging_timer_count = timer+ 60 SEC;
 					}
-					// if(!(callpriority == C_FIREALARM)) // C_FIREALARM
-					// {
-					// 	NugdingMode = 0;
-					// 	Nudging_timer_count = 0-1;
-					// 	Nudging_Buz_timer_count = 0-1;
-					// }
-					// else
-					// {
-						
-					// }
-
+					if(auto_fire)
+					{
+						Nudging_timer_count = 0-1;
+					}
 			}
 		}
-		if( timer > Nudging_timer_count  )
+		if( timer > Nudging_timer_count)
 		{
 			//over 2min
 			Nudging_timer_count = 0-1;
