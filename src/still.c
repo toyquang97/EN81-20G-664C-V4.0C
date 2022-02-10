@@ -16,7 +16,7 @@ DWORD nudgingTimerCount =UINT_MAX;
 DWORD nudgingTimerBuzCount =UINT_MAX;
 DWORD nudgingTimerOpenDoorCount =UINT_MAX;
 static BYTE callPriorityOld = 0;
-BYTE nudgingTime = 10 SEC;
+BYTE nudgingTime = 120 SEC;
 
 /****************************************************************************************************/
 /* Definitions for door open state																	*/
