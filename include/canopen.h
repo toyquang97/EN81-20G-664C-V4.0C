@@ -37,16 +37,16 @@
 #define	DOOR2_ID				0x08		/* node id door 2									*/
 
 #define	DSE_ID					0x09		// node id DSE
-#define	MON_ID				0x0A		// node id monitoring system
+#define	MON_ID					0x0A		// node id monitoring system
 #define	EMS_ID					0x0B		// node id monitoring system2
 #define	SHM_ID					0x0B		/* node id Safety module SHM						*/
 #define	FVE_ID					0x0C		// node id FVE
 #define	CBC_ID					0x0D		/* node id of 1. CBC								*/
 #define	WEIGHT_ID				0x0D		/* node id of load measuring device					*/
 #define	DRV_ID					0x0E		// node id drive
-#define	MUL_FUNC			0x0F		// node id of ��������ID
+#define	MUL_FUNC				0x0F		// node id of ��������ID
 #define	TSE_ID					0x10		// node id of 1. TSE
-#define	READ_CARD_ID		0x20		// node id of 1. TSE
+#define	READ_CARD_ID			0x20		// node id of 1. TSE
 #define	ESE_ID					0x10		// node id of 1. ESE
 //CAN_B
 #define	ACCESS_ID				0x02		// node id of 1. ACCESS(0x02--0x05)

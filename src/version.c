@@ -32,7 +32,7 @@ const DWORD identity [ID_NUMS] =
 	0x00000000,								// serial number
 };
 
-const BYTE version_hse [SW_SIZE] = "V4.0C";		// actual software version of MCU
+const BYTE version_hse [SW_SIZE] = "V4.2A";		// actual software version of MCU
 
 const BYTE hardware_hse [HW_SIZE] = "V1.3";		// actual hardware version of MCU
 const BYTE device_name [DV_SIZE] = "G-664";		// name of PCB is G-664
