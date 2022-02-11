@@ -67,7 +67,7 @@
 ### ADS-LD Output File: '.\output\G-664C-GS.axf'
 ### ADS-LD Command File: '.\output\G-664C-GS.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\output\G-664C-GS.lnp', Handle=0x00000344
+### Creating CmdFile '.\output\G-664C-GS.lnp', Handle=0x00000318
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\output\G-664C-GS.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

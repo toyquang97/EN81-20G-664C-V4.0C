@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I..\include -I "C:\Keil\Keil412\ARM\INC" -I "C:\Keil\Keil412\ARM\INC\NXP\LPC17xx" -o ".\output\i2c.o" --omf_browse ".\output\i2c.crf" --depend ".\output\i2c.d" "..\src\i2c.c"

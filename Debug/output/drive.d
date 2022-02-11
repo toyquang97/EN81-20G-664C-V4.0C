@@ -1,9 +1,0 @@
-.\output\drive.o: ..\src\drive.c
-.\output\drive.o: ..\include\typedef.h
-.\output\drive.o: ..\include\parameter.h
-.\output\drive.o: ..\include\config.h
-.\output\drive.o: ..\include\canopen.h
-.\output\drive.o: ..\include\rtc.h
-.\output\drive.o: ..\include\nice5000.h
-.\output\drive.o: ..\include\state.h
-.\output\drive.o: ..\include\drive.h

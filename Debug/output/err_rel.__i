@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I..\include -I "C:\Keil\Keil412\ARM\INC" -I "C:\Keil\Keil412\ARM\INC\NXP\LPC17xx" -o ".\output\err_rel.o" --omf_browse ".\output\err_rel.crf" --depend ".\output\err_rel.d" "..\src\err_rel.c"

@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -g -O2 -Otime --apcs=interwork -I..\include -I "C:\Keil\Keil412\ARM\INC" -I "C:\Keil\Keil412\ARM\INC\NXP\LPC17xx" -o ".\output\call.o" --omf_browse ".\output\call.crf" --depend ".\output\call.d" "..\src\call.c"

@@ -615,8 +615,8 @@ const struct _iopara iopara[] = {
 // BYTE  const *text[NO_OF_LANGUAGE];		WORD  number;			BYTE  io;		BYTE special;	void  *pointer;BYTE filter[2];struct _textlist  *detail;
 //**************************************************************************************************
 const struct _iotype iotype[] = {
-//		text[0] 					text[1] 					number											io								special 			pointer 						filter		detial					sign[0] 	sign[1]
-	{	"--",						"--",						0,										INPUT | OUTPUT,	S_STANDARD,		0,									0xE1,	paradetail,			'-',	'-',	},
+//		text[0] 		text[1] 		number					io				special 		pointer 				filter	detial			sign[0] sign[1]
+	{	"--",			"--",			0,						INPUT | OUTPUT,	S_STANDARD,		0,						0xE1,	paradetail,		'-',	'-',	},
 	{	"Land.call",	"Land.call",	HALL_CALL,				INPUT | OUTPUT,	S_HALL_CALL,	(void *)dirtext,		0xFB,	hallcalldetail,	'a',	'a',	},
 	{	"Special LC",	"Special LC",	HALL_CALL_SPECIAL,		INPUT | OUTPUT,	S_FUNC_SUB,		(void *)dirtext,		0xF3,	carcalldetail,	's',	's',	},
 	{	"VIP LC",		"VIP LC",		HALL_CALL_ADVANCED,		INPUT | OUTPUT,	S_FUNC_SUB,		(void *)dirtext,		0xF3,	carcalldetail,	'v',	'v',	},
@@ -629,7 +629,7 @@ const struct _iotype iotype[] = {
 	{	"Disable LC",	"Disable LC",	DISABLE_HALLCALL,		INPUT,			S_HALL_CALL,	(void *)dirtext,		0xF9,	hallcalldetail,	'm',	'm',	},
 	{	"Enable LC",	"Enable LC",	ENABLE_HALLCALL,		INPUT,			S_HALL_CALL,	(void *)dirtext,		0xFB,	hallcalldetail,	'f',	'f',	},
 	{	"Gong",			"Gong",			ARRIVAL_INDICATION,		OUTPUT,			S_FUNC_ARROW,	(void *)arrowtext,		0xFB,	hallcalldetail,	'g',	'g',	},
-	{	"Inspect.",		"Inspect.",		INSPECT_IN,				INPUT,			S_SUBTABLE,		(void *)insp_dir_in,		0xE3,	paradetail,		'-',	'-',	},
+	{	"Inspect.",		"Inspect.",		INSPECT_IN,				INPUT,			S_SUBTABLE,		(void *)insp_dir_in,	0xE3,	paradetail,		'-',	'-',	},
 	{	"Door test",	"Door test",	DOORTEST,				INPUT,			S_STANDARD,		0,						0xE1,	paradetail,		't',	't',	},
 	{	"Pos.",			"Pos.",			POS_IN,					INPUT | OUTPUT,	S_SUBTABLE,		(void *)pos_in,			0xE3,	paradetail,		'-',	'-',	},
 	{	"Car light",	"Car light",	CARLIGHT,				INPUT | OUTPUT,	S_STANDARD,		0,						0xE1,	paradetail,		'l',	'l',	},
@@ -980,8 +980,13 @@ const struct _textlist controltype[] = {
 const struct _paratext paratext[] = {
 //		text[0]				text[1]					menu							paratype						*pointer										size										array	minpointer	tablepointer		min	max				basic	index							subindex	object		datatype				access		right
 	{	"PW-00",		"Code",				M_CHANGE_PW0,	M_NUMBERPARA,		&password_maintain,		sizeof(password_maintain),	0,		0,			0,					0,	0xFFFFFFFE,	0,	PASSWORD_MAINTAIN,	0,		D_VAR,	D_UNSIGNED32,	D_RW,RIGHT_MAINTAIN	},
+<<<<<<< HEAD
 	{ "PW-01",		"Code", 			M_CHANGE_PW1, M_NUMBERPARA, 	&password_install,			sizeof(password_install), 	0,		0,			0,					0,	0xFFFFFFFE, 0,	PASSWORD_INSTALL,	0,		D_VAR,	D_UNSIGNED32,	D_RW,RIGHT_INSTALL },
 	{ "PW-02",		"Code", 			M_CHANGE_PW2, M_NUMBERPARA, 	&password_help, 				sizeof(password_help),			0,		0,			0,					0,	0xFFFFFFFE, 0,	PASSWORD_HELP,			0,		D_VAR,	D_UNSIGNED32,	D_RW,RIGHT_HELP		},
+=======
+	{ 	"PW-01",		"Code", 			M_CHANGE_PW1, 	M_NUMBERPARA, 	&password_install,			sizeof(password_install), 	0,		0,			0,					0,	0xFFFFFFFE, 0,	PASSWORD_INSTALL,	0,		D_VAR,	D_UNSIGNED32,	D_RW,RIGHT_INSTALL },
+	{ 	"PW-02",		"Code", 			M_CHANGE_PW2, 	M_NUMBERPARA, 	&password_help, 				sizeof(password_help),			0,		0,			0,					0,	0xFFFFFFFE, 0,	PASSWORD_HELP,			0,		D_VAR,	D_UNSIGNED32,	D_RW,RIGHT_HELP		},
+>>>>>>> 71965de (add gitignore)
 	{	"PW-03",		"Code",				M_CHANGE_PW3,	M_NUMBERPARA,		&password_admin,			sizeof(password_admin),			0,		0,			0,					0,	0xFFFFFFFE,	0,	PASSWORD_ADMIN,		0,		D_VAR,	D_UNSIGNED32,	D_RW,RIGHT_USER},
 
 	{	"P0-00",		"Bottom floor",		M_GEN_PARA,		M_FLOORPARA,		&p.bot_floor,				sizeof(p.bot_floor),				0,	0,	0,	0,MAX_FLOOR-2,	0,BOT_FLOOR,	0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_INSTALL	},
@@ -998,14 +1003,14 @@ const struct _paratext paratext[] = {
 	{	"P0-11",		"Motor turned",		M_GEN_PARA,		M_NUMBERPARA,		&p.motor_tuned,					sizeof(p.motor_tuned),					0,	0,(void *)no_yes,	0,	1,	0,IV_READY,	0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_INSTALL	},
 	{	"P0-12",		"Call type",		M_GEN_PARA,		M_NUMBERPARA,		&p.controltype,					sizeof(p.controltype),					0,	0,(void *)controltype,	0,	1,	0,CONTROLTYPE,	0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_INSTALL	},
 	{	"P0-13",		"LC mode",			M_GEN_PARA,		M_NUMBERPARA,		&p.lcmode_actfloor,				sizeof(p.lcmode_actfloor),				0,	0,(void *)lcmode,	0,2,	0,LCMODE_ACTFLOOR,	0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_MAINTAIN },
-	{	"P0-14",		"Fan mode",			M_GEN_PARA,			M_NUMBERPARA,		&p.fan_mode,					sizeof(p.fan_mode),						0,	0,(void *)fanmode,	0,	255,1,FAN_MODE,	0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_MAINTAIN	},
+	{	"P0-14",		"Fan mode",			M_GEN_PARA,		M_NUMBERPARA,		&p.fan_mode,					sizeof(p.fan_mode),						0,	0,(void *)fanmode,	0,	255,1,FAN_MODE,	0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_MAINTAIN	},
 	{	"P0-15",		"Load type",		M_GEN_PARA,		M_NUMBERPARA,		&p.loadtype,					sizeof(p.loadtype),						0,	0,(void *)loadtype,	0,5,	0,LOADTYPE,	0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_MAINTAIN },
 	{	"P0-16",		"Arrow type",		M_GEN_PARA, 	M_NUMBERPARA,		&p.arrowtype,					sizeof(p.arrowtype),					0,	0,(void *)arrowtype,	0,2,	0,ARROW_MODE,	0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_INSTALL	},
-	{	"P0-18",		"FX active",		M_GEN_PARA, M_NUMBERPARA,		&p.fx_active,					sizeof(p.fx_active),					0,	0,	0,				0,		1,		1,		FX_ACTIVE, 			0,	D_VAR,	D_UNSIGNED8,	D_RW,	RIGHT_INSTALL },
-	{	"P0-20",		"Vane length",		M_GEN_PARA,	M_NUMBERPARA,		&p.doorzoneswitchsize, 			sizeof(p.doorzoneswitchsize),			0,	0,	0,	50,	1000,268,DOORZONESWITCHSIZE,0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_MAINTAIN	},
-	{ "P0-22",		"EXE numbers",		M_GEN_PARA,		M_NUMBERPARA, 	&p.exe_number,					sizeof(p.exe_number), 				0,	0,	0,	0,MAX_EXE,	1,EXENUMBERS, 0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_INSTALL	},
-	{ "P0-23",		"Max speed",		M_GEN_PARA,		M_NUMBERPARA, 	&p.max_speed,					sizeof(p.max_speed), 				0,	0,	0,	200,1000,	250,MAX_SPEED, 0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_INSTALL	},
-	{ "P0-40",		"UCM speed",		M_GEN_PARA,		M_NUMBERPARA, 	&p.ucmp_speed,					sizeof(p.ucmp_speed), 				0,	0,	0,	200,1000,	300,NO_OBJECT, 0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_INSTALL	},
+	{	"P0-18",		"FX active",		M_GEN_PARA, 	M_NUMBERPARA,		&p.fx_active,					sizeof(p.fx_active),					0,	0,	0,				0,		1,		1,		FX_ACTIVE, 			0,	D_VAR,	D_UNSIGNED8,	D_RW,	RIGHT_INSTALL },
+	{	"P0-20",		"Vane length",		M_GEN_PARA,		M_NUMBERPARA,		&p.doorzoneswitchsize, 			sizeof(p.doorzoneswitchsize),			0,	0,	0,	50,	1000,268,DOORZONESWITCHSIZE,0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_MAINTAIN	},
+	{ 	"P0-22",		"EXE numbers",		M_GEN_PARA,		M_NUMBERPARA, 		&p.exe_number,					sizeof(p.exe_number), 				0,	0,	0,	0,MAX_EXE,	1,EXENUMBERS, 0,	D_VAR,	D_UNSIGNED8,D_RW,RIGHT_INSTALL	},
+	{ 	"P0-23",		"Max speed",		M_GEN_PARA,		M_NUMBERPARA, 		&p.max_speed,					sizeof(p.max_speed), 				0,	0,	0,	200,1000,	250,MAX_SPEED, 0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_INSTALL	},
+	{ 	"P0-40",		"UCM speed",		M_GEN_PARA,		M_NUMBERPARA, 		&p.ucmp_speed,					sizeof(p.ucmp_speed), 				0,	0,	0,	200,1000,	300,NO_OBJECT, 0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_INSTALL	},
 
 
 	{	"P1-00",		"Parktime[s]",		M_TIMERPARA,	M_NUMBERPARA,		&p.parkingtime,					sizeof(p.parkingtime),					0,	0,	0,	0,3600,300,PARKINGTIME,	0,	D_VAR,	D_UNSIGNED16,D_RW,RIGHT_MAINTAIN	},
