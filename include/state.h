@@ -13,8 +13,8 @@
 #define	H_MOVING			0x05
 #define	H_ARRIVAL			0x06
 #define	H_ERROR				0x07
-#define	H_CAN_ERROR		0x08
-#define	H_INSP					0x09
+#define	H_CAN_ERROR			0x08
+#define	H_INSP				0x09
 #define	H_EM_OP				0x0A
 #define	H_HOMING			0x0B
 #define	H_TERM				0x0C
@@ -31,9 +31,9 @@
 #define	H_ERROR_RELEV		0x17
 #define	H_DOORTEST			0x18
 #define	H_EVACUATION		0x19
-#define	H_EE_ERROR		0x1A
+#define	H_EE_ERROR			0x1A
 #define	H_IV_TEACH_IN		0x1B
-#define	H_ACCESS_OP		0x1C
+#define	H_ACCESS_OP			0x1C
 
 //**************************************************************************************************
 //	direction
@@ -124,7 +124,7 @@
 #define	P_ILU_ON			0x0008
 #define P_KH5_ON			0x0010					/* KH5 not released								*/
 #define P_KH5_OFF			0x0020					/* KH5 not on									*/
-#define P_VU_NOT_ON		0x0040			//¼ì²â²»µ½Ç¿¼õÐÅºÅ
+#define P_VU_NOT_ON		0x0040			//ï¿½ï¿½â²»ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½Åºï¿½
 #define P_VO_NOT_ON		0x0080
 #define P_MSI_ERROR		0x0100
 
@@ -136,7 +136,7 @@
 #define G_WRONG_DIR			0x04					/* wrong direction								*/	
 #define G_DL_SHORTED			0x08
 
-// ÒÔÏÂË³Ðò²»ÒªËæÒâ¸ü¸Ä£¬Èç¹ûÔö¼ÓÁËÃÅÊý(Ä¿Ç°×î´óÖ§³Ö2¸öÃÅ)£¬ÕâÀïÓÐÎÊÌâ!
+// ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Ä¿Ç°ï¿½ï¿½ï¿½Ö§ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!
 #define G_OPENDOOR1			0x10
 #define G_OPENDOOR2			0x20
 #define G_CLOSEDOOR1			0x40

@@ -986,7 +986,7 @@ int main (void)
 				wait_for_stop_state ();				/* wait until drive is stopped				*/
 				break;
 			case (H_STANDSTILL):
-				standstill_state ();					/* Standstill								*/
+				standstill_state ();				/* Standstill								*/
 				break;
 			case (H_START):
 				start_trip_state ();					/* start a normal trip						*/
