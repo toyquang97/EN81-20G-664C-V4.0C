@@ -363,7 +363,17 @@ void menu (void)
 					case (30404):
 						value = M_GROUP;				/* String 404*						*/
 						break;
-
+					case (30405):
+						if (language == CHINESE)
+						{
+							language = ENGLISH;
+						}
+						else
+						{
+							language = CHINESE;
+						}
+						new = 1;
+						break;
 					case (30999):
 						if (password_right <= RIGHT_HELP)
 							{
@@ -1584,7 +1594,7 @@ void menu (void)
 					display(13, 2, "zon");
 				gotoxy(help[1], help[2]);
 			}
-//Ôö¼ÓÉÁË¸¹¦ÄÜ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½
 			for(i=0; i<MAX_HSE_IN + MAX_HSE_EX_IN; i++)
 			{
 				if (i < MAX_HSE_IN)
@@ -1641,7 +1651,7 @@ void menu (void)
 					}
 				}
 			}
-//Ôö¼ÓÉÁË¸¹¦ÄÜ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½
 			switch(key)
 			{
 #if	SRU_OLD			
@@ -1784,7 +1794,7 @@ void menu (void)
 							paranumber = buf1[2] * 8 + buf1 [0] - 8;
 							break;
 							
-						case (M_EXE_INFO):			//ÐèÒª¿¼ÂÇ½ÎÏáCAN»¹ÊÇÍâºôCANµÄ×ª»»ÎÊÌâ
+						case (M_EXE_INFO):			//ï¿½ï¿½Òªï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½CANï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CANï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							if (buf1 [1] == 2)
 								paratype = M_IN_EXE;
 							else
@@ -2418,7 +2428,7 @@ void menu (void)
 						menu = M_RESET_MCU;
 						new = 1;
 					}
-//Ôö¼Ó±§Õ¢Á¦¼ì²â¹¦ÄÜ	2017-03-14
+//ï¿½ï¿½ï¿½Ó±ï¿½Õ¢ï¿½ï¿½ï¿½ï¿½â¹¦ï¿½ï¿½	2017-03-14
 					else if((BYTE *)vptr == &bTest_brake)
 					{
 						if((drive_state == D_STOPPED) && bTest_brake && (!driveerror))
@@ -2435,7 +2445,7 @@ void menu (void)
 								bTest_brake = 0;
 							}
 					}
-//Ôö¼Ó±§Õ¢Á¦¼ì²â¹¦ÄÜ	2017-03-14
+//ï¿½ï¿½ï¿½Ó±ï¿½Õ¢ï¿½ï¿½ï¿½ï¿½â¹¦ï¿½ï¿½	2017-03-14
 					else
 					{
 						if (paratext [paranumber].menu == M_CHANGE_PW0)
@@ -2480,22 +2490,22 @@ void menu (void)
 								send_nice5000_parameter(1609, niv.F3_14);
 							}
 						else if((BYTE *)vptr == &save_double_door)
-							{//Ö»ÓÐË«ÃÅÏµÍ³²ÅÅäÖÃ´Ë¹¦ÄÜ
+							{//Ö»ï¿½ï¿½Ë«ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Ã´Ë¹ï¿½ï¿½ï¿½
 								if(save_double_door)
 									{
-										config_double_door();		//ÅäÖÃË«ÃÅÏµÍ³	
+										config_double_door();		//ï¿½ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ÏµÍ³	
 										accesstimer = 60;	
 									}
 							}
-						else if(((BYTE *)vptr == &p.door_connect) && (drive_state == D_STOPPED))		//Ö»ÔÊÐíÔÚÍ£ÌÝ×´Ì¬ÏÂ²Å¿ÉÒÔ¸Ä¶¯
+						else if(((BYTE *)vptr == &p.door_connect) && (drive_state == D_STOPPED))		//Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½×´Ì¬ï¿½Â²Å¿ï¿½ï¿½Ô¸Ä¶ï¿½
 							{
 								if(*(BYTE *)vptr)
-									{//²ãÃÅÔÚÇ°£¬½ÎÃÅÔÚºó
-										p.hse_inpar [IO_SC2][IO_SUB_FUNC] = SC3;			//¶ÔÓ¦µÄÃÅËø½ÓÏß¶Ôµ÷£¬Òò´ËÍ¬²½¸ü¸Ä
+									{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½
+										p.hse_inpar [IO_SC2][IO_SUB_FUNC] = SC3;			//ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶Ôµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 										p.hse_inpar [IO_SC3][IO_SUB_FUNC] = SC2;
 									}
 								else
-									{//½ÎÃÅÔÚÇ°£¬²ãÃÅÔÚºó
+									{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½
 										p.hse_inpar [IO_SC2][IO_SUB_FUNC] = SC2;
 										p.hse_inpar [IO_SC3][IO_SUB_FUNC] = SC3;
 									}
@@ -3219,7 +3229,7 @@ void menu (void)
 				display_line (help [0], 2);
 				help [1] = help [0];						/* save old error state						*/
 				if(help[0])
-					{//¹ÊÕÏ×´Ì¬ÏÂÍË³öÖÕ¶ËÄ£Ê½	
+					{//ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½Ë³ï¿½ï¿½Õ¶ï¿½Ä£Ê½	
 						term_active = 0;
 						new = 1;
 						menu_old = menu;
@@ -4416,7 +4426,7 @@ void menu (void)
 				}
 			if (wait == 1)
 				{
-					if ((key) || (displaytimer < realtimer))	// ²»Ê¹ÓÃtimerÊÇÒòÎª¶ÁÈëparaºó¿ÉÄÜÔì³É²ÎÊý»ìÂÒ¶øÔÚcycleÖÐËÀ»ú,timer²»ÄÜµÝÔö
+					if ((key) || (displaytimer < realtimer))	// ï¿½ï¿½Ê¹ï¿½ï¿½timerï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½paraï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½cycleï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,timerï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½
 						new = 1;
 				}
 			else if (wait == 2)
@@ -4424,16 +4434,16 @@ void menu (void)
 					if (menu == M_RESET_MCU)
 						{
 							display_standardtext (T_OK_AND_RESET);
-							displaytimer = realtimer + 3 SEC;	// ²»Ê¹ÓÃtimerÊÇÒòÎª¶ÁÈëparaºó¿ÉÄÜÔì³É²ÎÊý»ìÂÒ¶øÔÚcycleÖÐËÀ»ú,timer²»ÄÜµÝÔö
+							displaytimer = realtimer + 3 SEC;	// ï¿½ï¿½Ê¹ï¿½ï¿½timerï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½paraï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½cycleï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,timerï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½
 							wait = 3;
 						}
 				}
 			else if (wait == 3)
 			{
-				if ((key) || (displaytimer < realtimer))	// ²»Ê¹ÓÃtimerÊÇÒòÎª¶ÁÈëparaºó¿ÉÄÜÔì³É²ÎÊý»ìÂÒ¶øÔÚcycleÖÐËÀ»ú,timer²»ÄÜµÝÔö
+				if ((key) || (displaytimer < realtimer))	// ï¿½ï¿½Ê¹ï¿½ï¿½timerï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½paraï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½cycleï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,timerï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½
 				{
 					DisableIrq();
-					while(1);					// Ç¿ÆÈ¿´ÃÅ¹·¸´Î»
+					while(1);					// Ç¿ï¿½È¿ï¿½ï¿½Å¹ï¿½ï¿½ï¿½Î»
 				}
 			}
 			else if (wait == 4)
@@ -4466,7 +4476,7 @@ void menu (void)
 
 							case (KEY_ESC):
 								menu = menu_old;
-								*((BYTE *)vptr) = (BYTE)oldvalue;		//ÃÜÂë´íÎó·µ»ØÖ®Ç°Öµ
+								*((BYTE *)vptr) = (BYTE)oldvalue;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó·µ»ï¿½Ö®Ç°Öµ
 								new = 1;
 								numberkey = 0;
 								break;
@@ -4584,7 +4594,7 @@ void menu (void)
 			 if(!wait)
 				{
 					if(!(safety_circuit & SC3) && (displaytimer < timer))
-						{//°²È«»ØÂ·²»Í¨							
+						{//ï¿½ï¿½È«ï¿½ï¿½Â·ï¿½ï¿½Í¨							
 							display_standardtext(T_BRAKE_CHECK4);
 							displaytimer = timer + 2 SEC;
 							wait = 1;
@@ -4623,13 +4633,13 @@ void menu (void)
 							new = 1;
 						}
 					if(brake_check_return)
-						{//²âÊÔÍê±Ï
+						{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							if(brake_value == BRAKE_GOOD)
-								{//²âÊÔºÏ¸ñ									
+								{//ï¿½ï¿½ï¿½ÔºÏ¸ï¿½									
 									display_standardtext(T_BRAKE_CHECK2);
 								}
 							else
-								{//²âÊÔ²»ºÏ¸ñ
+								{//ï¿½ï¿½ï¿½Ô²ï¿½ï¿½Ï¸ï¿½
 									display_standardtext(T_BRAKE_CHECK3); 								
 									if((brake_value != brake_value_old) && (brake_value == BRAKE_NO_GOOD))
 										{
@@ -4906,7 +4916,7 @@ void menu (void)
 								if (password_right <= paratext [paranumber].right)
 								{
 									menu = paratext [paranumber].paratype;
-									address = paratext [paranumber].index;		//Ôö¼Óindex£¬Ö÷ÒªÕë¶Ô NICE5000 ±äÁ¿
+									address = paratext [paranumber].index;		//ï¿½ï¿½ï¿½ï¿½indexï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ NICE5000 ï¿½ï¿½ï¿½ï¿½
 								}
 								else
 								{

@@ -74,11 +74,11 @@ void TIMER0_IRQHandler (void){//500ms
 			if ((tse_hb_error != tse_hb_error_old) && (error_timer > 600) && (hse_state == H_STANDSTILL))
 			{
 				if ((tse_hb_error == tse_enabled) && tse_enabled)
-				{//²»´æÔÚCOP£¬°üÀ¨ËùÓÐµÄCOP
+				{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½COPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½COP
 					write_errorhist (E_CAN_TSE, HSE_ID, 0, W_HB_TSE);
 				}
 				else for (i = 0; i < MAX_TSE; i++)
-				{//Ö»ÊÇµ¥¸öCOP³öÏÖÐÄÌø´íÎó
+				{//Ö»ï¿½Çµï¿½ï¿½ï¿½COPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					if (bit_select (tse_hb_error, i))
 					{
 						if (!bit_select (tse_hb_error_old, i) || (tse_hb_error_old == tse_enabled))
@@ -162,7 +162,7 @@ void TIMER0_IRQHandler (void){//500ms
 						m++;
 				}
 			if((m < (p.ese_number >> 1)) && (hse_state == H_STANDSTILL) && (error_timer > 1200))
-				{//Ö»¼ÇÂ¼Ò»°ëµÄ LCU
+				{//Ö»ï¿½ï¿½Â¼Ò»ï¿½ï¿½ï¿½ LCU
 					for (i = 0; i < MAX_ESE_DW; i++)
 						{
 							if ((ese_hb_error_old [i]) && (!(canerrorstate & CANB_BUSOFF)))
@@ -422,7 +422,7 @@ void TIMER1_IRQHandler (void){///1ms
 	++ count;
 	if (count == 5)
 		count = 0;
-	if (count)				//Ã¿5msÖ´ÐÐÒ»´ÎÒÔÏÂ²Ù×÷
+	if (count)				//Ã¿5msÖ´ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â²ï¿½ï¿½ï¿½
 		return;
 
 	if (adv_door_op_dly)
@@ -603,7 +603,7 @@ void TIMER2_IRQHandler (void){//50ms
 			if (!(heartbeat & B_FVE))
 			{
 				if (!txa_fve_error)
-				{//5s ÊÕ²»µ½CDUÐÄÌø£¬±¨´í´¦Àí
+				{//5s ï¿½Õ²ï¿½ï¿½ï¿½CDUï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					if ((!(hb_error & B_FVE)) && (realtimer > 60))	
 					{
 						hb_error |= B_FVE;
@@ -641,14 +641,18 @@ void TIMER2_IRQHandler (void){//50ms
 	else
 	{
 		if (tea)
+		{
 			send_heartbeat_a();
+			transmit_position(nice5000_Rstore_position,nice5000_Rstore_setspd);
+		}
+			
 		if (nice5000_errrsttime)
 		{
 			-- nice5000_errrsttime;
 			if (!nice5000_errrsttime)
 				nice5000_Tcmd_data5 = 0;
 		}
-//¼à²â3¸öÐ¡¼üÅÌÊÇ·ñÍ¬Ê±°´ÏÂ
+//ï¿½ï¿½ï¿½3ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Í¬Ê±ï¿½ï¿½ï¿½ï¿½
 	if ((ENT_KEY_IN) && (MENU_KEY_IN) && (UP_KEY_IN))
 		{
 			++small_key_timer;
@@ -674,7 +678,7 @@ void TIMER3_IRQHandler (void){///2ms
 	T3TC = 0x00;
 	
 	++ dTmrCnt;
-	if (!(SSP1SR & (SSP_SR_BSY|SSP_SR_RNE)))		// SSP¿ØÖÆÆ÷¿ÕÏÐÇÒ½ÓÊÕFIFO²»Îª¿Õ²ÅÆô¶¯·¢ËÍ
+	if (!(SSP1SR & (SSP_SR_BSY|SSP_SR_RNE)))		// SSPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½FIFOï¿½ï¿½Îªï¿½Õ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
 		if (nice5000_crc_error)
 		{
@@ -683,7 +687,7 @@ void TIMER3_IRQHandler (void){///2ms
 		}
 		switch(step)
 		{
-			case 0:						// ·¢ËÍÃüÁîÐÅÏ¢1
+			case 0:						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢1
 				frm_buff[0] = FRM_HEAD_CMD1;
 				frm_buff[1] = nice5000_Tcmd_data1;
 				frm_buff[2] = nice5000_Tcmd_data2;
@@ -696,7 +700,7 @@ void TIMER3_IRQHandler (void){///2ms
 				++ data4;
 				step = 1;
 				break;
-			case 1:						// ·¢ËÍÃüÁîÐÅÏ¢2
+			case 1:						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢2
 				frm_buff[0] = FRM_HEAD_CMD2;
 				frm_buff[1] = nice5000_Tcmd_data1;
 				frm_buff[2] = nice5000_Tcmd_data5;
@@ -709,7 +713,7 @@ void TIMER3_IRQHandler (void){///2ms
 				else
 					step = 0;
 				break;
-			case 2:						// ·¢ËÍ¹¦ÄÜÂë£¬²»´æ´¢
+			case 2:						// ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½æ´¢
 				frm_buff[0] = FRM_HEAD_FCT1;
 				if (nice5000_Tstate_send)
 				{
@@ -732,7 +736,7 @@ void TIMER3_IRQHandler (void){///2ms
 				else
 					step = 0;
 				break;
-			case 3:						// ·¢ËÍ¹¦ÄÜÂë£¬Òª´æ´¢
+			case 3:						// ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ë£¬Òªï¿½æ´¢
 				frm_buff[0] = FRM_HEAD_FCT2;
 				if (nice5000_Tstore_send)
 				{
@@ -745,9 +749,9 @@ void TIMER3_IRQHandler (void){///2ms
 				step = 0;
 				break;
 		}
-		// Éú³É CRC Ð£Ñé
+		// ï¿½ï¿½ï¿½ï¿½ CRC Ð£ï¿½ï¿½
 		frm_buff[NICE5000_SPI_FRMSIZE - 1] = CrcChkValue(frm_buff, NICE5000_SPI_FRMSIZE - 1);
-		for (i=0; i<NICE5000_SPI_FRMSIZE; ++i)	//Á¬Ðø·¢ËÍ 1 Ö¡Êý¾Ý
+		for (i=0; i<NICE5000_SPI_FRMSIZE; ++i)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1 Ö¡ï¿½ï¿½ï¿½ï¿½
 			SSP1DR = frm_buff[i];
 	}
 }
