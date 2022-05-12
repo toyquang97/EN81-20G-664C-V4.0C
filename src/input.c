@@ -13,6 +13,10 @@ extern BYTE  enableOpenDoor;
 /* handle input																						*/
 /* active: 0=SDO message; 1=PDO message;															*/
 /****************************************************************************************************/
+static DWORD doublepresstimer_lc = 0;
+static BYTE old_callfloor_lc = 0;
+static BYTE old_calldoor_lc = 0;
+
 void handle_input (BYTE liftnumber, BYTE active)
 {
 	BYTE floor = 0, dir = 0, door = 0;
@@ -1014,6 +1018,17 @@ void handle_input (BYTE liftnumber, BYTE active)
 								{
 									dir = virt_in [IO_SUB_FUNC];					/* read landing call direction					*/
 									i = virt_in [IO_DOOR];						/* read doors								*/
+
+									// if ((doublepresstimer_lc > timer) &&				/* timer for quick double pressing				*/
+									// (old_callfloor_lc == floor) &&						/* same call like before						*/
+									// (old_calldoor_lc  == i))
+									// {
+									// 	set_out (HALL_CALL, dir, floor + 1, i, 0, O_ALL);
+									// 	calltab [floor].lcu_door &= ~i;				/* cancel all doors for this call					*/
+									// 	if (!calltab [floor].lcu_door)				/* no other calls; clear whole car call			*/
+									// 		calltab [floor].calltype &= ~(LANDINGCALLDIR | PRIOR_CARCALL);
+									// }
+
 									door = i & p.doortable [adt_hall][floor] & p.doorpos [floor];
 									if (!(p.call_disable_enable & CALL_DISEN_PRIORITY))						/* disable has higher priority than enable		*/
 										{
@@ -1053,7 +1068,17 @@ void handle_input (BYTE liftnumber, BYTE active)
 																		if(p.attend_carcall & ATTEND_SPEEKER)
 																			set_out (SPEAKER_BUZ, BUZZER_NORMAL, 3, SPEEKER_PAUSE, 1, O_CANA);
 																	}
+																if ((doublepresstimer_lc > timer) &&				/* timer for quick double pressing				*/
+																(old_callfloor_lc == floor) &&						/* same call like before						*/
+																(old_calldoor_lc  == i))
+																{
+																	set_out (HALL_CALL, dir, floor + 1, i, 0, O_ALL);
+																	calltab [floor].lcu_door &= ~i;				/* cancel all doors for this call					*/
+																	if (!calltab [floor].lcu_door)				/* no other calls; clear whole car call			*/
+																	calltab [floor].calltype &= ~(LANDINGCALL_UP | PRIOR_CARCALL);
+																}
 															}
+															
 														break;
 
 													case (HALL_CALL_DOWN):					/* down hall call								*/
@@ -1074,7 +1099,17 @@ void handle_input (BYTE liftnumber, BYTE active)
 																		if(p.attend_carcall & ATTEND_SPEEKER)
 																			set_out (SPEAKER_BUZ, BUZZER_NORMAL, 3, SPEEKER_PAUSE, 1, O_CANA);
 																	}
+																	if ((doublepresstimer_lc > timer) &&				/* timer for quick double pressing				*/
+																(old_callfloor_lc == floor) &&						/* same call like before						*/
+																(old_calldoor_lc  == i))
+																{
+																	set_out (HALL_CALL, dir, floor + 1, i, 0, O_ALL);
+																	calltab [floor].lcd_door &= ~i;				/* cancel all doors for this call					*/
+																	if (!calltab [floor].lcd_door)				/* no other calls; clear whole car call			*/
+																	calltab [floor].calltype &= ~(LANDINGCALL_DN | PRIOR_CARCALL);
+																}
 															}
+															
 														break;
 
 													case (HALL_CALL_NO_DIR):					/* hall call without direction					*/
@@ -1094,11 +1129,28 @@ void handle_input (BYTE liftnumber, BYTE active)
 																		if(p.attend_carcall & ATTEND_SPEEKER)
 																			set_out (SPEAKER_BUZ, BUZZER_NORMAL, 3, SPEEKER_PAUSE, 1, O_CANA);
 																	}
+																if ((doublepresstimer_lc > timer) &&				/* timer for quick double pressing				*/
+																(old_callfloor_lc == floor) &&						/* same call like before						*/
+																(old_calldoor_lc  == i))
+																{
+																	set_out (HALL_CALL, dir, floor + 1, i, 0, O_ALL);
+																	calltab [floor].lc_door &= ~i;				/* cancel all doors for this call					*/
+																	if (!calltab [floor].lc_door)				/* no other calls; clear whole car call			*/
+																	calltab [floor].calltype &= ~(LANDINGCALL | PRIOR_CARCALL);
+																}
 															}
+															
 														break;
 												}
 										}
+										if (p.cc_cancel == DOUBLE)				/* clear call by quick double pressing enabled	*/
+										{
+											old_callfloor_lc   = floor;
+											old_calldoor_lc    = i;
+											doublepresstimer_lc = timer + 0.3 SEC;		/* start quick double press timer				*/
+										}
 								}
+								
 						}						/* set call acknowledgement					*/
 				}
 			else														/* call acknowledgement requested by SDO		*/
