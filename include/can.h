@@ -11,11 +11,11 @@
 #define CAN_A					0x00
 #define CAN_B					0x01
 
-#define CMD_TRAN_BUFF1			0x21		//»º³åÇø1·¢ËÍSDOÖ®ÍâµÄÏûÏ¢
-#define CMD_TRAN_BUFF2			0x41		//»º³åÇø2·¢ËÍÐÄÌø
-#define CMD_TRAN_BUFF3			0x81		//»º³åÇø3·¢ËÍSDOÏûÏ¢
-#define CMD_CLR_RECV			0x04			//ÊÍ·Å½ÓÊÕ»º³åÆ÷
-#define CMD_CLR_DATAOVERRUN	0x08		//Çå³ýÊý¾Ý³¬ÔØÎ»
+#define CMD_TRAN_BUFF1			0x21		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½SDOÖ®ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+#define CMD_TRAN_BUFF2			0x41		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define CMD_TRAN_BUFF3			0x81		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½SDOï¿½ï¿½Ï¢
+#define CMD_CLR_RECV			0x04			//ï¿½Í·Å½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½
+#define CMD_CLR_DATAOVERRUN	0x08		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½Î»
 
 #define SEND_PRIORITY_HIGH		0x00
 #define SEND_PRIORITY_MIDD		0x01
@@ -86,6 +86,8 @@ void set_hallcall_c(void);
 void	send_drive_pos(void);
 
 
+void transmitNextFloor(void);
+void transmitNextFloorCanA(void);
 SWORD __GoToUpgrade(DWORD addr, DWORD mode, DWORD can);
 
 #endif

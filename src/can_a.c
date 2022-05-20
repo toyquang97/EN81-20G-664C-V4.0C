@@ -849,3 +849,21 @@ void	send_drive_pos(void){
 	}
 }
 
+void transmitNextFloorCanA(void)
+{
+
+	txb[tia][0] = MPDO | 3;			  // write function code + data length
+	txb[tia][1] = 0x69;				  // write node id of monitorng
+	txb[tia][2] = next_callfloor + 1; // write floor number
+	if (next_callfloor == 255)
+	{
+		txb[tia][3] = 0xff;
+		txb[tia][4] = 0xff; // write floor sign
+	}
+	else
+	{
+		txb[tia][3] = p.sign[next_callfloor] >> 8;
+		txb[tia][4] = p.sign[next_callfloor]; // write floor sign
+	}
+	WriteCanA(); // transmit message and set FIFO pointer
+}

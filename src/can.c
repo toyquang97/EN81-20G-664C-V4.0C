@@ -20,15 +20,15 @@ void init_can_a (void){
 	__nop();__nop();
 	reg = CAN1GSR;
 	reg &= 0x000000FF;
-	CAN1GSR = reg;					//Çå³ý¹ÊÕÏ¼ÆÊý
+	CAN1GSR = reg;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½
 	
 	CAN1CMR = CMD_CLR_RECV;
-	CAN1IER = 0x48Ful;				//½ÓÊÕÖÐ¶Ï£¬·¢ËÍ»º³å1ÖÐ¶Ï£¬´íÎó±¨¾¯ÖÐ¶Ï£¬Êý¾Ý³¬ÔØÖÐ¶Ï£¬×ÜÏß´íÎóÖÐ¶Ï£¬·¢ËÍ»º³å3ÖÐ¶Ï
+	CAN1IER = 0x48Ful;				//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½1ï¿½Ð¶Ï£ï¿½ï¿½ï¿½ï¿½ó±¨¾ï¿½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½3ï¿½Ð¶ï¿½
 	CAN1MOD &= ~0x01ul;
 	CAN1CMR = CMD_CLR_DATAOVERRUN;
 	SETENA0 = ISE_CAN;
 
-	CAN1TFI2 = (0x01ul << 16) | SEND_PRIORITY_HIGH;		//ÐÄÌø·¢ËÍÉèÖÃ(Ê¹ÓÃ buf2 )
+	CAN1TFI2 = (0x01ul << 16) | SEND_PRIORITY_HIGH;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Ê¹ï¿½ï¿½ buf2 )
 	CAN1TID2 = (HEARTBEAT << 3) | HSE_ID;
 	CAN1TDA2 = OPERATIONAL;
 }
@@ -48,11 +48,11 @@ void init_can_b (void)
 }
 
 /****************************************************
-* º¯ÊýÃû: CAN_IRQHandler
-* ¹¦ÄÜ: CANÖÐ¶Ï·þÎñ³ÌÐò
-* Èë²Î: ÎÞ
-* ³ö²Î: ÎÞ
-* ·µ»ØÖµ: ÎÞ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: CAN_IRQHandler
+* ï¿½ï¿½ï¿½ï¿½: CANï¿½Ð¶Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+* ï¿½ï¿½ï¿½: ï¿½ï¿½
+* ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½
+* ï¿½ï¿½ï¿½ï¿½Öµ: ï¿½ï¿½
 ****************************************************/
 void CAN_IRQHandler (void)
 {
@@ -60,7 +60,7 @@ void CAN_IRQHandler (void)
 	WORD i;
 
 	icr = CAN1ICR;
-	if (icr & CAN_INT_RECV)				// ½ÓÊÕÖÐ¶Ï
+	if (icr & CAN_INT_RECV)				// ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 	{
 		CAN1ICR &= ~CAN_INT_RECV;
 		if (rca >= RXASW_SIZE)
@@ -117,7 +117,7 @@ void CAN_IRQHandler (void)
 									}
 							}						
 						else if ((rxa[ria][1] >= EXE_ID) && (rxa[ria][1] < (EXE_ID + MAX_EXE)))
-							{//Ôö¼ÓÀ©Õ¹°åµÄÐÄÌø¼ì²â
+							{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 								exe_heartbeat |= (0x0001 << (rxa[ria][1] - EXE_ID));
 								exe_hb_error &= (~(0x0001 << (rxa[ria][1] - EXE_ID)));
 								if (rxa[ria][2] == OPERATIONAL)
@@ -249,7 +249,7 @@ void CAN_IRQHandler (void)
 			tra = 1;
 			sra = 1;
 		}
-//Ôö¼Ó can ´íÎó±¨¾¯´¦Àí 2014-08-18
+//ï¿½ï¿½ï¿½ï¿½ can ï¿½ï¿½ï¿½ó±¨¾ï¿½ï¿½ï¿½ï¿½ï¿½ 2014-08-18
 		if ((icr & 0x04) && (p.canbus_check) && (drive_state != D_STOPPED))
 			{
 				CLRENA0 = ISE_CAN;
@@ -257,16 +257,16 @@ void CAN_IRQHandler (void)
 				__nop();__nop();
 				reg = CAN1GSR;
 				reg &= 0x000000FF;
-				CAN1GSR = reg;					//Çå³ý¹ÊÕÏ¼ÆÊý
+				CAN1GSR = reg;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½
 				CAN1MOD &= ~01ul; 
 				__nop();__nop();
 				SETENA0 = ISE_CAN;
 			}
-//Ôö¼Ó can ´íÎó±¨¾¯´¦Àí 2014-08-18	
+//ï¿½ï¿½ï¿½ï¿½ can ï¿½ï¿½ï¿½ó±¨¾ï¿½ï¿½ï¿½ï¿½ï¿½ 2014-08-18	
 	}
 
 	icr = CAN2ICR;
-	if (icr & CAN_INT_RECV)				// ½ÓÊÕÖÐ¶Ï
+	if (icr & CAN_INT_RECV)				// ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 	{
 		CAN2ICR &= ~CAN_INT_RECV;
 		if (rcb >= RXBSW_SIZE)
@@ -313,7 +313,7 @@ void CAN_IRQHandler (void)
 					}
 				}				
 				else if ((i >= EXE_ID + 1) && (i < (EXE_ID + MAX_EXE)))
-					{//Ôö¼ÓÀ©Õ¹°åµÄÐÄÌø¼ì²â
+					{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						exe_heartbeat |= (0x0001 << (i - EXE_ID));
 						exe_hb_error &= (~(0x0001 << (i - EXE_ID)));
 						if (rxb[rib][2] == OPERATIONAL)
