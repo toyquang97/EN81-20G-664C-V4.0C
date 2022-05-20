@@ -19,7 +19,8 @@ void TIMER0_IRQHandler (void){//500ms
 	T0IR = 0x01;
 	sec_cnt++;
 	error_timer++;
-	
+	transmitNextFloor();
+	//transmitNextFloorCanA();
 	if (state_run == LED_ON)	
 	{
 		second_toggle = 1;
